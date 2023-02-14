@@ -301,18 +301,12 @@
             <img src="images/logo-055122b5.png" class="logo" alt="" />
             <div class="header-line"></div>
             <ul class="header-nav">
-                <li class="header-nav__item active">
-                    <a href="/API-MPC/zh/index.html">API-MPC</a>
-                </li>
-                <li class="header-nav__item">
-                    <a href="/API-WaaS-V2/zh/index.html">API-WaaS-V2</a>
-                </li>
-                <li class="header-nav__item">
-                    <a href="/API-WAPI/zh/index.html">API-WAPI</a>
-                </li>
+                    <li class="header-nav__item active"><a href="/API-MPC/zh/index.html">API-MPC</a></li>
+                    <li class="header-nav__item"><a href="/API-WaaS-V2/zh/index.html">API-WaaS-V2</a></li>
+                    <li class="header-nav__item"><a href="/API-WAPI/zh/index.html">API-WAPI</a></li>
             </ul>
         </div>
-        <a class="switch-language" href="/API-WaaS-V2/en/index.html">English</a>
+        <a class="switch-language" href="/API-WaaS-V2/zh/index.html">English</a>
     </div>
     <a href="#" id="nav-button">
       <span>
@@ -329,63 +323,6 @@
         </div>
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
-          <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#22dfeeb22d" class="toc-h2 toc-link" data-title="二级标题">二级标题</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#516f981774" class="toc-h3 toc-link" data-title="三级标题">三级标题</a>
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#query-parameters" class="toc-h3 toc-link" data-title="Query Parameters">Query Parameters</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request-2" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#url-parameters" class="toc-h3 toc-link" data-title="URL Parameters">URL Parameters</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request-3" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#url-parameters-2" class="toc-h3 toc-link" data-title="URL Parameters">URL Parameters</a>
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
@@ -395,245 +332,1706 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1><h2 id='22dfeeb22d'>二级标题</h2><h3 id='516f981774'>三级标题</h3>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>测试测试 英文英文6</p>
-
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+        <h2 id='api'><strong>一、API接口</strong></h2><h3 id='1-0'><strong>1.0 统一说明</strong></h3>
+<p><strong>请求参数统一格式</strong></p>
 
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td style="text-align: left">app_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">必须</td>
+<td style="text-align: left">商户唯一标识</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td style="text-align: left">data</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">可选</td>
+<td style="text-align: left">加密之后的字符串，具体加密信息见各接口 请求参数数据结构</td>
 </tr>
 </tbody></table>
+
+<p><strong>请求接口示例：</strong></p>
+
+<p><code>POST /api/mpc/sub_wallet/assets</code></p>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">请求接口示例</span><span class="err">：</span>
+
+<span class="no">POST</span> <span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">mpc</span><span class="o">/</span><span class="n">sub_wallet</span><span class="o">/</span><span class="n">assets</span>
+
+<span class="n">app_id</span><span class="o">=</span><span class="mi">2128</span><span class="n">eb8de9e932a4376909f3d69424cc</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">SWYYr</span><span class="o">-</span><span class="nc">LBVAmaS0eq8n</span><span class="o">-</span><span class="n">CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov</span><span class="o">-</span><span class="mi">7</span><span class="n">hsRsVmOhyPqC</span><span class="o">-</span><span class="n">JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8</span><span class="o">-</span><span class="n">BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht</span><span class="o">-</span><span class="n">n_ZcBdxIDt975dbOFUiH</span><span class="o">-</span><span class="n">oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ</span><span class="o">-</span><span class="mi">6</span><span class="n">cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb</span><span class="o">-</span><span class="mi">5</span><span class="n">g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI</span>
+</code></pre></div>
+<p><strong>响应参数统一格式</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">必须</td>
+<td style="text-align: left">加密之后的字符串，具体加密信息见 响应结果data解密后格式</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+
+<span class="o">{</span><span class="s">"data"</span><span class="o">:</span> <span class="s">"SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI"</span><span class="o">}</span>
+
+
+</code></pre></div>
+<p><strong>响应结果data解密后格式</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">code</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">状态码，例：100002</td>
+</tr>
+<tr>
+<td style="text-align: left">msg</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">响应结果说明，例：请求参数错误</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">具体响应数据，数据结构定义见各接口  响应参数数据结构</td>
+</tr>
+</tbody></table>
+<h3 id='1-1'><strong>1.1 获取钱包开通的主链</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>GET /api/mpc/wallet/open_coin</code></p>
+
+<p><strong>请求参数数据结构: 无</strong></p>
+
+<p><strong>响应参数数据结构:</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">类型</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">说明</td>
+</tr>
+<tr>
+<td style="text-align: left">open_main_chain</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">钱包开通的主链</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; coin_net</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">币种网络，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，提币时使用，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol_alias</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">币种真实币名，例：USDT</td>
+</tr>
+<tr>
+<td style="text-align: left">support_main_chain</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">MPC支持的主链</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; coin_net</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">币种网络，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，提币时使用，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol_alias</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">币种真实币名，例：USDT</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; if_open_chain</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">是否开通主链 false:未开通，true:已开通</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+
+<span class="o">{</span>
+    <span class="s">"open_main_chain"</span><span class="o">:[</span>
+        <span class="o">{</span>
+            <span class="s">"coin_net"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
+            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
+            <span class="s">"symbol_alias"</span><span class="o">:</span><span class="s">"BTC"</span>
+        <span class="o">}</span>
+    <span class="o">],</span>
+    <span class="s">"support_main_chain"</span><span class="o">:[</span>
+        <span class="o">{</span>
+            <span class="s">"coin_net"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
+            <span class="s">"if_open_chain"</span><span class="o">:</span><span class="kc">true</span><span class="o">,</span>
+            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
+            <span class="s">"symbol_alias"</span><span class="o">:</span><span class="s">"BTC"</span>
+        <span class="o">}</span>
+    <span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div><h3 id='1-2'><strong>1.2 创建子钱包（用户）</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>POST /api/mpc/sub_wallet/create</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_name</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包名称，最大支持50个字符，同一钱包下子钱包不能重名，例：mpc矿池</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+
+<span class="o">{</span>
+    <span class="s">"sub_wallet_id"</span><span class="o">:</span> <span class="mi">10234122</span>
+<span class="o">}</span>
+</code></pre></div><h3 id='1-3'><strong>1.3 获取子钱包（用户）地址</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>POST /api/mpc/sub_wallet/get_address</code></p>
+
+<p><strong>请求参数数据结构:</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充值到账地址，例：0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight plaintext"><code>响应结果示例：
+
+{
+    "address":"0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86"
+}
+</code></pre></div><h3 id='1-4'><strong>1.4 获取子钱包（用户）资产</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>GET /api/mpc/sub_wallet/assets</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">deposit_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充值到账地址，例：0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+<tr>
+<td style="text-align: left">normal_balance</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">可用余额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">lock_balance</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">冻结余额，例：0.77</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+<span class="o">{</span>
+    <span class="s">"normal_balance"</span><span class="o">:</span><span class="s">"1.23"</span><span class="o">,</span>
+    <span class="s">"deposit_address"</span><span class="o">:</span><span class="s">"0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86"</span><span class="o">,</span>
+    <span class="s">"lock_balance"</span><span class="o">:</span><span class="s">"0.77"</span>
+<span class="o">}</span>
+</code></pre></div><h3 id='1-5-app'><strong>1.5 修改子钱包（用户）在app客户端展示状态</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>POST /api/mpc/sub_wallet/change_show_status</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_ids</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">多个子钱包id的字符串，英文逗号分割，例：10234122,10234123</td>
+</tr>
+<tr>
+<td style="text-align: left">app_show_status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">1展示 2不展示</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构: 无</strong></p>
+<div class="highlight"><pre class="highlight plaintext"><code>无
+</code></pre></div><h3 id='1-6'>1.6 提现</h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>POST /api/mpc/billing/withdraw</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">类型</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">说明</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币到账地址，例：0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币到账地址memo，Memo类型提币时如有可填入，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币唯一标识，例：0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币备注，例：mpc矿池</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">自定义矿工费时传入，通过&lt;预估手续费接口&gt;获取参考值，填入大于等于0的数值fee和gas_price二选一，其中一者为0，另一者不为0；</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">自定义矿工费时传入，通过&lt;预估手续费接口&gt;获取参考值，填入大于等于0的数值</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">自定义矿工费时传入，通过&lt;预估手续费接口&gt;获取参考值，填入大于等于0的数值；fee是真实的矿工费，无精度，填入时需要注意fee和gas_price二选一，其中一者为0，另一者不为0；</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币id，例：12345</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+<span class="o">{</span>
+    <span class="s">"withdraw_id"</span><span class="o">:</span> <span class="mi">12345</span>
+<span class="o">}</span>
+</code></pre></div><h3 id='1-7'><strong>1.7 提现预估手续费</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>GET /api/mpc/billing/gas_estimate</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">类型</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">说明</td>
+</tr>
+<tr>
+<td style="text-align: left">from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b84</td>
+</tr>
+<tr>
+<td style="text-align: left">to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币到账地址memo，Memo类型提币时如有可填入，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">金额，例：1.23</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">gas_price1</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费推荐单价第一档，例：12.4</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price2</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费推荐单价第二档，例：13.4</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price3</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费推荐单价第三档，例：14.4</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_limit</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费限制，例：21000</td>
+</tr>
+<tr>
+<td style="text-align: left">fee_unit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费单位，例：Gwei</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费推荐值，例：0</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+<span class="o">{</span>
+    <span class="s">"gas_limit"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
+    <span class="s">"fee_unit"</span><span class="o">:</span><span class="s">"Gwei"</span><span class="o">,</span>
+    <span class="s">"gas_price1"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"fee"</span><span class="o">:</span><span class="s">"0.00159"</span><span class="o">,</span>
+    <span class="s">"gas_price2"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"gas_price3"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+<span class="o">}</span>
+</code></pre></div><h3 id='1-8'><strong>1.8 提现加速</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>POST /api/mpc/billing/withdraw_pending</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">通过&lt;预估手续费接口&gt;获取参考值，填入大于等于0的数值fee和gas_price二选一，其中一者为0，另一者不为0；</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">通过&lt;预估手续费接口&gt;获取参考值，填入大于等于0的数值</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">通过&lt;预估手续费接口&gt;获取参考值，填入大于等于0的数值；fee是真实的矿工费，无精度，填入时需要注意；fee和gas_price二选一，其中一者为0，另一者不为0；</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构: 无</strong></p>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">无</span>
+</code></pre></div><h3 id='1-9'><strong>1.9、获取提币记录</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>GET /api/mpc/billing/withdraw_list</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">ids</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">多个request_id的字符串，英文逗号分割，例：0d766c03-8382-4005-b976-16c33f780f21,0db54264-7ea0-41c2-af85-4dd22b5e74d6</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left"></td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">获取指定提币request_id的最多100条记录</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币唯一标识，例：0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，提币时使用，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; fee_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费币种，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费，例：0.00123</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; real_fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">真实消耗的手续费，例：0.00111</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">创建时间时间戳，例：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">修改时间时间戳，例：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币到账地址memo，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易hash，例：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">区块确认数，例：10</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提现状态: 1000 未审批, 1100 审批通过, 待签名，1200 支付中，2000 支付完成，2100 审批拒绝，2200 拒绝，2300 交易丢弃，2400 支付失败</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; withdraw_source</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提现类型： 1.app, 2.openapi</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币币种主链唯一标识，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币币种合约地址，例：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
+        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.0000111"</span><span class="o">,</span>
+        <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+        <span class="s">"wihdraw_source"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
+        <span class="s">"fee"</span><span class="o">:</span><span class="s">"0.0002782353"</span><span class="o">,</span>
+        <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="o">,</span>
+        <span class="s">"memo"</span><span class="o">:</span> <span class="s">"123321"</span><span class="o">,</span>
+        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1672304978000</span><span class="o">,</span>
+        <span class="s">"txid"</span><span class="o">:</span><span class="s">"0x8e6beba81b90835fc9fcd40a2bdca33243c7c3b81ac765c240837d4810874a55"</span><span class="o">,</span>
+        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
+        <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"sub_wallet_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
+        <span class="s">"address_from"</span><span class="o">:</span><span class="s">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="o">,</span>
+        <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
+        <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1672318660000</span><span class="o">,</span>
+        <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"id"</span><span class="o">:</span><span class="mi">242</span><span class="o">,</span>
+        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"57fdc296-1e14-47fa-a99d-5e86f8e51008"</span><span class="o">,</span>
+        <span class="s">"status"</span><span class="o">:</span><span class="mi">1200</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><h3 id='1-10'><strong>1.10、同步提币记录</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>GET /api/mpc/billing/sync_withdraw_list</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">max_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币记录起始id，例：12345</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left"></td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">获取大于指定提币id的最多100条记录</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币唯一标识，例：0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，提币时使用，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; fee_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费币种，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费，例：0.00123</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; real_fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">真实消耗的手续费，例：0.00111</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">创建时间时间戳，例：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">修改时间时间戳，例：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币到账地址memo，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易hash，例：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">区块确认数，例：10</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提现状态: 1000 未审批, 1100 审批通过, 待签名，1200 支付中，2000 支付完成，2100 审批拒绝，2200 拒绝，2300 交易丢弃，2400 支付失败</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; withdraw_source</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提现类型： 1.app, 2.openapi</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币币种主链唯一标识，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币币种合约地址，例：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
+        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.0000111"</span><span class="o">,</span>
+        <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+        <span class="s">"wihdraw_source"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
+        <span class="s">"fee"</span><span class="o">:</span><span class="s">"0.0002782353"</span><span class="o">,</span>
+        <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="o">,</span>
+        <span class="s">"memo"</span><span class="o">:</span> <span class="s">"123321"</span><span class="o">,</span>
+        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1672304978000</span><span class="o">,</span>
+        <span class="s">"txid"</span><span class="o">:</span><span class="s">"0x8e6beba81b90835fc9fcd40a2bdca33243c7c3b81ac765c240837d4810874a55"</span><span class="o">,</span>
+        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
+        <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"sub_wallet_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
+        <span class="s">"address_from"</span><span class="o">:</span><span class="s">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="o">,</span>
+        <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
+        <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1672318660000</span><span class="o">,</span>
+        <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"id"</span><span class="o">:</span><span class="mi">242</span><span class="o">,</span>
+        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"57fdc296-1e14-47fa-a99d-5e86f8e51008"</span><span class="o">,</span>
+        <span class="s">"status"</span><span class="o">:</span><span class="mi">1200</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><h3 id='1-11'><strong>1.11、获取充币记录</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>GET /api/mpc/billing/deposit_list</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">ids</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">多个id的字符串，英文逗号分割，例：123,345</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">类型</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">说明</td>
+</tr>
+<tr>
+<td style="text-align: left"></td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">获取指定id的最多100条记录</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充币id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">创建时间时间戳，例：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">修改时间时间戳，例：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">到账地址memo，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易hash，例：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">区块确认数，例：10</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充值状态: 1000 未确认，1100 已确认（交易区块已确认）, 2000 已完成（上账已完成），3000 异常</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">充币币种主链唯一标识，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">充币币种合约地址，例：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
+        <span class="s">"amount"</span><span class="o">:</span><span class="s">"1"</span><span class="o">,</span>
+        <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0x33648fACAD6CECA85cf717841Ddd87c40B12438F"</span><span class="o">,</span>
+        <span class="s">"memo"</span><span class="o">:</span> <span class="s">"123321"</span><span class="o">,</span>
+      <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1672107533000</span><span class="o">,</span>
+        <span class="s">"txid"</span><span class="o">:</span><span class="s">"0xfd0b04024bd1d849ba69e301733194154cb42a05c1dd32065367d8c6336af711"</span><span class="o">,</span>
+        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">20</span><span class="o">,</span>
+        <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"sub_wallet_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
+        <span class="s">"address_from"</span><span class="o">:</span><span class="s">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="o">,</span>
+        <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1672323030000</span><span class="o">,</span>
+        <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"id"</span><span class="o">:</span><span class="mi">43</span><span class="o">,</span>
+        <span class="s">"status"</span><span class="o">:</span><span class="mi">2000</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><h3 id='1-12'><strong>1.12、同步充币记录</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>GET /api/mpc/billing/sync_deposit_list</code></p>
+
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">max_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币记录起始id，例：100</td>
+</tr>
+</tbody></table>
+
+<p><strong>响应参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">类型</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">说明</td>
+</tr>
+<tr>
+<td style="text-align: left"></td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">获取大于指定充币id的最多100条记录</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充币id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">创建时间时间戳，例：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">修改时间时间戳，例：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">到账地址memo，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易hash，例：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">区块确认数，例：10</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充值状态: 1000 未确认，1100 已确认（交易区块已确认）, 2000 已完成（上账已完成），3000 异常</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">充币币种主链唯一标识，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">充币币种合约地址，例：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">响应结果示例</span><span class="err">：</span>
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
+        <span class="s">"amount"</span><span class="o">:</span><span class="s">"1"</span><span class="o">,</span>
+        <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0x33648fACAD6CECA85cf717841Ddd87c40B12438F"</span><span class="o">,</span>
+        <span class="s">"memo"</span><span class="o">:</span> <span class="s">"123321"</span><span class="o">,</span>
+      <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1672107533000</span><span class="o">,</span>
+        <span class="s">"txid"</span><span class="o">:</span><span class="s">"0xfd0b04024bd1d849ba69e301733194154cb42a05c1dd32065367d8c6336af711"</span><span class="o">,</span>
+        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">20</span><span class="o">,</span>
+        <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"sub_wallet_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
+        <span class="s">"address_from"</span><span class="o">:</span><span class="s">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="o">,</span>
+        <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1672323030000</span><span class="o">,</span>
+        <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+        <span class="s">"id"</span><span class="o">:</span><span class="mi">43</span><span class="o">,</span>
+        <span class="s">"status"</span><span class="o">:</span><span class="mi">2000</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><h2 id='ed6d381d79'><strong>二、交易通知</strong></h2><h3 id='2-0'><strong>2.0、统一说明</strong></h3>
+<p><strong>交易通知请求参数统一格式</strong></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">类型</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">说明</td>
+</tr>
+<tr>
+<td style="text-align: left">app_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">必须</td>
+<td style="text-align: left">商户唯一标识</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">必须</td>
+<td style="text-align: left">加密之后的字符串，具体加密信息见各接口 请求参数数据结构</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">交易通知请求接口示例</span><span class="err">：</span>
+
+<span class="no">POST</span> <span class="o">/</span><span class="n">用户回调通知地址</span>
+
+<span class="n">app_id</span><span class="o">=</span><span class="mi">2128</span><span class="n">eb8de9e932a4376909f3d69424cc</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">SWYYr</span><span class="o">-</span><span class="nc">LBVAmaS0eq8n</span><span class="o">-</span><span class="n">CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov</span><span class="o">-</span><span class="mi">7</span><span class="n">hsRsVmOhyPqC</span><span class="o">-</span><span class="n">JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8</span><span class="o">-</span><span class="n">BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht</span><span class="o">-</span><span class="n">n_ZcBdxIDt975dbOFUiH</span><span class="o">-</span><span class="n">oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ</span><span class="o">-</span><span class="mi">6</span><span class="n">cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb</span><span class="o">-</span><span class="mi">5</span><span class="n">g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI</span>
+</code></pre></div>
+<p><strong>交易通知响应参数统一格式：</strong></p>
+
+<p>返回字符串：<code>SUCCESS</code>表示成功，<code>FAILURE</code>表示失败 （注意此处返回参数无需进行加密）</p>
+<h3 id='2-1'><strong>2.1、提币通知</strong></h3>
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">charset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">编码格式，无特殊情况，传参数utf-8</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">通知类型， 充值通知：deposit， 提现通知： withdraw</td>
+</tr>
+<tr>
+<td style="text-align: left">notify_time</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">通知时间，例：2022-11-02 11:04:05</td>
+</tr>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币唯一标识，例：0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，提币时使用，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">fee_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费币种，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">手续费，例：0.00123</td>
+</tr>
+<tr>
+<td style="text-align: left">real_fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">真实消耗的手续费，例：0.00111</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">创建时间时间戳，例：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">修改时间时间戳，例：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">到账地址memo，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易hash，例：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">区块确认数，例：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提现状态: 1000 未审批, 1100 审批通过, 待签名，1200 支付中，2000 支付完成，2100 审批拒绝，2200 拒绝，2300 交易丢弃，2400 支付失败</td>
+</tr>
+<tr>
+<td style="text-align: left">withdraw_source</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提现类型： 1.app, 2.openapi</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币币种主链唯一标识，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">提币币种合约地址，例：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<h3 id='2-2'><strong>2.2、充币通知</strong></h3>
+<p><strong>请求参数数据结构:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">类型</td>
+<td style="text-align: left">是否必须</td>
+<td style="text-align: left">说明</td>
+</tr>
+<tr>
+<td style="text-align: left">charset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">编码格式，无特殊情况，传参数utf-8</td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">通知类型， 充值通知：deposit， 提现通知： withdraw</td>
+</tr>
+<tr>
+<td style="text-align: left">notify_time</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">通知时间，例：2022-11-02 11:04:05</td>
+</tr>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充币id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">子钱包id，例：10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">创建时间时间戳，例：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">修改时间时间戳，例：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">到账地址memo，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易hash，例：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">区块确认数，例：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">充值状态: 1000 未确认，1100 已确认（交易区块已确认）, 2000 已完成（上账已完成），3000 异常</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">充币币种主链唯一标识，例：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">充币币种合约地址，例：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<h2 id='co-signer'><strong>三、co-signer部署及说明</strong></h2><h3 id='3-1'><strong>3.1. 二进制文件名称</strong></h3>
+<ul>
+<li>co-signer</li>
+</ul>
+<h3 id='3-2-co-signer'><strong>3.2. co-signer相关命令</strong></h3>
+<ul>
+<li>co-signer -h          获取帮助命令</li>
+</ul>
+
+<p><img src="images/Users65813Downloadsimage2023-2-10_14-46-42.png" alt="image2023-2-10_14-46-42" /></p>
+
+<ul>
+<li>-v                   获取co-signer版本号</li>
+<li>-server               启动co-signer参数，不含该参数则为工具模式</li>
+<li>-conf                启动co-signer时指定配置文件</li>
+<li>-rsa-gen              工具模式：输入启动密码，生成加密的rsa公私钥文件（私钥加密，公钥非加密）</li>
+<li>-rsa-pri-import         工具模式：输入启动密码，导入现有的rsa私钥，生成加密后的rsa私钥文件（仅导入私钥）</li>
+<li>-recover-seed         工具模式：输入启动密码，导入现有的根私钥助记词，每个单词使用英文符号 - 分隔，生成加密后的随机数种子文件</li>
+</ul>
+<h3 id='3-3-co-signer'><strong>3.3. co-signer配置文件</strong></h3><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="err">##</span> <span class="nx">主配置信息</span>
+<span class="nx">main</span><span class="p">:</span>
+  <span class="err">##</span> <span class="nx">co</span><span class="o">-</span><span class="nx">signer的服务ip地址</span>
+  <span class="nx">tcp</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.0.0.0:28888</span><span class="dl">"</span>
+  <span class="err">##</span> <span class="nx">加密后的随机数种子文件</span>
+  <span class="nx">seed_key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">conf/seed.dat</span><span class="dl">"</span>
+
+<span class="err">##</span> <span class="nx">rsa配置</span>
+<span class="nx">rsa</span><span class="p">:</span>
+  <span class="err">##</span> <span class="nx">加密后的rsa私钥文件</span>
+  <span class="nx">pri_pem</span><span class="p">:</span> <span class="dl">"</span><span class="s2">conf/rsaPri.pem</span><span class="dl">"</span>
+
+<span class="err">##</span> <span class="nx">custody系统</span>
+<span class="nx">custody_service</span><span class="p">:</span>
+  <span class="err">##</span> <span class="nx">app_id</span><span class="err">，</span><span class="nx">创建商户后获取</span>
+  <span class="nx">app_id</span><span class="p">:</span> <span class="dl">""</span>
+  <span class="err">##</span> <span class="nx">api域名地址</span><span class="err">，</span><span class="nx">见接口文档</span>
+  <span class="nx">domain</span><span class="p">:</span> <span class="dl">""</span>
+  <span class="err">##</span> <span class="nx">custody商户公钥文件</span>
+  <span class="nx">rsa_pub</span><span class="p">:</span> <span class="dl">"</span><span class="s2">conf/custodyPub.pem</span><span class="dl">"</span>
+  <span class="err">##</span> <span class="nx">请求获取响应语言</span><span class="err">，</span><span class="nx">支持zh_CN和en_US</span>
+  <span class="nx">language</span><span class="p">:</span> <span class="dl">"</span><span class="s2">zh_CN</span><span class="dl">"</span>
+
+<span class="err">##</span> <span class="nx">客户系统</span>
+<span class="nx">custom_service</span><span class="p">:</span>
+  <span class="err">##</span> <span class="nx">withdraw签名回调地址</span>
+  <span class="nx">withdraw_callback_url</span><span class="p">:</span> <span class="dl">""</span>
+</code></pre></div><h3 id='3-1-2'><strong>3.1. 客户需要实现提现签名回调接口（签名前回调一次，签名成功回调一次）</strong></h3>
+<p><strong>HTTP请求</strong></p>
+
+<p><code>POST /自定义地址</code></p>
+
+<p><strong>请求参数数据结构（无需进行加密）:</strong> </p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提现id，例：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币唯一标识，例：0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">pending_round</td>
+<td style="text-align: left">Bool</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">加速状态，false为提币，true为提币加速</td>
+</tr>
+<tr>
+<td style="text-align: left">from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">出币地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">到账地址，例：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">到账地址memo，例：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">Decimal</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">提币金额，例：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+</tr>
+</tbody></table>
+
+<p>回调响应参数统一格式：返回字符串：<code>SUCCES</code>表示成功，<code>FAILURE</code>表示失败 （注意此处返回参数无需进行加密）</p>
 
       </div>
       <div class="dark-box">
