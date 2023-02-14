@@ -286,7 +286,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-816a0751.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-b0498dce.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-2b633527.js"></script>
 
@@ -295,13 +295,13 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;java&quot;]">
+  <body class="index" data-languages="[&quot;java&quot;,&quot;php&quot;]">
     <div class="header">
         <div class="header-left">
             <img src="images/logo-055122b5.png" class="logo" alt="" />
             <div class="header-line"></div>
             <div class="header-nav-h5">
-                
+                API-WaaS-V2
                 <ul class="header-nav-list-h5">
                         <li class="header-nav__item"><a href="/API-MPC/zh/index.html">API-MPC</a></li>
                         <li class="header-nav__item active"><a href="/API-WaaS-V2/zh/index.html">API-WaaS-V2</a></li>
@@ -325,6 +325,7 @@
     <div class="toc-wrapper">
         <div class="lang-selector">
               <a href="#" data-language-name="java">java</a>
+              <a href="#" data-language-name="php">php</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -464,6 +465,20 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#ada01d8c4e" class="toc-h2 toc-link" data-title="统一说明">统一说明</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#d06fcec6de" class="toc-h3 toc-link" data-title="请求参数统一格式">请求参数统一格式</a>
+                          </li>
+                          <li>
+                            <a href="#513b6965ca" class="toc-h3 toc-link" data-title="请求接口示例">请求接口示例</a>
+                          </li>
+                          <li>
+                            <a href="#680b2bbba1" class="toc-h3 toc-link" data-title="响应参数统一格式">响应参数统一格式</a>
+                          </li>
+                          <li>
+                            <a href="#data" class="toc-h3 toc-link" data-title="响应结果data解密后格式">响应结果data解密后格式</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
                     <a href="#a1cda4baf4" class="toc-h2 toc-link" data-title="获取地址">获取地址</a>
@@ -564,7 +579,7 @@
 <h1 id='153042ed9e'>概述</h1><h2 id='45fa4e00db'>介绍</h2>
 <p>ChainUp Custody是ChainUp集团依托3年时间所服务的300多家交易所经验，将底层区块链钱包封装成的一套完整的Custody服务，包含资产托管、节点服务、主链币种开发、热门币种一键接入、共管钱包、借贷理财等多种功能服务。</p>
 
-<p>ChainUp Custody通过API、SDK等形式为第三方合作伙伴提供快捷、低成本的集成Custody服务（多达200条主链不限代币的收币、发币等功能）；同时三方合作伙伴亦可通过web端可视化界面（custody.chainup.com ）进行资产管理，更有丰富的金融产品供您使用。</p>
+<p>ChainUp Custody通过API、SDK等形式为第三方合作伙伴提供快捷、低成本的集成Custody服务（多达200条主链不限代币的收币、发币等功能）；同时三方合作伙伴亦可通过web端可视化界面 <a href="https://custody.chainup.com" title="ChainUp Custody">ChainUp Custody</a> 进行资产管理，更有丰富的金融产品供您使用。</p>
 
 <p>目前ChainUp Custody服务客户已突破500家，涉及各行业，如：区块链行业：交易所、项目方、矿工、OTC、借贷等；传统行业：游戏、地产、直播、电商、供应链、媒体等；接入ChainUp Custody的客户，可享受联盟成员之间转账【0手续费】、【秒级到账】等多种优势。</p>
 <h2 id='1771a2f143'>愿景</h2>
@@ -576,7 +591,7 @@
 
 <p><a href="https://custodydocs.chainup.com/zh/latest/_images/jieruzhiyin2.png"><img src="https://custodydocs.chainup.com/zh/latest/_images/jieruzhiyin2.png" alt="" /></a></p>
 <h2 id='4742b507b1'>创建账号</h2><h3 id='custody'>下载Custody钱包</h3>
-<p>方式一：手机浏览器打开链接：https://custody.chainup.com/download</p>
+<p>方式一：手机浏览器打开链接：<a href="https://custody.chainup.com/download">https://custody.chainup.com/download</a></p>
 
 <p>方式二：使用手机扫码打开链接下载：</p>
 
@@ -724,11 +739,11 @@
 
 <p>SDK：支持java与PHP</p>
 
-<p>java SDK地址：https://github.com/HiCoinCom/java-sdk</p>
+<p>java SDK地址：<code>https://github.com/HiCoinCom/java-sdk</code></p>
 
-<p>PHP SDK地址：https://github.com/HiCoinCom/php-sdk</p>
+<p>PHP SDK地址：<code>https://github.com/HiCoinCom/php-sdk</code></p>
 
-<p>API：请查看相关文档</p>
+<p>API：<code>请查看相关文档</code></p>
 <h4 id='api-2'>两对公私钥作用（API方式）</h4>
 <p><strong>第一对公私钥：</strong> 开发者在开通资管账号时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台B，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。</p>
 
@@ -739,12 +754,12 @@
 <table><thead>
 <tr>
 <th style="text-align: left">生产环境域名(不支持测试环境):</th>
-<th></th>
+<th><a href="https://openapi.hicoin.vip/">https://openapi.hicoin.vip/</a></th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left"></td>
-<td><a href="https://openapi.hicoin.vip/">https://openapi.hicoin.vip</a></td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: left">app_id:</td>
@@ -824,12 +839,13 @@
 <td>详见附 1</td>
 </tr>
 </tbody></table>
-<h2 id='f8519014aa'>附录</h2><h3 id='1'>附 1:加解密方式</h3>
+
 <blockquote>
 <p>请求参数加密示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code>
 <span class="c1">// 原始请求参数</span>
+
 <span class="nc">String</span> <span class="n">originReqData</span> <span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"charset"</span><span class="o">:</span><span class="s">"utf-8"</span><span class="o">,</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"eth"</span><span class="o">,</span><span class="s">"sign"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span><span class="s">"time"</span><span class="o">:</span><span class="s">"1586420916306"</span><span class="o">,</span><span class="s">"app_id"</span><span class="o">:</span><span class="s">"baaceb1e506e1b5d7d1f0a3b1622583b"</span><span class="o">,</span><span class="s">"version"</span><span class="o">:</span><span class="s">"2.0"</span><span class="o">}</span><span class="err">'</span>
 
 <span class="c1">// encryptByPrivate方法封装在下列公共类RSAHelper.java中</span>
@@ -837,376 +853,375 @@
 
 <span class="c1">//http post</span>
 <span class="nc">String</span> <span class="n">httpBuildParams</span> <span class="o">=</span> <span class="s">"app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data="</span> <span class="o">+</span> <span class="n">encryptReqData</span>
-</code></pre></div>
+
+</code></pre></div><h2 id='f8519014aa'>附录</h2>
 <blockquote>
-<p>响应数据解密示例:
-```java</p>
+<p>响应数据解密示例:</p>
 </blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code>
+<span class="c1">// 响应的原始数据</span>
+<span class="nc">String</span> <span class="n">originResp</span><span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"jwtkGrhh2EVJS8xe93MpUYd-SQ-TyK0Bx5sXjE4hygFNg4wmctiahtIYXRpR2j8yDaEF5YzVstnUKbOH2p44FSMjXMQU4qFrhD00WOfW7v4LNALyiQXRb_5sakR0Zf573lGfLRTPlzLtTho3gqu3hMwuAv5e3r2dpb6_jxh1Z9BjkzSsNRX_bjLcHLUOPhMvo6rTUKSa9LQ6QnT8RX0eqzOZPlnCw3TeX_zcWWjxp6fcpKcdODxoI86gHwWRpSd-2qbEbFcaT12CJd9nPXA0KnLPNNHWz8sxQGiAg7Jg_-cN_yBHL9cS15zecTemYGqpOXRkojM1JwLsjM-7txf_dw"</span><span class="o">}</span><span class="err">'</span>
 
-<p>// 响应的原始数据
-String originResp= &#39;{&quot;data&quot;:&quot;jwtkGrhh2EVJS8xe93MpUYd-SQ-TyK0Bx5sXjE4hygFNg4wmctiahtIYXRpR2j8yDaEF5YzVstnUKbOH2p44FSMjXMQU4qFrhD00WOfW7v4LNALyiQXRb_5sakR0Zf573lGfLRTPlzLtTho3gqu3hMwuAv5e3r2dpb6_jxh1Z9BjkzSsNRX_bjLcHLUOPhMvo6rTUKSa9LQ6QnT8RX0eqzOZPlnCw3TeX_zcWWjxp6fcpKcdODxoI86gHwWRpSd-2qbEbFcaT12CJd9nPXA0KnLPNNHWz8sxQGiAg7Jg_-cN_yBHL9cS15zecTemYGqpOXRkojM1JwLsjM-7txf_dw&quot;}&#39;</p>
-
-<p>// 解密响应数据
-      String encryptRespData = JSON.parse(originResp)[&#39;data&#39;]
-      // decryptByPublic 方法封装在下列公共类 RSAHelper.java中
-String decryptRespData = RSAHelper.decryptByPublic( encryptRespData, &quot;托管平台提供的公钥&quot; )
-```</p>
-
+      <span class="c1">// 解密响应数据</span>
+      <span class="nc">String</span> <span class="n">encryptRespData</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">originResp</span><span class="o">)[</span><span class="err">'</span><span class="n">data</span><span class="err">'</span><span class="o">]</span>
+      <span class="c1">// decryptByPublic 方法封装在下列公共类 RSAHelper.java中</span>
+<span class="nc">String</span> <span class="n">decryptRespData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">decryptByPublic</span><span class="o">(</span> <span class="n">encryptRespData</span><span class="o">,</span> <span class="s">"托管平台提供的公钥"</span> <span class="o">)</span>
+</code></pre></div><h3 id='1'>附 1:加解密方式</h3>
 <blockquote>
-<p>公共类RSAHelper.java:
-```JAVA
-公共类RSAHelper.java:</p>
+<p>公共类RSAHelper.java:</p>
 </blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code>
+<span class="kn">import</span> <span class="nn">java.io.ByteArrayOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.Key</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.KeyFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.spec.PKCS8EncodedKeySpec</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.spec.X509EncodedKeySpec</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Base64</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Base64.Decoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Base64.Encoder</span><span class="o">;</span>
 
-<p>import java.io.ByteArrayOutputStream;
-import java.security.Key;
-import java.security.KeyFactory;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.X509EncodedKeySpec;
-import java.util.Base64;
-import java.util.Base64.Decoder;
-import java.util.Base64.Encoder;</p>
+<span class="kn">import</span> <span class="nn">javax.crypto.Cipher</span><span class="o">;</span>
 
-<p>import javax.crypto.Cipher;</p>
-
-<p>public class RSAHelper {
-        /**
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RSAHelper</span> <span class="o">{</span>
+        <span class="cm">/**
      * 加密算法RSA
-     */
-    public static final String KEY_ALGORITHM = &quot;RSA&quot;;</p>
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">KEY_ALGORITHM</span> <span class="o">=</span> <span class="s">"RSA"</span><span class="o">;</span>
 
-<p>/** <em>//</em>*
+    <span class="cm">/** *//**
      * RSA最大加密明文大小
-     */
-    private static final int MAX_ENCRYPT_BLOCK = 234;</p>
+     */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">MAX_ENCRYPT_BLOCK</span> <span class="o">=</span> <span class="mi">234</span><span class="o">;</span>
 
-<p>/** <em>//</em>*
+    <span class="cm">/** *//**
      * RSA最大解密密文大小
-     */
-    private static final int MAX_DECRYPT_BLOCK = 256;</p>
+     */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">MAX_DECRYPT_BLOCK</span> <span class="o">=</span> <span class="mi">256</span><span class="o">;</span>
 
-<p>private static final String CHARSET =&quot;UTF-8&quot;;</p>
 
-<p>/**
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">CHARSET</span> <span class="o">=</span><span class="s">"UTF-8"</span><span class="o">;</span>
+
+
+
+    <span class="cm">/**
      * 公钥解密
      *
      * @param encryptedData 已加密数据
      * @param publicKey 公钥(BASE64编码)
      * @return
      * @throws Exception
-     */
-    public static byte[] decryptByPublicKey(byte[] encryptedData, String publicKey)
-                    throws Exception {
-            byte[] keyBytes =  decryptBASE64(publicKey);
-            X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);
-            KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
-            Key publicK = keyFactory.generatePublic(x509KeySpec);
-            Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
-            cipher.init(Cipher.DECRYPT_MODE, publicK);
-            int inputLen = encryptedData.length;
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            int offSet = 0;
-            byte[] cache;
-            int i = 0;
-            // 对数据分段解密
-            while (inputLen - offSet &gt; 0) {
-                    if (inputLen - offSet &gt; MAX_DECRYPT_BLOCK) {
-                            cache = cipher.doFinal(encryptedData, offSet, MAX_DECRYPT_BLOCK);
-                    } else {
-                            cache = cipher.doFinal(encryptedData, offSet, inputLen - offSet);
-                    }
-                    out.write(cache, 0, cache.length);
-                    i++;
-                    offSet = i * MAX_DECRYPT_BLOCK;
-            }
-            byte[] decryptedData = out.toByteArray();
-            out.close();
-            return decryptedData;
-    }</p>
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">decryptByPublicKey</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">encryptedData</span><span class="o">,</span> <span class="nc">String</span> <span class="n">publicKey</span><span class="o">)</span>
+                    <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">keyBytes</span> <span class="o">=</span>  <span class="n">decryptBASE64</span><span class="o">(</span><span class="n">publicKey</span><span class="o">);</span>
+            <span class="nc">X509EncodedKeySpec</span> <span class="n">x509KeySpec</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">X509EncodedKeySpec</span><span class="o">(</span><span class="n">keyBytes</span><span class="o">);</span>
+            <span class="nc">KeyFactory</span> <span class="n">keyFactory</span> <span class="o">=</span> <span class="nc">KeyFactory</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="no">KEY_ALGORITHM</span><span class="o">);</span>
+            <span class="nc">Key</span> <span class="n">publicK</span> <span class="o">=</span> <span class="n">keyFactory</span><span class="o">.</span><span class="na">generatePublic</span><span class="o">(</span><span class="n">x509KeySpec</span><span class="o">);</span>
+            <span class="nc">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="nc">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">keyFactory</span><span class="o">.</span><span class="na">getAlgorithm</span><span class="o">());</span>
+            <span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="nc">Cipher</span><span class="o">.</span><span class="na">DECRYPT_MODE</span><span class="o">,</span> <span class="n">publicK</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">inputLen</span> <span class="o">=</span> <span class="n">encryptedData</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+            <span class="nc">ByteArrayOutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ByteArrayOutputStream</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">offSet</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">cache</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="c1">// 对数据分段解密</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">inputLen</span> <span class="o">-</span> <span class="n">offSet</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">inputLen</span> <span class="o">-</span> <span class="n">offSet</span> <span class="o">&gt;</span> <span class="no">MAX_DECRYPT_BLOCK</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">cache</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">encryptedData</span><span class="o">,</span> <span class="n">offSet</span><span class="o">,</span> <span class="no">MAX_DECRYPT_BLOCK</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                            <span class="n">cache</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">encryptedData</span><span class="o">,</span> <span class="n">offSet</span><span class="o">,</span> <span class="n">inputLen</span> <span class="o">-</span> <span class="n">offSet</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">cache</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">cache</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+                    <span class="n">i</span><span class="o">++;</span>
+                    <span class="n">offSet</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="no">MAX_DECRYPT_BLOCK</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">decryptedData</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">();</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="k">return</span> <span class="n">decryptedData</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<p>/**
+    <span class="cm">/**
      *  公钥分段解密
      * @param encryptedData 加密的base64数据
      * @param publicKey rsa 公钥
      * @return
-     */
-    public static String decryptByPublicKey(String encryptedData, String publicKey){
-            if(encryptedData==null || encryptedData.isEmpty() || publicKey==null || publicKey.isEmpty()) {
-                return &quot;&quot;;
-            }</p>
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">decryptByPublicKey</span><span class="o">(</span><span class="nc">String</span> <span class="n">encryptedData</span><span class="o">,</span> <span class="nc">String</span> <span class="n">publicKey</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">encryptedData</span><span class="o">==</span><span class="kc">null</span> <span class="o">||</span> <span class="n">encryptedData</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">||</span> <span class="n">publicKey</span><span class="o">==</span><span class="kc">null</span> <span class="o">||</span> <span class="n">publicKey</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+            <span class="o">}</span>
 
-<p>try {
-                encryptedData = encryptedData.replace(&quot;\r&quot;, &quot;&quot;).replace(&quot;\n&quot;, &quot;&quot;);
-                byte[] data = decryptByPublicKey(decryptBASE64(encryptedData), publicKey);
-                if(data == null || data.length &lt; 1){
-                        return  &quot;&quot;;
-                }
-                return new String(data);
-            }catch (Exception ex){
-                    ex.printStackTrace();
-            }
-            return &quot;&quot;;
-    }</p>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">encryptedData</span> <span class="o">=</span> <span class="n">encryptedData</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">"\r"</span><span class="o">,</span> <span class="s">""</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">"\n"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="n">decryptByPublicKey</span><span class="o">(</span><span class="n">decryptBASE64</span><span class="o">(</span><span class="n">encryptedData</span><span class="o">),</span> <span class="n">publicKey</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">data</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">data</span><span class="o">.</span><span class="na">length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">){</span>
+                        <span class="k">return</span>  <span class="s">""</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">ex</span><span class="o">){</span>
+                    <span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<p>/**
+    <span class="cm">/**
      * 私钥加密
      *
      * @param data 源数据
      * @param privateKey 私钥(BASE64编码)
      * @return
      * @throws Exception
-     */
-    public static byte[] encryptByPrivateKey(byte[] data, String privateKey)
-                    throws Exception {
-            byte[] keyBytes =  decryptBASE64(privateKey);
-            PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
-            KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
-            Key privateK = keyFactory.generatePrivate(pkcs8KeySpec);
-            Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());
-            cipher.init(Cipher.ENCRYPT_MODE, privateK);
-            int inputLen = data.length;
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            int offSet = 0;
-            byte[] cache;
-            int i = 0;
-            // 对数据分段加密
-            while (inputLen - offSet &gt; 0) {
-                    if (inputLen - offSet &gt; MAX_ENCRYPT_BLOCK) {
-                            cache = cipher.doFinal(data, offSet, MAX_ENCRYPT_BLOCK);
-                    } else {
-                            cache = cipher.doFinal(data, offSet, inputLen - offSet);
-                    }
-                    out.write(cache, 0, cache.length);
-                    i++;
-                    offSet = i * MAX_ENCRYPT_BLOCK;
-            }
-            byte[] encryptedData = out.toByteArray();
-            out.close();
-            return encryptedData;
-    }</p>
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encryptByPrivateKey</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="o">,</span> <span class="nc">String</span> <span class="n">privateKey</span><span class="o">)</span>
+                    <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">keyBytes</span> <span class="o">=</span>  <span class="n">decryptBASE64</span><span class="o">(</span><span class="n">privateKey</span><span class="o">);</span>
+            <span class="nc">PKCS8EncodedKeySpec</span> <span class="n">pkcs8KeySpec</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKCS8EncodedKeySpec</span><span class="o">(</span><span class="n">keyBytes</span><span class="o">);</span>
+            <span class="nc">KeyFactory</span> <span class="n">keyFactory</span> <span class="o">=</span> <span class="nc">KeyFactory</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="no">KEY_ALGORITHM</span><span class="o">);</span>
+            <span class="nc">Key</span> <span class="n">privateK</span> <span class="o">=</span> <span class="n">keyFactory</span><span class="o">.</span><span class="na">generatePrivate</span><span class="o">(</span><span class="n">pkcs8KeySpec</span><span class="o">);</span>
+            <span class="nc">Cipher</span> <span class="n">cipher</span> <span class="o">=</span> <span class="nc">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">keyFactory</span><span class="o">.</span><span class="na">getAlgorithm</span><span class="o">());</span>
+            <span class="n">cipher</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="nc">Cipher</span><span class="o">.</span><span class="na">ENCRYPT_MODE</span><span class="o">,</span> <span class="n">privateK</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">inputLen</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+            <span class="nc">ByteArrayOutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ByteArrayOutputStream</span><span class="o">();</span>
+            <span class="kt">int</span> <span class="n">offSet</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">cache</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="c1">// 对数据分段加密</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">inputLen</span> <span class="o">-</span> <span class="n">offSet</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">inputLen</span> <span class="o">-</span> <span class="n">offSet</span> <span class="o">&gt;</span> <span class="no">MAX_ENCRYPT_BLOCK</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">cache</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">data</span><span class="o">,</span> <span class="n">offSet</span><span class="o">,</span> <span class="no">MAX_ENCRYPT_BLOCK</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                            <span class="n">cache</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">data</span><span class="o">,</span> <span class="n">offSet</span><span class="o">,</span> <span class="n">inputLen</span> <span class="o">-</span> <span class="n">offSet</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">cache</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">cache</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+                    <span class="n">i</span><span class="o">++;</span>
+                    <span class="n">offSet</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="no">MAX_ENCRYPT_BLOCK</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">encryptedData</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">();</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="k">return</span> <span class="n">encryptedData</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<p>/**
+    <span class="cm">/**
      *  私钥分段加密数据
      * @param data 待加密数据
      * @param privateKey  私钥
      * @return
-     */
-    public static String encryptByPrivateKey(String data, String privateKey){
-            if(data==null || privateKey==null || data.isEmpty()|| privateKey.isEmpty()) {
-                return &quot;&quot;;
-            }</p>
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">encryptByPrivateKey</span><span class="o">(</span><span class="nc">String</span> <span class="n">data</span><span class="o">,</span> <span class="nc">String</span> <span class="n">privateKey</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">data</span><span class="o">==</span><span class="kc">null</span> <span class="o">||</span> <span class="n">privateKey</span><span class="o">==</span><span class="kc">null</span> <span class="o">||</span> <span class="n">data</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()||</span> <span class="n">privateKey</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+            <span class="o">}</span>
 
-<p>try {
-                    byte[] encryptedData = encryptByPrivateKey(data.getBytes(CHARSET), privateKey);
-                    if(encryptedData == null || encryptedData.length &lt; 1){
-                            return  &quot;&quot;;
-                    }</p>
+            <span class="k">try</span> <span class="o">{</span>
+                    <span class="kt">byte</span><span class="o">[]</span> <span class="n">encryptedData</span> <span class="o">=</span> <span class="n">encryptByPrivateKey</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="no">CHARSET</span><span class="o">),</span> <span class="n">privateKey</span><span class="o">);</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">encryptedData</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">encryptedData</span><span class="o">.</span><span class="na">length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">){</span>
+                            <span class="k">return</span>  <span class="s">""</span><span class="o">;</span>
+                    <span class="o">}</span>
 
-<p>byte[] dataBytes = encryptBASE64(encryptedData).getBytes(CHARSET);
-        return new String(dataBytes).replace(&quot;\r&quot;, &quot;&quot;).replace(&quot;\n&quot;, &quot;&quot;);
-            }catch (Exception ex){
-                    ex.printStackTrace();
-            }
-            return &quot;&quot;;
-    }</p>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">dataBytes</span> <span class="o">=</span> <span class="n">encryptBASE64</span><span class="o">(</span><span class="n">encryptedData</span><span class="o">).</span><span class="na">getBytes</span><span class="o">(</span><span class="no">CHARSET</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">dataBytes</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">"\r"</span><span class="o">,</span> <span class="s">""</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">"\n"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">ex</span><span class="o">){</span>
+                    <span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="s">""</span><span class="o">;</span>
+    <span class="o">}</span>
 
-<p>/**
+    <span class="cm">/**
      * BASE64Encoder 加密
      *
      * @param data
      *            要加密的数据
      * @return 加密后的字符串
-     <em>/
-    public static String encryptBASE64(byte[] data) {
-        //JDK 1.8以下环境，使用下列2行代码
-        // BASE64Encoder encoder = new BASE64Encoder();
-        // String encode = encoder.encode(data);
-        // 从JKD 9开始rt.jar包已废除，从JDK 1.8开始使用java.util.Base64.Encoder
-        Encoder encoder = Base64.getEncoder();
-        String encode = encoder.encodeToString(data);
-        //不管使用什么环境，下面的+/替换成-<em>都需要完成。
-        String safeBase64Str = encode.replace(&#39;+&#39;, &#39;-&#39;);
-        safeBase64Str = safeBase64Str.replace(&#39;/&#39;, &#39;</em>&#39;);
-        safeBase64Str = safeBase64Str.replaceAll(&quot;=&quot;, &quot;&quot;);
-        return safeBase64Str;
-    }
-    /</em>*
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">encryptBASE64</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//JDK 1.8以下环境，使用下列2行代码</span>
+        <span class="c1">// BASE64Encoder encoder = new BASE64Encoder();</span>
+        <span class="c1">// String encode = encoder.encode(data);</span>
+        <span class="c1">// 从JKD 9开始rt.jar包已废除，从JDK 1.8开始使用java.util.Base64.Encoder</span>
+        <span class="nc">Encoder</span> <span class="n">encoder</span> <span class="o">=</span> <span class="nc">Base64</span><span class="o">.</span><span class="na">getEncoder</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">encode</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="na">encodeToString</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+        <span class="c1">//不管使用什么环境，下面的+/替换成-_都需要完成。</span>
+        <span class="nc">String</span> <span class="n">safeBase64Str</span> <span class="o">=</span> <span class="n">encode</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="sc">'+'</span><span class="o">,</span> <span class="sc">'-'</span><span class="o">);</span>
+        <span class="n">safeBase64Str</span> <span class="o">=</span> <span class="n">safeBase64Str</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="sc">'/'</span><span class="o">,</span> <span class="sc">'_'</span><span class="o">);</span>
+        <span class="n">safeBase64Str</span> <span class="o">=</span> <span class="n">safeBase64Str</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"="</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">safeBase64Str</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="cm">/**
      * BASE64Decoder 解密
      *
      * @param data
      *            要解密的字符串
      * @return 解密后的byte[]
      * @throws Exception
-     */
-    public static byte[] decryptBASE64(String data) throws Exception {
-        //JDK 1.8以下环境，使用下列2行代码
-        // BASE64Decoder decoder = new BASE64Decoder();
-        // byte[] buffer = decoder.decodeBuffer(data);
-        // 从JKD 9开始rt.jar包已废除，从JDK 1.8开始使用java.util.Base64.Decoder
-        Decoder decoder = Base64.getDecoder();</p>
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">decryptBASE64</span><span class="o">(</span><span class="nc">String</span> <span class="n">data</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="c1">//JDK 1.8以下环境，使用下列2行代码</span>
+        <span class="c1">// BASE64Decoder decoder = new BASE64Decoder();</span>
+        <span class="c1">// byte[] buffer = decoder.decodeBuffer(data);</span>
+        <span class="c1">// 从JKD 9开始rt.jar包已废除，从JDK 1.8开始使用java.util.Base64.Decoder</span>
+        <span class="nc">Decoder</span> <span class="n">decoder</span> <span class="o">=</span> <span class="nc">Base64</span><span class="o">.</span><span class="na">getDecoder</span><span class="o">();</span>
 
-<p>//不管使用什么环境，下面的-<em>替换成+/都需要完成。
-        String base64Str = data.replace(&#39;-&#39;, &#39;+&#39;);
-        base64Str = base64Str.replace(&#39;</em>&#39;, &#39;/&#39;);
-        int mod4 = base64Str.length()%4;
-        if(mod4 &gt; 0){
-            base64Str = base64Str + &quot;====&quot;.substring(mod4);
-        }</p>
+        <span class="c1">//不管使用什么环境，下面的-_替换成+/都需要完成。</span>
+        <span class="nc">String</span> <span class="n">base64Str</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="sc">'-'</span><span class="o">,</span> <span class="sc">'+'</span><span class="o">);</span>
+        <span class="n">base64Str</span> <span class="o">=</span> <span class="n">base64Str</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="sc">'_'</span><span class="o">,</span> <span class="sc">'/'</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">mod4</span> <span class="o">=</span> <span class="n">base64Str</span><span class="o">.</span><span class="na">length</span><span class="o">()%</span><span class="mi">4</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">mod4</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+            <span class="n">base64Str</span> <span class="o">=</span> <span class="n">base64Str</span> <span class="o">+</span> <span class="s">"===="</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">mod4</span><span class="o">);</span>
+        <span class="o">}</span>
 
-<p>byte[] buffer = decoder.decode(base64Str);
-        return buffer;
-    }
-}
-```</p>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="na">decode</span><span class="o">(</span><span class="n">base64Str</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">buffer</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+        <span class="kd">class</span> <span class="nc">RSA</span>
+        <span class="p">{</span>
 
-<blockquote>
-<p>PHP签名Demo:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>
-&lt;?php
-        class RSA
-        {
+                <span class="c1">//第三方私钥</span>
+            <span class="k">public</span> <span class="nv">$pri_key</span> <span class="o">=</span> <span class="s1">'MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD6YNILWOJZjS6FQQ9ZL9CEKcWZTTldrDLsxP2dQME7hSUTDQ5AosBUZk18Uq212SC2+L0UA9G6WPoCNzHCB8TP25jC+EwIkHMN4EEPRs+bEHUgX3Bq3oR2SCHjEiqleTFW2kO/oS6Vg9bhTST5MFaEnA0fc2Bh3+4iRus+5mVc6ux0lG55f1qmvUNM4hhP7qVpzc3X0xFA0Slu8dyel1dbOUQlJbUkrt5NzXXqmRoP5UVHUCXPZzH1kbxdbGA58TonXceh6DHQRa6pIBNaQ6BfnqhMvGVvuIqKPrdWq8yigvTw2zqBfwCwY3/3FZoI5ICQ8oS3GRHYP/rXzncqkKTzAgMBAAECggEAdag77EMnkueKXeo12TZj6Udr6N9mPsOl5qenelcsttiZlHtFIFCays6MSQjdQqA3BGSdDaPB0azwR0xCoKhf70GFZtGhgUDIIFQqnpArDPZN5BmVTVMlsiOxcPBfhAUQj3zf61RF/NLIjnVfE46IiaZ/cDEasMO3NvpWn+dK6L86zklgwHfC5IXTFnFRVA3bWkAQ3gswhLzjs50HNoNV96fsnbt1n7NSWhyz9B8hGMV+qYz1NGmb+VsaAune+oIv28krcaqf+Doah37rCmzEgVeZZ1/flPFOXpaq1eGJDgbLu6FbbgqfabCBlhmuzuwNbDl/2T/U9U6JoQWGR7t++QKBgQD8XSzBqpWwz8ebfsPipvnhIugbHgBnwLaRc3/xieuNuiDMsYPY1isBWSeYqjwV5uTad9s9dRxb6OOMH+KChkUxkYhEvoujUulGSuO4MxJlWl99WWEsbLzefubBD0zyHo5daHbPPXO8UPMu/SfiYxT2D5wsW2/swUqHWS3AmDS9RQKBgQD9/FJC/++DLyhU60Q9vrVY50zQTyPLtPnuIxbsPXB1Exo1wKe+LC02k9Cub9f5EFViTEniWRasB7ecnDxJT/ISU+hJjMUKFuaHueb7dO6wiIqyfpJeQM/4fKalBQI+nCEh3aceNKP44mk/lv2x22+P47EAKh7yqBdEVUv5GlHw1wKBgQCbAqReJOijXU0vLtMlYgj0h9tn5Kq9D/tUJky9UUkVmfFRqevhgdOSlW+j71TO4y9JHfvVqRyNO+ShCmi4Yb8Yrlq0VxIwdNoCqjdryjsPdE5ZEVCF2Bi+1dXpWfuacLhjman4q7duQY7OGwOno9KZPYdhG50JIMUlk9pthVBHvQKBgCXUC+iAuAqg3m/vboWHvvjT0mQANYOkm8j1HvfmmrZFNxUkcZdoev9y+pTQgalN3nm6hRKaVD8hEx7XQj9lEdfa+XDi74H2MTWr4ZQ4MUjHvWiiY2h4XMFUx3kyisgKdwDVQ4vDKVzrU+OtuHFiDnau4fD1VRCtKnH6Bku+uM+XAoGAB7V/OFlk7gaX7gne7p+DypXICn1oGE46aFLsDciOyePNovYg6bfdiUB9evwFSijiHq7eldZIQSRIdUalL1qfv2zDwFmEGpSd/RZYOOv21c3eISjln6W7ZGtumtLHx2nGpC072i5vNee0aAPEdvO0h3y4gvzad5L4KwIwyHifKic='</span><span class="p">;</span>
 
-                //第三方私钥
-            public $pri_key = 'MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD6YNILWOJZjS6FQQ9ZL9CEKcWZTTldrDLsxP2dQME7hSUTDQ5AosBUZk18Uq212SC2+L0UA9G6WPoCNzHCB8TP25jC+EwIkHMN4EEPRs+bEHUgX3Bq3oR2SCHjEiqleTFW2kO/oS6Vg9bhTST5MFaEnA0fc2Bh3+4iRus+5mVc6ux0lG55f1qmvUNM4hhP7qVpzc3X0xFA0Slu8dyel1dbOUQlJbUkrt5NzXXqmRoP5UVHUCXPZzH1kbxdbGA58TonXceh6DHQRa6pIBNaQ6BfnqhMvGVvuIqKPrdWq8yigvTw2zqBfwCwY3/3FZoI5ICQ8oS3GRHYP/rXzncqkKTzAgMBAAECggEAdag77EMnkueKXeo12TZj6Udr6N9mPsOl5qenelcsttiZlHtFIFCays6MSQjdQqA3BGSdDaPB0azwR0xCoKhf70GFZtGhgUDIIFQqnpArDPZN5BmVTVMlsiOxcPBfhAUQj3zf61RF/NLIjnVfE46IiaZ/cDEasMO3NvpWn+dK6L86zklgwHfC5IXTFnFRVA3bWkAQ3gswhLzjs50HNoNV96fsnbt1n7NSWhyz9B8hGMV+qYz1NGmb+VsaAune+oIv28krcaqf+Doah37rCmzEgVeZZ1/flPFOXpaq1eGJDgbLu6FbbgqfabCBlhmuzuwNbDl/2T/U9U6JoQWGR7t++QKBgQD8XSzBqpWwz8ebfsPipvnhIugbHgBnwLaRc3/xieuNuiDMsYPY1isBWSeYqjwV5uTad9s9dRxb6OOMH+KChkUxkYhEvoujUulGSuO4MxJlWl99WWEsbLzefubBD0zyHo5daHbPPXO8UPMu/SfiYxT2D5wsW2/swUqHWS3AmDS9RQKBgQD9/FJC/++DLyhU60Q9vrVY50zQTyPLtPnuIxbsPXB1Exo1wKe+LC02k9Cub9f5EFViTEniWRasB7ecnDxJT/ISU+hJjMUKFuaHueb7dO6wiIqyfpJeQM/4fKalBQI+nCEh3aceNKP44mk/lv2x22+P47EAKh7yqBdEVUv5GlHw1wKBgQCbAqReJOijXU0vLtMlYgj0h9tn5Kq9D/tUJky9UUkVmfFRqevhgdOSlW+j71TO4y9JHfvVqRyNO+ShCmi4Yb8Yrlq0VxIwdNoCqjdryjsPdE5ZEVCF2Bi+1dXpWfuacLhjman4q7duQY7OGwOno9KZPYdhG50JIMUlk9pthVBHvQKBgCXUC+iAuAqg3m/vboWHvvjT0mQANYOkm8j1HvfmmrZFNxUkcZdoev9y+pTQgalN3nm6hRKaVD8hEx7XQj9lEdfa+XDi74H2MTWr4ZQ4MUjHvWiiY2h4XMFUx3kyisgKdwDVQ4vDKVzrU+OtuHFiDnau4fD1VRCtKnH6Bku+uM+XAoGAB7V/OFlk7gaX7gne7p+DypXICn1oGE46aFLsDciOyePNovYg6bfdiUB9evwFSijiHq7eldZIQSRIdUalL1qfv2zDwFmEGpSd/RZYOOv21c3eISjln6W7ZGtumtLHx2nGpC072i5vNee0aAPEdvO0h3y4gvzad5L4KwIwyHifKic=';
+                <span class="c1">//钱包给的公钥</span>
+            <span class="k">public</span> <span class="nv">$pub_key</span> <span class="o">=</span> <span class="s1">'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAua4XMw/W9BxyZhirTlNau5Y/tdAHkPsbZo58Cdz1ByeRX8RwOibpREDZLTwhMTZGroqWEAZ+efQhx0gez++03Sw6IsPWPDpzpM90ezn2gBqPog7jxQA+M0E32gMHWB5ygplPwQkGz/qGYeJ5qhp2OZ8O+jFqOJNi7ob1hE2QsPT118HIhUzTL77urD61BovI+jg9Rx6PGAqlFLLmfXToqDulLkYVKhhQlL7ii6iuzIXgl46mbmvH2RXJRq083sa9b9J1z/WzXxNaHNpq5USl3ifTTyD/IiOKnblA7f4KJmr9rcMFbAP1mNxz95at6hPBvqGypPqqixxPBrdkOIPUVwIDAQAB'</span><span class="p">;</span>
 
-                //钱包给的公钥
-            public $pub_key = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAua4XMw/W9BxyZhirTlNau5Y/tdAHkPsbZo58Cdz1ByeRX8RwOibpREDZLTwhMTZGroqWEAZ+efQhx0gez++03Sw6IsPWPDpzpM90ezn2gBqPog7jxQA+M0E32gMHWB5ygplPwQkGz/qGYeJ5qhp2OZ8O+jFqOJNi7ob1hE2QsPT118HIhUzTL77urD61BovI+jg9Rx6PGAqlFLLmfXToqDulLkYVKhhQlL7ii6iuzIXgl46mbmvH2RXJRq083sa9b9J1z/WzXxNaHNpq5USl3ifTTyD/IiOKnblA7f4KJmr9rcMFbAP1mNxz95at6hPBvqGypPqqixxPBrdkOIPUVwIDAQAB';
+                <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
 
-                public function __construct() {
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_null</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pub_key</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pub_key</span> <span class="o">=</span> <span class="nb">openssl_pkey_get_public</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">formatterPublicKey</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pub_key</span><span class="p">));</span>
+                <span class="p">}</span>
 
-                if (!is_null($this-&gt;pub_key)) {
-                    $this-&gt;pub_key = openssl_pkey_get_public($this-&gt;formatterPublicKey($this-&gt;pub_key));
-                }
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_null</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pri_key</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pri_key</span> <span class="o">=</span> <span class="nb">openssl_pkey_get_private</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">formatterPrivateKey</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pri_key</span><span class="p">));</span>
+                <span class="p">}</span>
 
-                if (!is_null($this-&gt;pri_key)) {
-                    $this-&gt;pri_key = openssl_pkey_get_private($this-&gt;formatterPrivateKey($this-&gt;pri_key));
-                }
-
-            }
+            <span class="p">}</span>
 
 
-                 /**
+                 <span class="cd">/**
              * 格式化公钥
              * @param $publicKey string 公钥
              * @return string
-             */
-            public function formatterPublicKey($publicKey)
-            {
-                if (false !== strpos($publicKey, '-----BEGIN PUBLIC KEY-----')) return $publicKey;
+             */</span>
+            <span class="k">public</span> <span class="k">function</span> <span class="n">formatterPublicKey</span><span class="p">(</span><span class="nv">$publicKey</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="kc">false</span> <span class="o">!==</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$publicKey</span><span class="p">,</span> <span class="s1">'-----BEGIN PUBLIC KEY-----'</span><span class="p">))</span> <span class="k">return</span> <span class="nv">$publicKey</span><span class="p">;</span>
 
-                $str = chunk_split($publicKey, 64, PHP_EOL);//在每一个64字符后加一个\n
-                $publicKey = "-----BEGIN PUBLIC KEY-----".PHP_EOL.$str."-----END PUBLIC KEY-----";
+                <span class="nv">$str</span> <span class="o">=</span> <span class="nb">chunk_split</span><span class="p">(</span><span class="nv">$publicKey</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="kc">PHP_EOL</span><span class="p">);</span><span class="c1">//在每一个64字符后加一个\n</span>
+                <span class="nv">$publicKey</span> <span class="o">=</span> <span class="s2">"-----BEGIN PUBLIC KEY-----"</span><span class="mf">.</span><span class="kc">PHP_EOL</span><span class="mf">.</span><span class="nv">$str</span><span class="mf">.</span><span class="s2">"-----END PUBLIC KEY-----"</span><span class="p">;</span>
 
-                return $publicKey;
-            }
+                <span class="k">return</span> <span class="nv">$publicKey</span><span class="p">;</span>
+            <span class="p">}</span>
 
-            /**
+            <span class="cd">/**
              * 格式化私钥
              * @param $privateKey string 公钥
              * @return string
-             */
-            public function formatterPrivateKey($privateKey)
-            {
-                if (false !==strpos($privateKey, '-----BEGIN RSA PRIVATE KEY-----')) return $privateKey;
+             */</span>
+            <span class="k">public</span> <span class="k">function</span> <span class="n">formatterPrivateKey</span><span class="p">(</span><span class="nv">$privateKey</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="kc">false</span> <span class="o">!==</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$privateKey</span><span class="p">,</span> <span class="s1">'-----BEGIN RSA PRIVATE KEY-----'</span><span class="p">))</span> <span class="k">return</span> <span class="nv">$privateKey</span><span class="p">;</span>
 
-                $str = chunk_split($privateKey, 64, PHP_EOL);//在每一个64字符后加一个\n
-                $privateKey = "-----BEGIN RSA PRIVATE KEY-----".PHP_EOL.$str."-----END RSA PRIVATE KEY-----";
+                <span class="nv">$str</span> <span class="o">=</span> <span class="nb">chunk_split</span><span class="p">(</span><span class="nv">$privateKey</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="kc">PHP_EOL</span><span class="p">);</span><span class="c1">//在每一个64字符后加一个\n</span>
+                <span class="nv">$privateKey</span> <span class="o">=</span> <span class="s2">"-----BEGIN RSA PRIVATE KEY-----"</span><span class="mf">.</span><span class="kc">PHP_EOL</span><span class="mf">.</span><span class="nv">$str</span><span class="mf">.</span><span class="s2">"-----END RSA PRIVATE KEY-----"</span><span class="p">;</span>
 
-                return $privateKey;
-            }
+                <span class="k">return</span> <span class="nv">$privateKey</span><span class="p">;</span>
+            <span class="p">}</span>
 
-                /**
+                <span class="cd">/**
              * URL base64解码
              * '-' -&gt; '+'
              * '_' -&gt; '/'
              * 字符串长度%4的余数，补'='
              * @param unknown $string
-             */
-          function urlsafe_b64decode($string) {
-                $data = str_replace(array('-','_'),array('+','/'),$string);
-                $mod4 = strlen($data) % 4;
-                if ($mod4) {
-                    $data .= substr('====', $mod4);
-                }
-                return base64_decode($data);
-            }
+             */</span>
+          <span class="k">function</span> <span class="n">urlsafe_b64decode</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$data</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span><span class="s1">'_'</span><span class="p">),</span><span class="k">array</span><span class="p">(</span><span class="s1">'+'</span><span class="p">,</span><span class="s1">'/'</span><span class="p">),</span><span class="nv">$string</span><span class="p">);</span>
+                <span class="nv">$mod4</span> <span class="o">=</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$mod4</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nv">$data</span> <span class="mf">.</span><span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="s1">'===='</span><span class="p">,</span> <span class="nv">$mod4</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+            <span class="p">}</span>
 
-            /**
+            <span class="cd">/**
              * URL base64编码
              * '+' -&gt; '-'
              * '/' -&gt; '_'
              * '=' -&gt; ''
              * @param unknown $string
-             */
-            function urlsafe_b64encode($string) {
-                $data = base64_encode($string);
-                $data = str_replace(array('+','/','='),array('-','_',''),$data);
-                return $data;
-            }
+             */</span>
+            <span class="k">function</span> <span class="n">urlsafe_b64encode</span><span class="p">(</span><span class="nv">$string</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$data</span> <span class="o">=</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
+                <span class="nv">$data</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'+'</span><span class="p">,</span><span class="s1">'/'</span><span class="p">,</span><span class="s1">'='</span><span class="p">),</span><span class="k">array</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span><span class="s1">'_'</span><span class="p">,</span><span class="s1">''</span><span class="p">),</span><span class="nv">$data</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+            <span class="p">}</span>
 
 
-            /**
+            <span class="cd">/**
              *  私钥加密（分段加密）
              *  emptyStr    需要加密字符串
-             */
-            public function encrypt($str) {
-                $crypted = array();
-        //        $data = json_encode($str);
-                $data = $str;
-                $dataArray = str_split($data, 234);
-                foreach($dataArray as $subData){
-                    $subCrypted = null;
-                    openssl_private_encrypt($subData, $subCrypted, $this-&gt;pri_key);
-                    $crypted[] = $subCrypted;
-                }
-                $crypted = implode('',$crypted);
-                return $this-&gt;urlsafe_b64encode($crypted);
-            }
+             */</span>
 
-            /**
+            <span class="k">public</span> <span class="k">function</span> <span class="n">encrypt</span><span class="p">(</span><span class="nv">$str</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$crypted</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+        <span class="c1">//        $data = json_encode($str);</span>
+                <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$str</span><span class="p">;</span>
+                <span class="nv">$dataArray</span> <span class="o">=</span> <span class="nb">str_split</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="mi">234</span><span class="p">);</span>
+                <span class="k">foreach</span><span class="p">(</span><span class="nv">$dataArray</span> <span class="k">as</span> <span class="nv">$subData</span><span class="p">){</span>
+                    <span class="nv">$subCrypted</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                    <span class="nb">openssl_private_encrypt</span><span class="p">(</span><span class="nv">$subData</span><span class="p">,</span> <span class="nv">$subCrypted</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pri_key</span><span class="p">);</span>
+                    <span class="nv">$crypted</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$subCrypted</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nv">$crypted</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span><span class="nv">$crypted</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">urlsafe_b64encode</span><span class="p">(</span><span class="nv">$crypted</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="cd">/**
              *  公钥解密（分段解密）
              *  @encrypstr  加密字符串
-             */
-            public function decrypt($encryptstr) {
-                // echo $encryptstr;exit;
-                $encryptstr = $this-&gt;urlsafe_b64decode($encryptstr);
-                $decrypted = array();
-                $dataArray = str_split($encryptstr, 256);
+             */</span>
+            <span class="k">public</span> <span class="k">function</span> <span class="n">decrypt</span><span class="p">(</span><span class="nv">$encryptstr</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// echo $encryptstr;exit;</span>
+                <span class="nv">$encryptstr</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">urlsafe_b64decode</span><span class="p">(</span><span class="nv">$encryptstr</span><span class="p">);</span>
+                <span class="nv">$decrypted</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+                <span class="nv">$dataArray</span> <span class="o">=</span> <span class="nb">str_split</span><span class="p">(</span><span class="nv">$encryptstr</span><span class="p">,</span> <span class="mi">256</span><span class="p">);</span>
 
-                foreach($dataArray as $subData){
-                    $subDecrypted = null;
-                    openssl_public_decrypt($subData, $subDecrypted, $this-&gt;pub_key);
-                    $decrypted[] = $subDecrypted;
-                }
-                $decrypted = implode('',$decrypted);
-                // openssl_public_decrypt(base64_decode($encryptstr),$decryptstr,$this-&gt;pub_key);
-                return $decrypted;
-            }
+                <span class="k">foreach</span><span class="p">(</span><span class="nv">$dataArray</span> <span class="k">as</span> <span class="nv">$subData</span><span class="p">){</span>
+                    <span class="nv">$subDecrypted</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                    <span class="nb">openssl_public_decrypt</span><span class="p">(</span><span class="nv">$subData</span><span class="p">,</span> <span class="nv">$subDecrypted</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pub_key</span><span class="p">);</span>
+                    <span class="nv">$decrypted</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$subDecrypted</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nv">$decrypted</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span><span class="nv">$decrypted</span><span class="p">);</span>
+                <span class="c1">// openssl_public_decrypt(base64_decode($encryptstr),$decryptstr,$this-&gt;pub_key);</span>
+                <span class="k">return</span> <span class="nv">$decrypted</span><span class="p">;</span>
+            <span class="p">}</span>
 
-        }
-        $rsa = new RSA();
-        $params = '{"charset":"utf-8","country":"+86","sign":"","mobile":"","time":"1589013592078","app_id":"baaceb1e506e1b5d7d1f0a3b1622583b","version":"2.0","email":"test123@qq.com"}';
+        <span class="p">}</span>
+        <span class="nv">$rsa</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RSA</span><span class="p">();</span>
+        <span class="nv">$params</span> <span class="o">=</span> <span class="s1">'{"charset":"utf-8","country":"+86","sign":"","mobile":"","time":"1589013592078","app_id":"baaceb1e506e1b5d7d1f0a3b1622583b","version":"2.0","email":"test123@qq.com"}'</span><span class="p">;</span>
 
-        //加密参数
-        $encryptParamsByPriv = $rsa-&gt;encrypt($params);
+        <span class="c1">//加密参数</span>
+        <span class="nv">$encryptParamsByPriv</span> <span class="o">=</span> <span class="nv">$rsa</span><span class="o">-&gt;</span><span class="nf">encrypt</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
 
-        //请求接口
-        $resp = file_get_contents('http://awstestopenapi.hicoin.one/api/v2/user/info?app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data='.$encryptParamsByPriv);
+        <span class="c1">//请求接口</span>
+        <span class="nv">$resp</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'http://awstestopenapi.hicoin.one/api/v2/user/info?app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data='</span><span class="mf">.</span><span class="nv">$encryptParamsByPriv</span><span class="p">);</span>
 
-        $resp = json_decode($resp, true)['data'];
-        //解密接口返回
-        echo "get user info api:", $rsa-&gt;decrypt($resp);
+        <span class="nv">$resp</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$resp</span><span class="p">,</span> <span class="kc">true</span><span class="p">)[</span><span class="s1">'data'</span><span class="p">];</span>
+        <span class="c1">//解密接口返回</span>
+        <span class="k">echo</span> <span class="s2">"get user info api:"</span><span class="p">,</span> <span class="nv">$rsa</span><span class="o">-&gt;</span><span class="nf">decrypt</span><span class="p">(</span><span class="nv">$resp</span><span class="p">);</span>
 </code></pre></div>
 <p>请求参数data与响应字段data的值都是经过rsa加密后再通过 <strong>base64urlsafe</strong> 加密的结果</p>
 
 <aside class="notice">
 *注意事项*
-
+<br/>
+<br/>
 1）base64传统编码中会出现+, /两个会被url直接转义的符号，因此如果希望通过url传输这些编码字符串，我们需要先做传统base64编码，随后将+和/分别替换为- _两个字符，在接收端则做相反的动作解码
-
+<br/>
+<br/>
 2）Java Demo ： https://github.com/HiCoinCom/WaaSDemo
-
+<br/>
+<br/>
 3）rsa加密与解密使用分段加密
 </aside>
 <h3 id='2'>附 2:接口错误码表 - 表格</h3>
@@ -1218,7 +1233,7 @@ import java.util.Base64.Encoder;</p>
 </thead><tbody>
 <tr>
 <td>0</td>
-<td><code>成功</code></td>
+<td>成功</td>
 </tr>
 <tr>
 <td>100001</td>
@@ -1322,16 +1337,14 @@ import java.util.Base64.Encoder;</p>
 
 <p><strong>SDK</strong>：支持java、PHP和node</p>
 
-<p>java SDK地址：https://github.com/HiCoinCom/java-sdk</p>
+<p>java SDK地址：<code>https://github.com/HiCoinCom/java-sdk</code></p>
 
-<p>PHP SDK地址：https://github.com/HiCoinCom/php-sdk</p>
+<p>PHP SDK地址：<code>https://github.com/HiCoinCom/php-sdk</code></p>
 
-<p>node SDK地址：https://github.com/HiCoinCom/js-sdk</p>
+<p>node SDK地址：<code>https://github.com/HiCoinCom/js-sdk</code></p>
 
 <p><strong>API</strong>：请查看API接口</p>
-<h2 id='ada01d8c4e'>统一说明</h2>
-<p><strong>请求参数统一格式</strong></p>
-
+<h2 id='ada01d8c4e'>统一说明</h2><h3 id='d06fcec6de'>请求参数统一格式</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -1353,9 +1366,7 @@ import java.util.Base64.Encoder;</p>
 <td style="text-align: left">加密之后的字符串，具体加密信息见各接口 请求参数数据结构</td>
 </tr>
 </tbody></table>
-
-<p><strong>请求接口示例</strong></p>
-
+<h3 id='513b6965ca'>请求接口示例</h3>
 <p><code>POST/api/v2/user/createUser</code></p>
 
 <blockquote>
@@ -1367,9 +1378,7 @@ import java.util.Base64.Encoder;</p>
 <span class="n">app_id</span><span class="o">=</span><span class="n">baaceb1e506e1b5d7d1f0a3b1622583b</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">GCJBk77n7epyOexdGZ20qvukd321TpJ62lIAtlCinW6TzHx8SIbm6evXGulO87UgLTzIWCtgupgeLJKDdZmC7msuPNBGK</span><span class="o">--</span><span class="n">Ec27WZXjuhI0gNWXcOVk5RW_VRVcyfJ1Ml</span><span class="o">-</span><span class="n">DMW8XVxZRgA2U1bt9BztiyfryzMGj8_jl1IXd5sOQfPYXulCdm70WyTJpjsDkuMSov6QUmOn</span><span class="o">-</span><span class="no">C_</span><span class="o">-</span><span class="n">HUoZ7s715EMeZ60D09uUsF0i6mKLhFZTEQZPGPeJITYSJNddAw7nvqvX2KzNc6YUeCQhEmU1Dfxp65W4e3SVOgpd_2Q</span><span class="o">-</span><span class="n">dLN1MpOlkUKwbmbpb</span><span class="o">-</span><span class="n">gEh_s68yl7ox6WSgKfCK4i_uvA</span>
 
 
-</code></pre></div>
-<p><strong>响应参数统一格式</strong></p>
-
+</code></pre></div><h3 id='680b2bbba1'>响应参数统一格式</h3>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1382,7 +1391,7 @@ import java.util.Base64.Encoder;</p>
 <td>data</td>
 <td>String</td>
 <td>可选</td>
-<td>加密之后的字符串，具体加密信息见 响应结果data解密后格式</td>
+<td>加密之后的字符串，具体加密信息见 <code>响应结果data解密后格式</code></td>
 </tr>
 </tbody></table>
 
@@ -1391,9 +1400,7 @@ import java.util.Base64.Encoder;</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code>
 <span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"LK4D5mrtvTubDxCQM4lqyN2h8TTIkEBL_06FrrrzLrImyMO4Yuac-wdbk5VnGVfCKB5EFaUb162xXUJdTHhpA5CGBCAQKl64h_Dt10C-H8KIoap9dZI90qE4f-mAMAyjF1QzKXJ-f-R_3J3bRGqfHFBRXebh08R8MdRDssniopVOhsFUs4gBxUensKas3_ta15eFIqXPjIgJWfYQCD2DUi1gaKgmN-5Q_tgt-qXp5Y2uh3yfM4g4k71Ahyel3G8S_AktbWl2G9wU3cri3ZVQEo0faIpkX_CKsk9V1YoY5yRopvJbxNtkG9lBFxKnureAQo0KP3f1tsIMOzgcyEXPnA"</span><span class="o">}</span>
-</code></pre></div>
-<p><strong>响应结果data解密后格式</strong></p>
-
+</code></pre></div><h3 id='data'>响应结果data解密后格式</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -1418,20 +1425,16 @@ import java.util.Base64.Encoder;</p>
 <td style="text-align: left">data</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">否</td>
-<td style="text-align: left">具体响应数据，数据结构定义见各接口  响应参数数据结构</td>
+<td style="text-align: left">具体响应数据，数据结构定义见各接口  <strong>响应参数数据结构</strong></td>
 </tr>
 </tbody></table>
 <h2 id='a1cda4baf4'>获取地址</h2>
 <p>请注意，默认注册用户量为5万个，如果用户超过上限，请联系相关运营人员进行协助</p>
 <h3 id='7cdaa5821f'>用户手机注册</h3>
 <p>注册成为钱包的用户</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http'>HTTP请求</h4>
 <p><code>POST/api/v2/user/createUser</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong></p>
-
+<h4 id='data-2'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1471,9 +1474,7 @@ import java.util.Base64.Encoder;</p>
 <td>手机号</td>
 </tr>
 </tbody></table>
-
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+<h4 id='data-3'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1497,13 +1498,9 @@ import java.util.Base64.Encoder;</p>
 {"code":"0","data":{"uid":3529218},"msg":"成功"}
 </code></pre></div><h3 id='2a7ea8d599'>用户邮箱注册</h3>
 <p>注册成为钱包的用户。满足邮箱格式即可（e.g. <a href="mailto:123@111.com">123@111.com</a>）</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-2'>HTTP请求</h4>
 <p><code>POST /api/v2/user/registerEmail</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong></p>
-
+<h4 id='data-4'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1544,9 +1541,7 @@ import java.util.Base64.Encoder;</p>
 <div class="highlight"><pre class="highlight plaintext"><code>
 
 {"code":"0","data":{"uid":3529218},"msg":"成功"}
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-5'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1564,13 +1559,9 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 <h3 id='c54cc46289'>获取用户指定币种充币地址</h3>
 <p>获取用户指定币账户地址。如果没有地址，则给用户分配一个地址，此时不应生成账户，账户还是按需生成。</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-3'>HTTP请求</h4>
 <p><code>POST/api/v2/account/getDepositAddress</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong></p>
-
+<h4 id='data-6'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1616,9 +1607,7 @@ import java.util.Base64.Encoder;</p>
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>
 {"code":"0","data":{"uid":"3529218","address":"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"},"msg":"成功"}
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-7'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1642,13 +1631,9 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 <h2 id='11f99972ee'>账户资产</h2><h3 id='b6bb36669d'>查询用户信息</h3>
 <p>查询用户信息。</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-4'>HTTP请求</h4>
 <p><code>GET/api/v2/user/info</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong></p>
-
+<h4 id='data-8'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1695,8 +1680,12 @@ import java.util.Base64.Encoder;</p>
 </tr>
 </tbody></table>
 
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+<blockquote>
+<p>响应数据解密后示例:  </p>
+</blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code>
+<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">,</span><span class="s">"nickname"</span><span class="o">:</span><span class="s">""</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+</code></pre></div><h4 id='data-9'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1718,21 +1707,11 @@ import java.util.Base64.Encoder;</p>
 <td>用户昵称</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>响应数据解密后示例:  </p>
-</blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">,</span><span class="s">"nickname"</span><span class="o">:</span><span class="s">""</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
-</code></pre></div><h3 id='a91b3a582e'>获取支持的币种列表</h3>
+<h3 id='a91b3a582e'>获取支持的币种列表</h3>
 <p>获取商户的币种列表</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-5'>HTTP请求</h4>
 <p><code>GET/api/v2/user/getCoinList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong></p>
-
+<h4 id='data-10'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1761,8 +1740,31 @@ import java.util.Base64.Encoder;</p>
 </tr>
 </tbody></table>
 
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+<blockquote>
+<p>响应数据解密后示例:  </p>
+</blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code>
+<span class="o">{</span>
+  <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+  <span class="s">"data"</span><span class="o">:[</span>
+      <span class="o">{</span>
+          <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
+          <span class="s">"icon"</span><span class="o">:</span><span class="s">"http://chainup-oss.oss-cn-beijing.aliyuncs.com/saas/1565681771193.png"</span><span class="o">,</span>
+          <span class="s">"real_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
+          <span class="s">"decimals"</span><span class="o">:</span><span class="s">"8"</span><span class="o">,</span>
+          <span class="s">"name"</span><span class="o">:</span><span class="s">"Bitcoin"</span><span class="o">,</span>
+          <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
+          <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+          <span class="s">"deposit_confirmation"</span><span class="o">:</span><span class="s">"2"</span><span class="o">,</span>
+          <span class="s">"explorer"</span><span class="o">:</span><span class="s">"https://btc.com/"</span><span class="o">,</span>
+          <span class="s">"address_regex"</span><span class="o">:</span><span class="s">"^(1|3)[a-zA-Z0-9]{24,36}$"</span><span class="o">,</span>
+          <span class="s">"address_tag_regex"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
+          <span class="s">"support_memo"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+          <span class="s">"support_token"</span><span class="o">:</span><span class="s">"0"</span>
+      <span class="o">}</span>
+   <span class="o">]</span>
+ <span class="o">}</span>
+</code></pre></div><h4 id='data-11'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1850,40 +1852,11 @@ import java.util.Base64.Encoder;</p>
 <td>是否支持token币，0不支持1支持,主链币才有值,代币为空</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>响应数据解密后示例:  </p>
-</blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span>
-  <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-  <span class="s">"data"</span><span class="o">:[</span>
-      <span class="o">{</span>
-          <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"icon"</span><span class="o">:</span><span class="s">"http://chainup-oss.oss-cn-beijing.aliyuncs.com/saas/1565681771193.png"</span><span class="o">,</span>
-          <span class="s">"real_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"decimals"</span><span class="o">:</span><span class="s">"8"</span><span class="o">,</span>
-          <span class="s">"name"</span><span class="o">:</span><span class="s">"Bitcoin"</span><span class="o">,</span>
-          <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"deposit_confirmation"</span><span class="o">:</span><span class="s">"2"</span><span class="o">,</span>
-          <span class="s">"explorer"</span><span class="o">:</span><span class="s">"https://btc.com/"</span><span class="o">,</span>
-          <span class="s">"address_regex"</span><span class="o">:</span><span class="s">"^(1|3)[a-zA-Z0-9]{24,36}$"</span><span class="o">,</span>
-          <span class="s">"address_tag_regex"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"support_memo"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-          <span class="s">"support_token"</span><span class="o">:</span><span class="s">"0"</span>
-      <span class="o">}</span>
-   <span class="o">]</span>
- <span class="o">}</span>
-</code></pre></div><h3 id='fa09f0aa87'>获取指定用户的账户信息</h3>
+<h3 id='fa09f0aa87'>获取指定用户的账户信息</h3>
 <p>根据币种及用户ID查询用户的账户。另外，若商户开启自动归集后，用户账户将被转移到商户的归集账户中</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-6'>HTTP请求</h4>
 <p><code>GET/api/v2/account/getByUidAndSymbol</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-12'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1925,15 +1898,12 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:<br>
-```JAVA</p>
-</blockquote>
+<p>响应数据解密后示例:  </p>
+<div class="highlight"><pre class="highlight plaintext"><code></code></pre></div></blockquote>
 
 <p>{&quot;code&quot;:&quot;0&quot;,&quot;data&quot;:{&quot;normal_balance&quot;:&quot;2.99400066&quot;,&quot;deposit_address&quot;:&quot;0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd&quot;,&quot;lock_balance&quot;:&quot;0&quot;},&quot;msg&quot;:&quot;成功&quot;}
 ```</p>
-
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+<h4 id='data-13'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1963,13 +1933,9 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 <h3 id='e5c3883984'>获取商户归集账户余额</h3>
 <p>开启商户资金自动归集之后，商户可以通过该接口种获取商户归集账户余额</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-7'>HTTP请求</h4>
 <p><code>GET/api/v2/account/getCompanyBySymbol</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-14'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2005,15 +1971,11 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:<br>
-```java</p>
+<p>响应数据解密后示例:  </p>
 </blockquote>
-
-<p>{&quot;code&quot;:&quot;0&quot;,&quot;data&quot;:{&quot;symbol&quot;:&quot;ETH&quot;,&quot;balance&quot;:&quot;64.97599802&quot;},&quot;msg&quot;:&quot;成功&quot;}
-```</p>
-
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+<div class="highlight"><pre class="highlight java tab-java"><code>
+<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span><span class="s">"balance"</span><span class="o">:</span><span class="s">"64.97599802"</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+</code></pre></div><h4 id='data-15'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2035,13 +1997,9 @@ import java.util.Base64.Encoder;</p>
 <td>归集账户余额</td>
 </tr>
 </tbody></table>
-<h2 id='6b81bd2875'>用户充值</h2><h3 id='ae74502f48'>同步充值记录</h3>
-<p><strong>HTTP请求</strong></p>
-
+<h2 id='6b81bd2875'>用户充值</h2><h3 id='ae74502f48'>同步充值记录</h3><h4 id='http-8'>HTTP请求</h4>
 <p><code>GET/api/v2/billing/syncDepositList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-16'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2077,61 +2035,57 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:
-<code>Java
-{
-    &quot;code&quot;:&quot;0&quot;,
-    &quot;data&quot;:[
+<p>响应数据解密后示例:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "code":"0",
+    "data":[
         {
-            &quot;withdraw_fee&quot;:&quot;0&quot;,
-            &quot;symbol&quot;:&quot;BTC&quot;,
-            &quot;amount&quot;:&quot;0.0001&quot;,
-            &quot;real_fee&quot;:&quot;0&quot;,
-            &quot;fee&quot;:&quot;0&quot;,
-            &quot;address_to&quot;:&quot;1CfYiePwcf3mWhLBQH2ac35C7jmE2udQqH&quot;,
-            &quot;created_at&quot;:1539050731000,
-            &quot;txid&quot;:&quot;&quot;,
-            &quot;confirmations&quot;:0,
-            &quot;address_from&quot;:&quot;&quot;,
-            &quot;uid&quot;:10596,
-            &quot;withdraw_fee_symbol&quot;:&quot;BTC&quot;,
-            &quot;fee_symbol&quot;:&quot;BTC&quot;,
-            &quot;saas_status&quot;:0,
-            &quot;updated_at&quot;:1543483252000,
-            &quot;company_status&quot;:2,
-            &quot;id&quot;:45325,
-            &quot;request_id&quot;:&quot;&quot;,
-            &quot;status&quot;:2
+            "withdraw_fee":"0",
+            "symbol":"BTC",
+            "amount":"0.0001",
+            "real_fee":"0",
+            "fee":"0",
+            "address_to":"1CfYiePwcf3mWhLBQH2ac35C7jmE2udQqH",
+            "created_at":1539050731000,
+            "txid":"",
+            "confirmations":0,
+            "address_from":"",
+            "uid":10596,
+            "withdraw_fee_symbol":"BTC",
+            "fee_symbol":"BTC",
+            "saas_status":0,
+            "updated_at":1543483252000,
+            "company_status":2,
+            "id":45325,
+            "request_id":"",
+            "status":2
         },
         {
-            &quot;withdraw_fee&quot;:&quot;0.0000001&quot;,
-            &quot;symbol&quot;:&quot;BTC&quot;,
-            &quot;amount&quot;:&quot;0.0001&quot;,
-            &quot;real_fee&quot;:&quot;0&quot;,
-            &quot;fee&quot;:&quot;0.0000001&quot;,
-            &quot;address_to&quot;:&quot;17m2GM8aRrrnxPt5JhYPJd4qUFqF8rJDop&quot;,
-            &quot;created_at&quot;:1539065092000,
-            &quot;txid&quot;:&quot;&quot;,
-            &quot;confirmations&quot;:0,
-            &quot;address_from&quot;:&quot;&quot;,
-            &quot;uid&quot;:10595,
-            &quot;withdraw_fee_symbol&quot;:&quot;BTC&quot;,
-            &quot;fee_symbol&quot;:&quot;BTC&quot;,
-            &quot;saas_status&quot;:1,
-            &quot;updated_at&quot;:1543851222000,
-            &quot;company_status&quot;:2,
-            &quot;id&quot;:45332,
-            &quot;request_id&quot;:&quot;&quot;,
-            &quot;status&quot;:2
+            "withdraw_fee":"0.0000001",
+            "symbol":"BTC",
+            "amount":"0.0001",
+            "real_fee":"0",
+            "fee":"0.0000001",
+            "address_to":"17m2GM8aRrrnxPt5JhYPJd4qUFqF8rJDop",
+            "created_at":1539065092000,
+            "txid":"",
+            "confirmations":0,
+            "address_from":"",
+            "uid":10595,
+            "withdraw_fee_symbol":"BTC",
+            "fee_symbol":"BTC",
+            "saas_status":1,
+            "updated_at":1543851222000,
+            "company_status":2,
+            "id":45332,
+            "request_id":"",
+            "status":2
         }
     ],
-    &quot;msg&quot;:&quot;成功&quot;
+    "msg":"成功"
 }
-</code></p>
-</blockquote>
-
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-17'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2207,13 +2161,9 @@ import java.util.Base64.Encoder;</p>
 <td>0待确认，1 成功，2 失败，4 待KYT验证，5 待人工审核(KYT风险等级过高)，6 待人工审核(KYT充值熔断)</td>
 </tr>
 </tbody></table>
-<h3 id='01c2ef489d'>批量获取充值记录</h3>
-<p><strong>HTTP请求</strong></p>
-
+<h3 id='01c2ef489d'>批量获取充值记录</h3><h4 id='http-9'>HTTP请求</h4>
 <p><code>GET/api/v2/billing/depositList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-18'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2249,44 +2199,39 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:
-```java</p>
+<p>响应数据解密后示例:</p>
 </blockquote>
-
-<p>{
-&quot;code&quot;: &quot;0&quot;,
-        &quot;msg&quot;: &quot;suc&quot;,
-        &quot;data&quot;: [
-                {
-                        &quot;id&quot; ：1,
-                &quot;uid&quot; ：11,
-                &quot;symbol&quot;：&quot;ETH&quot;,
-                &quot;amount&quot;：&quot;0.0002000000000000&quot;,
-                &quot;created_at&quot;: 1545273830000,
-                &quot;updated_at&quot;: 1545273830000,
-                &quot;txid&quot;:&quot;78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de&quot;,
-                        &quot;confirmations&quot;:11,
-                &quot;status&quot;:1,
-                &quot;address_to&quot;:&quot;0xcb03bfdccb50c9f62ec1c728f264bf453e037132&quot;
-                },
-        {
-                &quot;id&quot; ：2,
-                &quot;uid&quot; ：12,
-                        &quot;symbol&quot; ：&quot;ETH&quot;,
-                &quot;amount&quot;：&quot;0.0002000000000000&quot;,
-                &quot;created_at&quot;: 1545273830000,
-                &quot;updated_at&quot;: 1545273830000,
-                &quot;txid&quot;:&quot;0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e&quot;,
-                        &quot;confirmations&quot;:11,
-                &quot;status&quot;:1,
-                &quot;address_to&quot;:&quot;0xcb03bfdccb50c9f62ec1c728f264bf453e037132&quot;
-        }
-        ]
-}
-```</p>
-
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+<span class="s">"code"</span><span class="o">:</span> <span class="s">"0"</span><span class="o">,</span>
+        <span class="s">"msg"</span><span class="o">:</span> <span class="s">"suc"</span><span class="o">,</span>
+        <span class="s">"data"</span><span class="o">:</span> <span class="o">[</span>
+                <span class="o">{</span>
+                        <span class="s">"id"</span> <span class="err">：</span><span class="mi">1</span><span class="o">,</span>
+                <span class="s">"uid"</span> <span class="err">：</span><span class="mi">11</span><span class="o">,</span>
+                <span class="s">"symbol"</span><span class="err">：</span><span class="s">"ETH"</span><span class="o">,</span>
+                <span class="s">"amount"</span><span class="err">：</span><span class="s">"0.0002000000000000"</span><span class="o">,</span>
+                <span class="s">"created_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
+                <span class="s">"updated_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
+                <span class="s">"txid"</span><span class="o">:</span><span class="s">"78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de"</span><span class="o">,</span>
+                        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">11</span><span class="o">,</span>
+                <span class="s">"status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
+                <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span>
+                <span class="o">},</span>
+        <span class="o">{</span>
+                <span class="s">"id"</span> <span class="err">：</span><span class="mi">2</span><span class="o">,</span>
+                <span class="s">"uid"</span> <span class="err">：</span><span class="mi">12</span><span class="o">,</span>
+                        <span class="s">"symbol"</span> <span class="err">：</span><span class="s">"ETH"</span><span class="o">,</span>
+                <span class="s">"amount"</span><span class="err">：</span><span class="s">"0.0002000000000000"</span><span class="o">,</span>
+                <span class="s">"created_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
+                <span class="s">"updated_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
+                <span class="s">"txid"</span><span class="o">:</span><span class="s">"0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e"</span><span class="o">,</span>
+                        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">11</span><span class="o">,</span>
+                <span class="s">"status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
+                <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span>
+        <span class="o">}</span>
+        <span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div><h4 id='data-19'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2378,9 +2323,7 @@ import java.util.Base64.Encoder;</p>
 <td>POST</td>
 </tr>
 </tbody></table>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-20'>请求参数data解密之后数据结构:</h4>
 <p>充值通知：</p>
 
 <table><thead>
@@ -2476,19 +2419,13 @@ import java.util.Base64.Encoder;</p>
 <td>充值状态 0待确认，1 成功，2 失败，4 待KYT验证，5 待人工审核(KYT风险等级过高)，6 待人工审核(KYT充值熔断)</td>
 </tr>
 </tbody></table>
-
-<p><strong>响应参数:</strong></p>
-
+<h4 id='75d7c3d973'>响应参数:</h4>
 <p>返回字符串：<code>SUCCESS</code>表示成功，<code>FAILURE</code>表示失败 （注意此处返回参数无需进行加密）</p>
 <h3 id='3eb0894447'>获取归集矿工费</h3>
 <p>账户类型的币种充值后需要进行归集，UTXO无归集矿工费费用</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-10'>HTTP请求</h4>
 <p><code>GET//api/v2/billing/syncMinerFeeList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-21'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2549,9 +2486,7 @@ import java.util.Base64.Encoder;</p>
      <span class="o">],</span>
   <span class="s">"msg"</span><span class="o">:</span> <span class="s">"成功"</span>
   <span class="o">}</span>
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-22'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2653,13 +2588,9 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 <h2 id='69560f134e'>用户提现</h2><h3 id='34cd7a9e4c'>发起提现</h3>
 <p>如果提现地址为联盟内部地址，则不会上链；否则需要上链。另外，为了避免非法的提现请求，钱包服务在接收到第三方应用的提现请求时，会调用第三方提供的[提现二次确认接口。</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-11'>HTTP请求</h4>
 <p><code>POST/api/v2/billing/withdraw</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-23'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2723,9 +2654,7 @@ import java.util.Base64.Encoder;</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code>
 <span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"id"</span><span class="o">:</span><span class="mi">48680</span><span class="o">,</span><span class="s">"status"</span><span class="o">:</span><span class="mi">0</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-24'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>param</th>
@@ -2757,9 +2686,7 @@ import java.util.Base64.Encoder;</p>
 <td>POST</td>
 </tr>
 </tbody></table>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-25'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2828,9 +2755,7 @@ import java.util.Base64.Encoder;</p>
 <p>响应数据解密后示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span><span class="s">"check_sum"</span><span class="o">:</span><span class="s">"1234"</span><span class="o">,</span><span class="s">"time"</span><span class="o">:</span><span class="s">"12345678"</span><span class="o">}</span>
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-26'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2868,9 +2793,7 @@ import java.util.Base64.Encoder;</p>
 <td>POST</td>
 </tr>
 </tbody></table>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-27'>请求参数data解密之后数据结构:</h4>
 <p>提现通知：</p>
 
 <table><thead>
@@ -2996,19 +2919,13 @@ import java.util.Base64.Encoder;</p>
 <td>提现状态: 0 风控审核中，1 支付中，2 审核拒绝，4 失败，5 成功， 6 已撤销，7 待KYT验证， 8 待人工审核(KYT风险等级过高)</td>
 </tr>
 </tbody></table>
-
-<p><strong>响应参数:</strong></p>
-
+<h4 id='75d7c3d973-2'>响应参数:</h4>
 <p>返回字符串：<code>SUCCESS</code>表示成功，<code>FAILURE</code>表示失败 （注意此处返回参数无需进行加密）</p>
 <h3 id='74637cf841'>同步提现记录</h3>
 <p>批量获取提现记录</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-12'>HTTP请求</h4>
 <p><code>GET/api/v2/billing/syncWithdrawList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-28'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3073,9 +2990,7 @@ import java.util.Base64.Encoder;</p>
     <span class="o">],</span>
     <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
 <span class="o">}</span>
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-29'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3195,13 +3110,9 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 <h3 id='3b572ffb5a'>批量获取提现记录</h3>
 <p>批量获取提现记录</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-13'>HTTP请求</h4>
 <p><code>GET/api/v2/billing/withdrawList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-30'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3266,9 +3177,7 @@ import java.util.Base64.Encoder;</p>
     <span class="o">],</span>
     <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
 <span class="o">}</span>
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-31'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3388,13 +3297,9 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 <h2 id='ab640ebe1e'>商户转账</h2><h3 id='custody-3'>Custody商户转账</h3>
 <p>Custody内部商户互相转账</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-14'>HTTP请求</h4>
 <p><code>POST/api/v2/account/transfer</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-32'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3465,9 +3370,7 @@ import java.util.Base64.Encoder;</p>
     ],
     "msg":"成功"
 }
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-33'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3485,13 +3388,9 @@ import java.util.Base64.Encoder;</p>
 </tbody></table>
 <h3 id='22d4f1a655'>转账信息异步确认</h3>
 <p>转账信息异步确认</p>
-
-<p><strong>HTTP请求</strong></p>
-
+<h4 id='http-15'>HTTP请求</h4>
 <p><code>POST/same-with-withdraw-check-sum</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-34'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3569,9 +3468,7 @@ import java.util.Base64.Encoder;</p>
 ],
 "msg":"成功"
     }
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-35'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3593,13 +3490,9 @@ import java.util.Base64.Encoder;</p>
 <td>随机校验码，第三方原样返回此字段平台认为成功</td>
 </tr>
 </tbody></table>
-<h3 id='785254f966'>批量查询转账记录</h3>
-<p><strong>HTTP请求</strong></p>
-
+<h3 id='785254f966'>批量查询转账记录</h3><h4 id='http-16'>HTTP请求</h4>
 <p><code>POST/api/v2/account/transferList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-36'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3671,9 +3564,7 @@ import java.util.Base64.Encoder;</p>
 ],
 "msg":"成功"
     }
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-37'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3755,13 +3646,9 @@ import java.util.Base64.Encoder;</p>
 <td>最大支持32字符</td>
 </tr>
 </tbody></table>
-<h3 id='047e3c04bb'>同步转账记录</h3>
-<p><strong>HTTP请求</strong></p>
-
+<h3 id='047e3c04bb'>同步转账记录</h3><h4 id='http-17'>HTTP请求</h4>
 <p><code>POST/api/v2/account/syncTransferList</code></p>
-
-<p><strong>请求参数data解密之后数据结构:</strong> </p>
-
+<h4 id='data-38'>请求参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3827,15 +3714,14 @@ import java.util.Base64.Encoder;</p>
 <span class="o">],</span>
 <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
     <span class="o">}</span>
-</code></pre></div>
-<p><strong>响应参数data解密之后数据结构:</strong></p>
-
+</code></pre></div><h4 id='data-39'>响应参数data解密之后数据结构:</h4>
 <p>无</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="java">java</a>
+                <a href="#" data-language-name="php">php</a>
           </div>
       </div>
     </div>
