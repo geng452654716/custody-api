@@ -591,7 +591,7 @@
 
 <p>方式二：使用手机扫码打开链接下载：</p>
 
-<p><img src="images/qrcode.png" style="width: 150px" alt="" /></p>
+<p><img src="images/qrCode-3001df59.png" style="width: 150px" alt="" /></p>
 <h3 id='custody-2'>注册Custody账号</h3>
 <p>打开【Custody】应用，注册账号（未注册账号登录即注册），支持邮箱与手机号两种方式</p>
 
@@ -833,16 +833,16 @@
 <blockquote>
 <p>请求参数加密示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="c1">// 原始请求参数</span>
+<div class="highlight"><pre class="highlight plaintext"><code>
+// 原始请求参数
 
-<span class="nc">String</span> <span class="n">originReqData</span> <span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"charset"</span><span class="o">:</span><span class="s">"utf-8"</span><span class="o">,</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"eth"</span><span class="o">,</span><span class="s">"sign"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span><span class="s">"time"</span><span class="o">:</span><span class="s">"1586420916306"</span><span class="o">,</span><span class="s">"app_id"</span><span class="o">:</span><span class="s">"baaceb1e506e1b5d7d1f0a3b1622583b"</span><span class="o">,</span><span class="s">"version"</span><span class="o">:</span><span class="s">"2.0"</span><span class="o">}</span><span class="err">'</span>
+String originReqData = '{"charset":"utf-8","symbol":"eth","sign":"","time":"1586420916306","app_id":"baaceb1e506e1b5d7d1f0a3b1622583b","version":"2.0"}'
 
-<span class="c1">// encryptByPrivate方法封装在下列公共类RSAHelper.java中</span>
-<span class="nc">String</span> <span class="n">encryptReqData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">encryptByPrivate</span><span class="o">(</span><span class="n">originReqData</span><span class="o">,</span> <span class="s">"第三方自己的私钥"</span><span class="o">)</span>
+// encryptByPrivate方法封装在下列公共类RSAHelper.java中
+String encryptReqData = RSAHelper.encryptByPrivate(originReqData, "第三方自己的私钥")
 
-<span class="c1">//http post</span>
-<span class="nc">String</span> <span class="n">httpBuildParams</span> <span class="o">=</span> <span class="s">"app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data="</span> <span class="o">+</span> <span class="n">encryptReqData</span>
+//http post
+String httpBuildParams = "app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data=" + encryptReqData
 
 </code></pre></div>
 <blockquote>
