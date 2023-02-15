@@ -310,7 +310,7 @@
                     <li class="header-nav__item"><a href="/API-WAPI/zh/index.html">API-WAPI</a></li>
             </ul>
         </div>
-        <a class="switch-language" href="/API-WaaS-V2/zh/index.html">English</a>
+        <a class="switch-language" href="/API-WaaS-V2/en/index.html">English</a>
     </div>
     <a href="#" id="nav-button">
       <span>
@@ -833,28 +833,21 @@
 <blockquote>
 <p>请求参数加密示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="c1">// 原始请求参数</span>
-
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="c1">// 原始请求参数</span>
 <span class="nc">String</span> <span class="n">originReqData</span> <span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"charset"</span><span class="o">:</span><span class="s">"utf-8"</span><span class="o">,</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"eth"</span><span class="o">,</span><span class="s">"sign"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span><span class="s">"time"</span><span class="o">:</span><span class="s">"1586420916306"</span><span class="o">,</span><span class="s">"app_id"</span><span class="o">:</span><span class="s">"baaceb1e506e1b5d7d1f0a3b1622583b"</span><span class="o">,</span><span class="s">"version"</span><span class="o">:</span><span class="s">"2.0"</span><span class="o">}</span><span class="err">'</span>
-
 <span class="c1">// encryptByPrivate方法封装在下列公共类RSAHelper.java中</span>
 <span class="nc">String</span> <span class="n">encryptReqData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">encryptByPrivate</span><span class="o">(</span><span class="n">originReqData</span><span class="o">,</span> <span class="s">"第三方自己的私钥"</span><span class="o">)</span>
-
 <span class="c1">//http post</span>
 <span class="nc">String</span> <span class="n">httpBuildParams</span> <span class="o">=</span> <span class="s">"app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data="</span> <span class="o">+</span> <span class="n">encryptReqData</span>
-
 </code></pre></div>
 <blockquote>
 <p>响应数据解密示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="c1">// 响应的原始数据</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="c1">// 响应的原始数据</span>
 <span class="nc">String</span> <span class="n">originResp</span><span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"jwtkGrhh2EVJS8xe93MpUYd-SQ-TyK0Bx5sXjE4hygFNg4wmctiahtIYXRpR2j8yDaEF5YzVstnUKbOH2p44FSMjXMQU4qFrhD00WOfW7v4LNALyiQXRb_5sakR0Zf573lGfLRTPlzLtTho3gqu3hMwuAv5e3r2dpb6_jxh1Z9BjkzSsNRX_bjLcHLUOPhMvo6rTUKSa9LQ6QnT8RX0eqzOZPlnCw3TeX_zcWWjxp6fcpKcdODxoI86gHwWRpSd-2qbEbFcaT12CJd9nPXA0KnLPNNHWz8sxQGiAg7Jg_-cN_yBHL9cS15zecTemYGqpOXRkojM1JwLsjM-7txf_dw"</span><span class="o">}</span><span class="err">'</span>
-
-      <span class="c1">// 解密响应数据</span>
-      <span class="nc">String</span> <span class="n">encryptRespData</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">originResp</span><span class="o">)[</span><span class="err">'</span><span class="n">data</span><span class="err">'</span><span class="o">]</span>
-      <span class="c1">// decryptByPublic 方法封装在下列公共类 RSAHelper.java中</span>
+<span class="c1">// 解密响应数据</span>
+<span class="nc">String</span> <span class="n">encryptRespData</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">originResp</span><span class="o">)[</span><span class="err">'</span><span class="n">data</span><span class="err">'</span><span class="o">]</span>
+<span class="c1">// decryptByPublic 方法封装在下列公共类 RSAHelper.java中</span>
 <span class="nc">String</span> <span class="n">decryptRespData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">decryptByPublic</span><span class="o">(</span> <span class="n">encryptRespData</span><span class="o">,</span> <span class="s">"托管平台提供的公钥"</span> <span class="o">)</span>
 </code></pre></div><h3 id='1'>附 1:加解密方式</h3>
 <blockquote>
@@ -1468,8 +1461,13 @@
 <blockquote>
 <p>响应结果示例：</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:{</span>
+        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span>
+    <span class="o">},</span>
+    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
+<span class="o">}</span>
 </code></pre></div><h4 id='data-3'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
@@ -1528,9 +1526,13 @@
 <blockquote>
 <p>响应数据解密后示例:  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:{</span>
+        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span>
+    <span class="o">},</span>
+    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
+<span class="o">}</span>
 </code></pre></div><h4 id='data-5'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
@@ -1595,8 +1597,14 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"uid"</span><span class="o">:</span><span class="s">"3529218"</span><span class="o">,</span><span class="s">"address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:{</span>
+        <span class="s">"uid"</span><span class="o">:</span><span class="s">"3529218"</span><span class="o">,</span>
+        <span class="s">"address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span>
+    <span class="o">},</span>
+    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
+<span class="o">}</span>
 </code></pre></div><h4 id='data-7'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
@@ -1673,8 +1681,14 @@
 <blockquote>
 <p>响应数据解密后示例:  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">,</span><span class="s">"nickname"</span><span class="o">:</span><span class="s">""</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:{</span>
+        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">,</span>
+        <span class="s">"nickname"</span><span class="o">:</span><span class="s">""</span>
+    <span class="o">},</span>
+    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
+<span class="o">}</span>
 </code></pre></div><h4 id='data-9'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
@@ -1890,8 +1904,15 @@
 <blockquote>
 <p>响应数据解密后示例:  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"normal_balance"</span><span class="o">:</span><span class="s">"2.99400066"</span><span class="o">,</span><span class="s">"deposit_address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="o">,</span><span class="s">"lock_balance"</span><span class="o">:</span><span class="s">"0"</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:{</span>
+        <span class="s">"normal_balance"</span><span class="o">:</span><span class="s">"2.99400066"</span><span class="o">,</span>
+        <span class="s">"deposit_address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="o">,</span>
+        <span class="s">"lock_balance"</span><span class="o">:</span><span class="s">"0"</span>
+    <span class="o">},</span>
+    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
+<span class="o">}</span>
 </code></pre></div><h4 id='data-13'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
@@ -1960,11 +1981,19 @@
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:  </p>
+<p>响应数据解密后示例:<br>
+<code>java
+{
+    &quot;code&quot;:&quot;0&quot;,
+    &quot;data&quot;:{
+        &quot;symbol&quot;:&quot;ETH&quot;,
+        &quot;balance&quot;:&quot;64.97599802&quot;
+    },
+    &quot;msg&quot;:&quot;成功&quot;
+}
+</code></p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span><span class="s">"balance"</span><span class="o">:</span><span class="s">"64.97599802"</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
-</code></pre></div><h4 id='data-15'>响应参数data解密之后数据结构:</h4>
+<h4 id='data-15'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2641,8 +2670,14 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"id"</span><span class="o">:</span><span class="mi">48680</span><span class="o">,</span><span class="s">"status"</span><span class="o">:</span><span class="mi">0</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:{</span>
+        <span class="s">"id"</span><span class="o">:</span><span class="mi">48680</span><span class="o">,</span>
+        <span class="s">"status"</span><span class="o">:</span><span class="mi">0</span>
+    <span class="o">},</span>
+    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
+<span class="o">}</span>
 </code></pre></div><h4 id='data-24'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
@@ -2743,7 +2778,10 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span><span class="s">"check_sum"</span><span class="o">:</span><span class="s">"1234"</span><span class="o">,</span><span class="s">"time"</span><span class="o">:</span><span class="s">"12345678"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"check_sum"</span><span class="o">:</span><span class="s">"1234"</span><span class="o">,</span>
+    <span class="s">"time"</span><span class="o">:</span><span class="s">"12345678"</span>
+<span class="o">}</span>
 </code></pre></div><h4 id='data-26'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
