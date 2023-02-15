@@ -5,10 +5,6 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta
-            name="description"
-            content="Documentation for the Kittn API"
-        >
     <title>API Reference</title>
 
     <style media="screen">
@@ -286,7 +282,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-b0498dce.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-88b96ed4.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-2b633527.js"></script>
 
@@ -595,27 +591,21 @@
 
 <p>方式二：使用手机扫码打开链接下载：</p>
 
-<p><img src="https://custodydocs.chainup.com/zh/latest/_images/QR.png" alt="img" /></p>
+<p><img src="images/qrcode.png" style="width: 150px" alt="" /></p>
 <h3 id='custody-2'>注册Custody账号</h3>
 <p>打开【Custody】应用，注册账号（未注册账号登录即注册），支持邮箱与手机号两种方式</p>
 
-<p><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_zhucezhanghao3.png" alt="../_images/api_plan_zhucezhanghao3.png" /></p>
-
-<p><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_zhucezhanghao4.png" alt="../_images/api_plan_zhucezhanghao4.png" /></p>
+<p><img src="images/login-ddfa039e.png" style="width: 250px" alt="" /></p>
 <h3 id='e019fed864'>完成身份认证</h3>
-<p>打开个人中心-【安全设置】，进入身份认证页面</p>
-
-<p><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_shezhi3.png" alt="img" /></p>
-
 <p>身份认证信息，仅支持一种身份，且认证后不支持更换</p>
 
-<p><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_shezhi4.png" alt="img" /></p>
+<p><img src="images/pkyc-b038901c.jpg" style="width: 250px" alt="" /></p>
 
-<p><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_shezhi5.png" alt="img" /></p>
+<p><img src="images/ekyc-d7915522.jpg" style="width: 250px" alt="" /></p>
 
 <p>完成【身份认证】、【谷歌验证】（身份认证需要平台审核，您可以联系项目经理或客服快速审核）</p>
 
-<p><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_shimingrenzheng2.png" alt="img" /></p>
+<p><img src="images/safe-74dc70cf.jpg" style="width: 250px" alt="" /></p>
 <h2 id='c4571ab0cb'>创建并配置企业钱包</h2><h3 id='chainup-custody'>登录ChainUp Custody平台</h3>
 <p>浏览器打开<a href="https://custody.chainup.com/">ChainUp Custody平台</a>， 使用【Custody】应用，首页或云端钱包【扫码】功能扫描二维码登录</p>
 
@@ -788,8 +778,8 @@
 <p>说明：</p>
 
 <ol>
-<li>rsa_third_prv为第三方应用私钥，主要用于加密请求参数。如果是生产环境，rsa_third_prv由开发者生成，然后将对应的公钥提供给平台。测试环境为了简化开发者对接流程，此处直接提供了一套第三方的公私钥，便于开发者快速对接。</li>
-<li>目前不支持测试环境对接，请根据<strong>接入指引</strong>自主注册创建钱包后，获取生产环境的API相关信息。</li>
+<li><p>rsa_third_prv为第三方应用私钥，主要用于加密请求参数。如果是生产环境，rsa_third_prv由开发者生成，然后将对应的公钥提供给平台。测试环境为了简化开发者对接流程，此处直接提供了一套第三方的公私钥，便于开发者快速对接。</p></li>
+<li><p>目前不支持测试环境对接，请根据<strong>接入指引</strong>自主注册创建钱包后，获取生产环境的API相关信息。</p></li>
 </ol>
 <h3 id='2f8862bf69'>资管账号准备</h3>
 <p>开发者准备如下信息：</p>
@@ -806,9 +796,9 @@
 
 <p>联系平台相关人员，提供上述五类信息。平台为您准备资管账号，提供到您这边包括以下信息：</p>
 
-<p>1）商户的唯一标识：app_id；</p>
+<p>1）商户的唯一标识：<code>app_id</code>；</p>
 
-<p>2）钱包公钥：rsa_wallet_pub。</p>
+<p>2）钱包公钥：<code>rsa_wallet_pub</code>。</p>
 <h3 id='6e241fa925'>接口交互过程</h3>
 <p>文档为钱包服务对第三方应用提供的接口。</p>
 
@@ -824,11 +814,11 @@
 </thead><tbody>
 <tr>
 <td style="text-align: left">签名字段:</td>
-<td>除了 sign 字段，其他所有必填项都需要参与签名</td>
+<td>除了 <code>sign</code> 字段，其他所有必填项都需要参与签名</td>
 </tr>
 <tr>
 <td style="text-align: left">响应状态码为:</td>
-<td>0,表示处理成功，非 0 表示请求错误或系统异常</td>
+<td><code>0</code>表示处理<code>成功</code>，非 0 表示<strong>请求错误</strong>或<strong>系统异常</strong></td>
 </tr>
 <tr>
 <td style="text-align: left">请求地址:</td>
@@ -836,10 +826,10 @@
 </tr>
 <tr>
 <td style="text-align: left">加密算法:</td>
-<td>详见附 1</td>
+<td>详见<code>附 1</code></td>
 </tr>
 </tbody></table>
-
+<h2 id='f8519014aa'>附录</h2>
 <blockquote>
 <p>请求参数加密示例:</p>
 </blockquote>
@@ -854,7 +844,7 @@
 <span class="c1">//http post</span>
 <span class="nc">String</span> <span class="n">httpBuildParams</span> <span class="o">=</span> <span class="s">"app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data="</span> <span class="o">+</span> <span class="n">encryptReqData</span>
 
-</code></pre></div><h2 id='f8519014aa'>附录</h2>
+</code></pre></div>
 <blockquote>
 <p>响应数据解密示例:</p>
 </blockquote>
@@ -1363,7 +1353,7 @@
 <td style="text-align: left">data</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">可选</td>
-<td style="text-align: left">加密之后的字符串，具体加密信息见各接口 请求参数数据结构</td>
+<td style="text-align: left">加密之后的字符串，具体加密信息见各接口 <code>请求参数数据结构</code></td>
 </tr>
 </tbody></table>
 <h3 id='513b6965ca'>请求接口示例</h3>
@@ -1396,7 +1386,7 @@
 </tbody></table>
 
 <blockquote>
-<p>响应结果示例:   </p>
+<p>响应结果示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code>
 <span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"LK4D5mrtvTubDxCQM4lqyN2h8TTIkEBL_06FrrrzLrImyMO4Yuac-wdbk5VnGVfCKB5EFaUb162xXUJdTHhpA5CGBCAQKl64h_Dt10C-H8KIoap9dZI90qE4f-mAMAyjF1QzKXJ-f-R_3J3bRGqfHFBRXebh08R8MdRDssniopVOhsFUs4gBxUensKas3_ta15eFIqXPjIgJWfYQCD2DUi1gaKgmN-5Q_tgt-qXp5Y2uh3yfM4g4k71Ahyel3G8S_AktbWl2G9wU3cri3ZVQEo0faIpkX_CKsk9V1YoY5yRopvJbxNtkG9lBFxKnureAQo0KP3f1tsIMOzgcyEXPnA"</span><span class="o">}</span>
@@ -1425,7 +1415,7 @@
 <td style="text-align: left">data</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">否</td>
-<td style="text-align: left">具体响应数据，数据结构定义见各接口  <strong>响应参数数据结构</strong></td>
+<td style="text-align: left">具体响应数据，数据结构定义见各接口  <code>响应参数数据结构</code></td>
 </tr>
 </tbody></table>
 <h2 id='a1cda4baf4'>获取地址</h2>
@@ -1474,7 +1464,13 @@
 <td>手机号</td>
 </tr>
 </tbody></table>
-<h4 id='data-3'>响应参数data解密之后数据结构:</h4>
+
+<blockquote>
+<p>响应结果示例：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>
+{"code":"0","data":{"uid":3529218},"msg":"成功"}
+</code></pre></div><h4 id='data-3'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1490,13 +1486,7 @@
 <td>用户在钱包服务的唯一标识</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>响应结果示例：</p>
-</blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>
-{"code":"0","data":{"uid":3529218},"msg":"成功"}
-</code></pre></div><h3 id='2a7ea8d599'>用户邮箱注册</h3>
+<h3 id='2a7ea8d599'>用户邮箱注册</h3>
 <p>注册成为钱包的用户。满足邮箱格式即可（e.g. <a href="mailto:123@111.com">123@111.com</a>）</p>
 <h4 id='http-2'>HTTP请求</h4>
 <p><code>POST /api/v2/user/registerEmail</code></p>
@@ -1536,7 +1526,7 @@
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:  </p>
+<p>响应数据解密后示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>
 
@@ -1681,7 +1671,7 @@
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:  </p>
+<p>响应数据解密后示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code>
 <span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">,</span><span class="s">"nickname"</span><span class="o">:</span><span class="s">""</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
@@ -1741,7 +1731,7 @@
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:  </p>
+<p>响应数据解密后示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code>
 <span class="o">{</span>
@@ -1898,12 +1888,11 @@
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:  </p>
-<div class="highlight"><pre class="highlight plaintext"><code></code></pre></div></blockquote>
-
-<p>{&quot;code&quot;:&quot;0&quot;,&quot;data&quot;:{&quot;normal_balance&quot;:&quot;2.99400066&quot;,&quot;deposit_address&quot;:&quot;0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd&quot;,&quot;lock_balance&quot;:&quot;0&quot;},&quot;msg&quot;:&quot;成功&quot;}
-```</p>
-<h4 id='data-13'>响应参数data解密之后数据结构:</h4>
+<p>响应数据解密后示例:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>
+{"code":"0","data":{"normal_balance":"2.99400066","deposit_address":"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd","lock_balance":"0"},"msg":"成功"}
+</code></pre></div><h4 id='data-13'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1971,7 +1960,7 @@
 </tbody></table>
 
 <blockquote>
-<p>响应数据解密后示例:  </p>
+<p>响应数据解密后示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight java tab-java"><code>
 <span class="o">{</span><span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span><span class="s">"data"</span><span class="o">:{</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span><span class="s">"balance"</span><span class="o">:</span><span class="s">"64.97599802"</span><span class="o">},</span><span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span><span class="o">}</span>
