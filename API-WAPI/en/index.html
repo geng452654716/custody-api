@@ -5,10 +5,6 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta
-            name="description"
-            content="Documentation for the Kittn API"
-        >
     <title>API Reference</title>
 
     <style media="screen">
@@ -286,7 +282,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-e6d89783.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-63558632.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-2b633527.js"></script>
 
@@ -301,20 +297,20 @@
             <img src="images/logo-055122b5.png" class="logo" alt="" />
             <div class="header-line"></div>
             <div class="header-nav-h5">
-                
+                API-WAPI
                 <ul class="header-nav-list-h5">
-                        <li class="header-nav__item"><a href="/API-MPC/en/index.html">API-MPC</a></li>
-                        <li class="header-nav__item active"><a href="/API-WaaS-V2/en/index.html">API-WaaS-V2</a></li>
-                        <li class="header-nav__item"><a href="/API-WAPI/en/index.html">API-WAPI</a></li>
+                        <li class="header-nav__item"><a href="/API-MPC/zh/index.html">API-MPC</a></li>
+                        <li class="header-nav__item"><a href="/API-WaaS-V2/zh/index.html">API-WaaS-V2</a></li>
+                        <li class="header-nav__item active"><a href="/API-WAPI/zh/index.html">API-WAPI</a></li>
                 </ul>
             </div>
             <ul class="header-nav">
-                    <li class="header-nav__item"><a href="/API-MPC/en/index.html">API-MPC</a></li>
-                    <li class="header-nav__item active"><a href="/API-WaaS-V2/en/index.html">API-WaaS-V2</a></li>
-                    <li class="header-nav__item"><a href="/API-WAPI/en/index.html">API-WAPI</a></li>
+                    <li class="header-nav__item"><a href="/API-MPC/zh/index.html">API-MPC</a></li>
+                    <li class="header-nav__item"><a href="/API-WaaS-V2/zh/index.html">API-WaaS-V2</a></li>
+                    <li class="header-nav__item active"><a href="/API-WAPI/zh/index.html">API-WAPI</a></li>
             </ul>
         </div>
-        <a class="switch-language" href="/API-WaaS-V2/zh/index.html">中文</a>
+        <a class="switch-language" href="/API-WAPI/zh/index.html">中文</a>
     </div>
     <a href="#" id="nav-button">
       <span>
@@ -332,310 +328,807 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#chainup-custody-wapi-documentation" class="toc-h1 toc-link" data-title="ChainUp Custody WAPI documentation">ChainUp Custody WAPI documentation</a>
+          </li>
+          <li>
+            <a href="#preliminary-preparation" class="toc-h1 toc-link" data-title="Preliminary Preparation">Preliminary Preparation</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#22dfeeb22d" class="toc-h2 toc-link" data-title="二级标题">二级标题</a>
+                    <a href="#development-notes" class="toc-h2 toc-link" data-title="Development Notes">Development Notes</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#516f981774" class="toc-h3 toc-link" data-title="三级标题">三级标题</a>
+                            <a href="#the-role-of-public-and-private-keys" class="toc-h3 toc-link" data-title="The Role of Public and Private Keys">The Role of Public and Private Keys</a>
+                          </li>
+                          <li>
+                            <a href="#account-preparation" class="toc-h3 toc-link" data-title="Account Preparation">Account Preparation</a>
+                          </li>
+                          <li>
+                            <a href="#interface-rules" class="toc-h3 toc-link" data-title="Interface rules">Interface rules</a>
                           </li>
                       </ul>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#domain-name-and-api-key" class="toc-h1 toc-link" data-title="Domain Name and API Key">Domain Name and API Key</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#query-parameters" class="toc-h3 toc-link" data-title="Query Parameters">Query Parameters</a>
-                          </li>
-                      </ul>
+                    <a href="#production-environment" class="toc-h2 toc-link" data-title="Production Environment">Production Environment</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request-2" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#url-parameters" class="toc-h3 toc-link" data-title="URL Parameters">URL Parameters</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request-3" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#url-parameters-2" class="toc-h3 toc-link" data-title="URL Parameters">URL Parameters</a>
-                          </li>
-                      </ul>
+                    <a href="#test-environment" class="toc-h2 toc-link" data-title="Test environment">Test environment</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#docking-solutions" class="toc-h1 toc-link" data-title="Docking Solutions">Docking Solutions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#register-a-deposit-address" class="toc-h2 toc-link" data-title="Register A Deposit Address">Register A Deposit Address</a>
+                  </li>
+                  <li>
+                    <a href="#make-deposits" class="toc-h2 toc-link" data-title="Make Deposits">Make Deposits</a>
+                  </li>
+                  <li>
+                    <a href="#make-withdrawals" class="toc-h2 toc-link" data-title="Make Withdrawals">Make Withdrawals</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wapi-documentation" class="toc-h1 toc-link" data-title="WAPI Documentation">WAPI Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#address-registration-interface" class="toc-h2 toc-link" data-title="Address Registration Interface">Address Registration Interface</a>
+                  </li>
+                  <li>
+                    <a href="#the-number-of-remaining-addresses-available-interface" class="toc-h2 toc-link" data-title="The number of remaining addresses available interface">The number of remaining addresses available interface</a>
+                  </li>
+                  <li>
+                    <a href="#deposit-notification-call-interface" class="toc-h2 toc-link" data-title="Deposit notification call interface">Deposit notification call interface</a>
+                  </li>
+                  <li>
+                    <a href="#withdrawal-interface" class="toc-h2 toc-link" data-title="Withdrawal Interface">Withdrawal Interface</a>
+                  </li>
+                  <li>
+                    <a href="#withdrawal-notification-interface" class="toc-h2 toc-link" data-title="Withdrawal Notification Interface">Withdrawal Notification Interface</a>
+                  </li>
+                  <li>
+                    <a href="#internal-notification-interface" class="toc-h2 toc-link" data-title="Internal Notification Interface">Internal Notification Interface</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#callback-withdrawals-interface" class="toc-h1 toc-link" data-title="Callback Withdrawals Interface">Callback Withdrawals Interface</a>
+          </li>
+          <li>
+            <a href="#appendix" class="toc-h1 toc-link" data-title="Appendix">Appendix</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#appendix-1-encryption-and-decryption-method" class="toc-h2 toc-link" data-title="Appendix 1: Encryption and Decryption Method">Appendix 1: Encryption and Decryption Method</a>
+                  </li>
+              </ul>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1><h2 id='22dfeeb22d'>二级标题</h2><h3 id='516f981774'>三级标题</h3>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='chainup-custody-wapi-documentation'>ChainUp Custody WAPI documentation</h1>
+<p>Welcome to the TopValue asset custody platform. This document is used by the third-party technical team to add the self-developed mainchain to the ChainUp Custody for alliance members.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Note: How to use WAPI to access the mainchain, the server and private keys are kept by the third-party technical team, and the ChainUp Custody is not responsible for the security of assets. Therefore, the third-party technical team must establish a complete wallet private key custody system and API private key custody system</p>
+<h1 id='preliminary-preparation'>Preliminary Preparation</h1><h2 id='development-notes'>Development Notes</h2><h3 id='the-role-of-public-and-private-keys'>The Role of Public and Private Keys</h3>
+<p><strong>Party A</strong> is a third-party public chain docking party</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p><strong>Party B</strong> is the ChainUp Custody BaaS Cloud</p>
 
-<p>API-MPC 英文英文</p>
+<p><strong>The Role of Public and Private Keys</strong>： Party A needs to generate a pair of public and private keys in advance when registering the WAPI interface. The public key (rsa_third_pub) is provided to Party B. The private key is kept by yourself, and the private key is not disclosed to anyone. When requesting WAPI services, Party A shall encrypt the request parameters with Party B’s public key and sign the original data after MD5 with Party A’s private key. Upon receiving the request, Party B shall decrypt the data with Party B’s private key and check the original data after MD5 with Party A’s public key</p>
+<h3 id='account-preparation'>Account Preparation</h3><h4 id='developers-need-to-prepare-the-following-information'>Developers need to prepare the following information：</h4>
+<p>1）Generate a pair of public and private keys, and provide the public key to the platform；</p>
+
+<p>2）Third-party application server IP；</p>
+
+<p><strong>Contact the relevant people of the platform and provide the above two types of information. The platform prepares WAPI docking information for you, and provides you with the following information：</strong></p>
+
+<p>1）The unique identifier for third-party docking: app_id；</p>
+
+<p>2）WAPI public key：rsa_wapi_pub。</p>
+<h4 id='rsa-public-and-private-key-generation-address'>RSA public and private key generation address:</h4>
+<p>http://www.metools.info/code/c80.html</p>
+
+<p>Password length：2048</p>
+
+<p>Key format：PKCS#8</p>
+<h3 id='interface-rules'>Interface rules</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Transmission method:</th>
+<th>https (the test environment temporarily uses http)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Signature Field:</td>
+<td>Except for the <code>sign</code>  field, all other required fields need to be signed</td>
+</tr>
+<tr>
+<td style="text-align: left">The response status code:</td>
+<td><code>0</code>indicating successful processing; <strong>non-zero</strong>, indicating request error or system abnormality</td>
+</tr>
+<tr>
+<td style="text-align: left">Request Address:</td>
+<td>domain name + interface address</td>
+</tr>
+<tr>
+<td style="text-align: left">Encryption Algorithm:</td>
+<td>See <code>Appendix 1</code>for details</td>
+</tr>
+</tbody></table>
+<h1 id='domain-name-and-api-key'>Domain Name and API Key</h1><h2 id='production-environment'>Production Environment</h2>
+<table><thead>
+<tr>
+<th style="text-align: left">Domain Name:</th>
+<th><a href="https://baas.waas.group/">https://baas.waas.group</a></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">app_id:</td>
+<td>To be assigned</td>
+</tr>
+<tr>
+<td style="text-align: left">rsa_wallet_pub:</td>
+<td>To be allocated</td>
+</tr>
+</tbody></table>
+<h2 id='test-environment'>Test environment</h2>
+<table><thead>
+<tr>
+<th style="text-align: left">Domain Name:</th>
+<th><a href="http://baas.dw2nn.com">http://baas.dw2nn.com</a></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left"><strong>app_id:</strong></td>
+<td>8ee3794a7e5bd188c6af4fd7dda191f3</td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>rsa_third_pub</strong></td>
+<td>refer to the <code>code</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>rsa_third_prv</strong></td>
+<td>refer to the <code>code</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><strong>rsa_baas_pub</strong></td>
+<td>refer to the <code>code</code></td>
+</tr>
+</tbody></table>
 
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>rsa_third_pub:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight plaintext"><code>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0P18OcSRr2mnWAWwn6hWlKCyChBb8bF6X1gHiFfdyejHmPnni60j6uKEHhAB7L9xyCnvpP44Wzp7txjNfYF+8SiaFUVP5rawisiHrcUHxvKEInVdyjeE6dUnDvr7acFTmF0JZCbfzDA38l5WznDV3AWESOm7Gd/0NP7rCiZDbn+2uOlrGqsYSi4cLwCnoqREQ+/Z7rNug8l3Vlqvvx6YVj0xxWi/4qz8yXlZV8aBAN1rshAkaTVbkWjij6uSJ3lMHY99B5DqnF/5EAhYYc+GTgAML5KAHfHYlF+Y9GDlKZoBaixIK/X3HtgBOaIIDaCZFLSQaO36ghIEpyjnepgXBQIDAQAB
 </code></pre></div>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>rsa_third_prv:</p>
 </blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvxsXpfWAeIV93J6MeY+eeLrSPq4oQeEAHsv3HIKe+k/jhbOnu3GM19gX7xKJoVRU/mtrCKyIetxQfG8oQidV3KN4Tp1ScO+vtpwVOYXQlkJt/MMDfyXlbOcNXcBYRI6bsZ3/Q0/usKJkNuf7a46WsaqxhKLhwvAKeipERD79nus26DyXdWWq+/HphWPTHFaL/irPzJeVlXxoEA3WuyECRpNVuRaOKPq5IneUwdj30HkOqcX/kQCFhhz4ZOAAwvkoAd8diUX5j0YOUpmgFqLEgr9fce2AE5oggNoJkUtJBo7fqCEgSnKOd6mBcFAgMBAAECggEAcpe7aPWGqHc3QgWErlagesiONwR3VdRp9CORpcoAG7ke0JuewbDDNATWSqGeXJEws3+DHqYigqtTsLbR3hKGZ3dK3YTu5eOgc8i21KpntEe/+iD+t2Wv5INy8jzeZEOUMcQ55QeHyS9bTfM6h+HI8ea4fT5j0DFDd1ebyynl6YzyGYy4kccMSvfUhkY2NVbLH1EKCoNXDO1fOyxMZ2McNvDwFhmm9+RIWxgD+Jqso/t+eAFddkxZHzMKgvmvnS3ov5H+0dbhf/NGGinzv697YVF2+8iRFS9+dpcPGHKN8Pxfd+dASIAxAkRP+suLYAfBdnP5SdHP7PZTp0vHokgM1QKBgQDpagBKVZXfdwz2DGcVLHJezyhx0ND9ToMyW75LwAZqtCB5pStltnM1kCioQGqaIuvhMKBCq3EEAT7kxzJA6/1QFFwqaDjCIrhr0rtxcfzv027B5u8YFSr4Fe3Pk8Osrf3+Vh7DVYBnerknmYOn3D1sYxp0LCAuO3r6ilbA/mOdFwKBgQDlNng2UPqmJ/8ba4IuQIBijWfFnW3wmq5mQh4ZjZzt4WSzHhU8lUCt+U28HzKoziuKjUriOJJFkjqT+HlMgpeTgKDsHBDfioo40TcPhH29pdb0D340uNlQ93So6r5NNbMazmr/lBTvXNfFv7IMIhATuQWmBhV9AkbDHiSTQOoWQwKBgQDn8IhXVVJ3WxKLEOoB9Ue1BH85EfoKK9Fc4iNnnGoD7/fxSPqluLYk/JoaDuCfR6JDBBHMDhZgl2hK59H9B0ORJporHaOA7gV6R04xvcZM/jmp/nOJ58bp/MhyI3AmkEK7UBKDodvVd/Ky8e4MiGKU6Kmp1QspRbu/aGYqot6TgwKBgQCPszF0ZBpwFv0xtJn940RaBOr9EnC9ekxCIct7G7Q50qfuP7ryq2PMblLU0P5SpEbZ6zD6WJsjcMS2xf1OAUWEHQ1GWWYer11ut4N8gATQ4+q6QghOh2D/CNSjnd/GyhbKhITCTJU/Z4aDHGZEgwpvQv0OlBverpGse/ZUN0tKvwKBgQDme1R9fsRKrlNhXe1wXs8qDw10KOfAa9TC04RRlY3p9rLa6ZQhDrUQEHBZLeKOgWeiPHULt5emLcRlqm50mMBHHNoN61kHDIN+EdxZXmJnICD1TzD0P6yj+VjdbmGcz/mQ1+Msf0RT+/KGvjX+GenjpYiTQc7n2CwYypnN9ru8KA
+</code></pre></div>
+<blockquote>
+<p>rsa_baas_pub:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmY3x4DVuU2NV90HaXZWnxGj7XvuBtwGT4bvnCiDcpMVlNuQN1cr+Vg+WMPIUihWmWkupA9oXdZf4LzWtqv2SRlP3tIs+tWG4Df3FuuZ0W2CIxhtJNnWHIY146m/teif+H2v9G3GeY+P+z/LqGFyV0nLYJzs4WQZa3/RL0rh2IlVlfs1eHod+PX99o+Aog80kmUx8NF6ExsoO4qI9y3wW8CH+5tGVqHvq3NaD3jHyS3DYrRztfxuJw9k/YTfZ6rDJVXmD7onqvZe2leSe5h/ehu321y7nB7+2uTJ76i1YOmIrEBW8KupwQUU1JuZKvMCzcLowLjIOYysU8JfpxXH+MQIDAQAB
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Token Name</th>
+<th>Accuracy</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>memo</td>
+<td>SRM</td>
+<td>8 decimals</td>
+</tr>
+<tr>
+<td>non-memo</td>
+<td>VLX</td>
+<td>8 decimals</td>
+</tr>
+</tbody></table>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Note： <code>rsa_third_prv</code> is a third-party application private key, which is mainly used to encrypt request parameters. If it is a production environment, <code>rsa_third_prv</code> is generated by the developer, and then the corresponding public key is provided to the platform. In order to simplify the developer connection process in the test environment, a set of third-party public and private keys and token names are directly provided here for developers to quickly connect.</p>
+<h1 id='docking-solutions'>Docking Solutions</h1>
+<p>In order to allow public chain developers to access the <strong>ChainUp Custody</strong> more conveniently and quickly, we provide BaaS services to meet the public chain docking needs. Based on the docking experience of past customers, the platform has sorted out a set of docking solutions. details as follows:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><strong>The whole Process is divided into three steps：</strong></p>
+
+<ol>
+<li> Register A Deposit Address</li>
+<li> Make Deposits</li>
+<li> Make Withdrawals</li>
+</ol>
+<h4 id='the-overall-docking-process-is-as-follows'>The overall docking process is as follows</h4>
+<p><a href="https://custodydocs.chainup.com/en/latest/_images/wapi_interact_process.png"><img src="https://custodydocs.chainup.com/en/latest/_images/wapi_interact_process.png" alt="../_images/wapi_interact_process.png" /></a></p>
+<h2 id='register-a-deposit-address'>Register A Deposit Address</h2>
+<p>1）The number of available addresses can be queried by currency name. Note: (A maximum of <code>100</code>addresses per push to Custody, with each push checking that the number of addresses remaining available to Custody is greater than 5,000 and disallowing registration if 5,000 addresses are not being used. Interface address: <code>/api/v1/address/available</code>)</p>
+
+<p>2）Push the currency name and address list to the BaaS platform, after the response is successful, and the representative registered address is successful (interface address:<code>/api/v1/address/register</code>) Note: If the type of registered currency is memo, the same address Only one registration is allowed.。</p>
+<h2 id='make-deposits'>Make Deposits</h2>
+<p>1）The third-party wallet detects that the address has a deposit transaction, initiates a deposit notification, and informs the BaaS system (interface address: <code>/api/v1/deposit/notify</code>)</p>
+
+<p>2）BaaS returns the notification result</p>
+<h2 id='make-withdrawals'>Make Withdrawals</h2>
+<p>1）The user initiates a withdrawal request in the Custody system</p>
+
+<p>2）Main chain developers pull the list of withdrawals (interface address:<code>/api/v1/withdraw/consume</code>)</p>
+
+<p>3）After the chain is successfully connected, BaaS will be notified of the withdrawal result, and the BaaS interface will respond (interface address: <code>/api/v1/withdraw/notify</code>)</p>
+
+<p>Note: In case of special circumstances, the withdrawal request can be withdrawn and a notification will be pushed to the BaaS interface (interface address: <code>/api/v1/withdraw/cancel</code>)</p>
+<h1 id='wapi-documentation'>WAPI Documentation</h1><h2 id='overview'>Overview</h2><h4 id='request-parameters'>Request Parameters:</h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>app_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Customer ID</td>
+</tr>
+<tr>
+<td>time</td>
+<td>int64</td>
+<td>Yes</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>string</td>
+<td>Yes</td>
+<td>Use Party A’s private key to sign the plaintext MD5 of the requested data</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>Yes</td>
+<td>Use Party B’s public key to encrypt the requested data</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/api/v</span><span class="mi">1</span><span class="err">/address/available</span><span class="w">
+</span><span class="err">body</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ee3794a7e5bd188c6af4fd7dda191f3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1616539980</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qVQZ0W1vl6Mh4wMadMHR1XM8N-ZD9xlQhhiIrPlbmmyoDDAgxqwYbtFZBAvPswX4t_6N46ZOFcGuH2K6abiqpl4FtizBkbC3MUlZ6LYU4EPtay_nh6wF97L5jrs7-Qjw5SrFsHTDY4j7mKUXOPrQWrSYAU6QQy6NHjNHazjo592HbG-Cbso_wDOwRDMsLtc4cj6ZxYwjXwYlpkMTK-l_J1iHE16YTI3WyH0fSvNXc3423h5rbJ8UyFPfHLVO433yMnsoexj1KG1oLKlAlrv-t8sIw1A-KBSFTs0o6wuqpBNSLGvH0vh-iAtBJarhcaxdfZG1L8XnYDUAlgKHNzECAW"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wYEom2ihnpZRcI0PeJKCwkwUcN_SZzWDm-QhIiScBVahdMATenUe8ssVqqouTp4PBEStDi3tsUAHnBXLEFFeLDugqrffhQTLKYB2sN3stxOAP_9PO6ucUI-ck_eOzuOVq4ZXTxfdX6csf2o1yyZwtozcfik7ViL49ctTO2yjAdtO17BuAzdxSvyCm_ZyI0EANNglR029b4_TyrhT9gSmIeVT5Is_JJNaifoTmpWz0aB5LvjxojBjsMupExb3dXV9uykNybgjakbTZPwOx-ycZZrGvk8nLxWSaCTajAA3K_Kb4Wj40hn_XRH0X-_37MaxJKK-672wr7Ce94aY2UCiQQ"</span><span class="p">,</span><span class="w"> </span><span class="nl">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"siGNQawtTmtEAj3C56tNSV_mOuMYzG_SYxIwaT0LlU-68_VVKRCS22b8mNykOmDs2zJh9PTl9Bzs-8Eo10rAivVajcBWBp6qw3RKimOURbYOL_EKYrbZyuJH84YoavCtm_r-pI16L3EsUFdzuyqRnSutRyuK15EKnxn4aYUbFa2oBMC9jK7sdONLx3KwQ8oolvOjQSrAFjhuL9rxxc5v-EXUDoamchH2NfF5-oYrNSkrMWpw01B9hU0AUSYktPeTuqWKCt3_sEEH8jYvx7N3joG-lHq6JlYIgC7HBMlFh_ZKfvE0dMCS4wT2-unejSrudM9kG9GgkiCSEp_jD0PacQ"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>Yes</td>
+<td>Status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>Yes</td>
+<td>Status information</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>Yes</td>
+<td>Use Party A’s public key to encrypt the returned data</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>string</td>
+<td>Yes</td>
+<td>Use Party B’s private key to sign the return data plaintext MD5</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tBosL74tKsUMckzB0320OjvqJvjHip77PS-mz_BZ-xsKO5MVzPz-adw94NUZ_8FtdYSDTsnM6ZtiL3e7T-2c2U5fvc7QTMVoJfv6SPJOmk0yRz8qBvMfgUKdjwEkpZJyCRYtmdp9sSJsbtI_Ygkr0i4KtaxMA_yskkAXODJ0aewcT7_uS9OHn8pExoNXpQ-XEbHbrK-QF8Sl4BcWQXZ2YdsF4z8T4Q3hQcSG3AyLOb4z3YIU6ZyjMok7ZsWyYoiHpMjD9eXfIfgDYUOxdocbNCjqAx6EPrueupLtUXqjCDqUEuXP3jXLJ97c9rluiNhc3XVdvrCK0lEzxoLL44yWRHDUTCpPARSemsHWy9XOiAdWlS8SaQKUS-iprfKi9e6kUDSHYFSEoZSo44Vktv8AGmHod5IGwGLBtu1fIaTuun8ahRHSVyLoJf11rSgfAkIWDUnC-Fiilk0O0pw-5q0HQkhihYYx4TEr-JWV_Y080YGkBI-NQ4RILpIKr0r292BrR4GLsYWzxieOURXrbmx7NKCaD0JmERrUbV0rbUs0rvJRj6T-5MIW6FD7oFGhXbViuTAxyqtUNvatbDEGRXbnoUTC_Jv0TX9LM0S9coT0ozYLn_2L9psdUdNGPPGkd6d3KzFxxy_m_h3l4MHinEpFvVewBJeZP7q5Z5rNhzSmxtc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jJr0UmgMHPesDNfe4kw8KYR3zSDzBmoRlJ6O979tgdLx5JydY6jNMYrzWEn4sqqy4p6niw7HEnbOrgtSGBr4BtgoGpzaqs4hslADUGfDpn8FPO4Cb6DW09yMsQZVMp7m9NIybgVwPiro7fMDOxOlSA5M5Bzxth7UNIVwgtEEZCoS0pi1Elsl6xASc9N8VR5gkh55B9zt_NbOOQ_nN-p7s1_JwOFY4qXtfYDrAjjawpTdprvThfRYoX_Lm-YpoWQeED80yFMOOUbrl9SUG-j8opVlSX53IwvQbVvwPI2gnZIBJBfUYgICP6ffQZRulP1WllYwaWYLKUdamyyYAZgQIQ"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='address-registration-interface'>Address Registration Interface</h2>
+<p>Push address to the platform, this address is used to assign to users</p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>POST/api/v1/address/register</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+A maximum of 100 addresses per push to Custody, with each push checking that the number of addresses remaining available to Custody is greater than 5,000 and disallowing registration if 5,000 addresses are not being used. If the address is memo type, only one address needs to be registered, and the memo will be allocated by Party B</aside>
+<h4 id='decrypted-request-parameters'><strong>Decrypted Request Parameters</strong></h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token name</td>
+</tr>
+<tr>
+<td>addresses</td>
+<td>string</td>
+<td>Yes</td>
+<td>Address list (can be separated by commas, up to 100 at a time)</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>bool</td>
+<td>Yes</td>
+<td>Whether it is memo type</td>
+</tr>
+</tbody></table>
+<h4 id='decrypted-response-data-parameters'>Decrypted Response Data Parameters</h4>
+<p>None</p>
+<h2 id='the-number-of-remaining-addresses-available-interface'>The number of remaining addresses available interface</h2>
+<p>How many addresses are available in the pushed addresses</p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>POST/api/v1/address/available</code></p>
+<h4 id='please-note'>Please Note:</h4>
+<p>It is recommended that the script monitor the available quantity.</p>
+<h4 id='decrypted-request-parameters-2'><strong>Decrypted Request Parameters</strong></h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token Name</td>
+</tr>
+</tbody></table>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='decrypted-response-data-parameters-2'>Decrypted Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token Name</td>
+</tr>
+<tr>
+<td>count</td>
+<td>int</td>
+<td>Yes</td>
+<td>Number of addresses available</td>
+</tr>
+</tbody></table>
+<h2 id='deposit-notification-call-interface'>Deposit notification call interface</h2>
+<p>Deposit notification call interface</p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>POST/api/v1/deposit/notify</code></p>
+<h4 id='please-note-2'>Please note:</h4>
+<ol>
+<li><p>For the same txid, different addresses, separate notifications</p></li>
+<li><p>For the same txid, the same address, and the amount of notification will be cumulative</p></li>
+<li><p>For the same deposit, please make sure that the request_id remains the same, otherwise it will cause repeated payments</p></li>
+<li><p>After request decryption, request_id will be included</p></li>
+</ol>
+<h4 id='decrypted-request-parameters-3'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>request_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Unique identifier for a single request</td>
+</tr>
+<tr>
+<td>address_from</td>
+<td>string</td>
+<td>No</td>
+<td>from address</td>
+</tr>
+<tr>
+<td>address_to</td>
+<td>string</td>
+<td>Yes</td>
+<td>to address</td>
+</tr>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>Yes</td>
+<td>Transaction ID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Amount</td>
+</tr>
+<tr>
+<td>confirm</td>
+<td>int</td>
+<td>Yes</td>
+<td>Confirmation number</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token name</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Hot wallet balance</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>Yes</td>
+<td>1 =success; 0 = failure</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>No</td>
+<td>memo ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"12345"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='decrypted-response-data-parameters-3'>Decrypted Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>└─request_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Unique identifier for a single request</td>
+</tr>
+</tbody></table>
+<h2 id='withdrawal-interface'>Withdrawal Interface</h2>
+<p>Withdrawal Interface</p>
+<h4 id='http-request-4'>HTTP Request</h4>
+<p><code>POST/api/v1/withdraw/consume</code></p>
+<h4 id='please-note-3'>Please Note:</h4>
+<p>This interface can return the latest 20 data at most at a time.</p>
+<h4 id='decrypted-request-parameters-4'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token Name</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"trans_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="mf">1.43232</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"3D2oetdNuZUqQHPJmcMDDHYoqkyNVsFk9r"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+</span></code></pre></div><h4 id='decrypted-response-data-parameters-4'>Decrypted Response Data Parameters</h4>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>trans_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Withdrawal ID</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token name</td>
+</tr>
+<tr>
+<td>address_to</td>
+<td>string</td>
+<td>Yes</td>
+<td>Withdrawal to account address</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Withdrawal Amount</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>No</td>
+<td>Withdraw memo</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h2 id='withdrawal-notification-interface'>Withdrawal Notification Interface</h2>
+<p>提现通知调用接口Call interface for withdrawal notification</p>
+<h4 id='http-request-5'>HTTP Request</h4>
+<p><code>POST/api/v1/withdraw/consume</code></p>
+<h4 id='please-note-4'>Please note:</h4>
+<ol>
+<li><p>The same txid, different addresses, separate notifications</p></li>
+<li><p>The same txid, the same address, and the amount of notification will be cumulative</p></li>
+<li><p>For the same deposte, please make sure that the request_id remains the same, otherwise it will cause repeated payments</p></li>
+<li><p>After request decryption, request_id will be included</p></li>
+</ol>
+<h4 id='decrypted-request-parameters-5'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>address_from</td>
+<td>string</td>
+<td>No</td>
+<td>from address</td>
+</tr>
+<tr>
+<td>address_to</td>
+<td>string</td>
+<td>Yes</td>
+<td>to address</td>
+</tr>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>Yes</td>
+<td>Transaction ID</td>
+</tr>
+<tr>
+<td>trans_id</td>
+<td>int</td>
+<td>Yes</td>
+<td>Withdrawal ID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Amount</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Real miner fees</td>
+</tr>
+<tr>
+<td>confirm</td>
+<td>int</td>
+<td>Yes</td>
+<td>Confirm the number. When the confirm passes 0, the status of the withdrawal record will be changed to “Paying”, and the withdrawal record will not be repeatedly obtained through the /api/v1/withdraw/consume interface</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token Name</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Hot Wallet Balance</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>No</td>
+<td>to address memo ID</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h4 id='decrypted-response-data-parameters-5'>Decrypted Response Data Parameters</h4>
+<p>None</p>
+<h2 id='internal-notification-interface'>Internal Notification Interface</h2>
+<p>Internal Notification Interface</p>
+<h4 id='http-request-6'>HTTP Request</h4>
+<p><code>POST/api/v1/internal/notify</code></p>
+<h4 id='please-note-5'>Please note:</h4>
+<p>This interface is called during transactions that consume miner fees except for cash withdrawal, mainly for deduction of miner fees, such as collection, transfer to cold wallet, etc.</p>
+<h4 id='decrypted-request-parameters-6'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>address_from</td>
+<td>string</td>
+<td>No</td>
+<td>from address</td>
+</tr>
+<tr>
+<td>address_to</td>
+<td>string</td>
+<td>Yes</td>
+<td>to address</td>
+</tr>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>Yes</td>
+<td>Transaction ID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Amount</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Real miner fees</td>
+</tr>
+<tr>
+<td>confirm</td>
+<td>int</td>
+<td>Yes</td>
+<td>Confirmation Number</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token Name</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>decimal</td>
+<td>Yes</td>
+<td>Hot wallet balance</td>
+</tr>
+<tr>
+<td>memo</td>
+<td>string</td>
+<td>No</td>
+<td>to address memo ID</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
+<h4 id='decrypted-response-data-parameters-6'>Decrypted Response Data Parameters</h4>
+<p>None</p>
+<h1 id='callback-withdrawals-interface'>Callback Withdrawals Interface</h1>
+<p>To callback withdrawals.</p>
+<h4 id='http-request-7'>HTTP Request</h4>
+<p><code>POST/api/v1/withdraw/cancel</code></p>
+<h4 id='please-note-6'>Please note:</h4>
+<p>Called when the withdrawal information is abnormal (address error, token error) and need to be called back.</p>
+<h4 id='decrypted-request-parameters-7'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Token Name</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>trans_id</td>
+<td>int64</td>
+<td>Yes</td>
+<td>Withdrawal ID</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>msg</td>
+<td>string</td>
+<td>Yes</td>
+<td>Call back reason</td>
 </tr>
 </tbody></table>
+<h4 id='decrypted-response-data-parameters-7'>Decrypted Response Data Parameters</h4>
+<p>None</p>
+<h1 id='appendix'>Appendix</h1><h2 id='appendix-1-encryption-and-decryption-method'>Appendix 1: Encryption and Decryption Method</h2>
+<p>Java Encryption and Decryption Demo： https://github.com/HiCoinCom/WAPIDemo.git</p>
 
       </div>
       <div class="dark-box">
