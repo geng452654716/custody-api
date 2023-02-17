@@ -5,10 +5,6 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta
-            name="description"
-            content="Documentation for the Kittn API"
-        >
     <title>API Reference</title>
 
     <style media="screen">
@@ -301,7 +297,7 @@
             <img src="images/logo-055122b5.png" class="logo" alt="" />
             <div class="header-line"></div>
             <div class="header-nav-h5">
-                
+                API-MPC
                 <ul class="header-nav-list-h5">
                         <li class="header-nav__item active"><a href="/API-MPC/en/index.html">API-MPC</a></li>
                         <li class="header-nav__item"><a href="/API-WaaS-V2/en/index.html">API-WaaS-V2</a></li>
@@ -314,7 +310,7 @@
                     <li class="header-nav__item"><a href="/API-WAPI/en/index.html">API-WAPI</a></li>
             </ul>
         </div>
-        <a class="switch-language" href="/API-WaaS-V2/zh/index.html">中文</a>
+        <a class="switch-language" href="/API-MPC/zh/index.html">中文</a>
     </div>
     <a href="#" id="nav-button">
       <span>
@@ -333,309 +329,2047 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#access-guidelines" class="toc-h1 toc-link" data-title="Access Guidelines">Access Guidelines</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#22dfeeb22d" class="toc-h2 toc-link" data-title="二级标题">二级标题</a>
+                    <a href="#create-account" class="toc-h2 toc-link" data-title="Create Account">Create Account</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#516f981774" class="toc-h3 toc-link" data-title="三级标题">三级标题</a>
+                            <a href="#download-mpc-wallet" class="toc-h3 toc-link" data-title="Download MPC Wallet">Download MPC Wallet</a>
+                          </li>
+                          <li>
+                            <a href="#register-mpc-wallet-account" class="toc-h3 toc-link" data-title="Register MPC Wallet Account">Register MPC Wallet Account</a>
                           </li>
                       </ul>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#docking-solutions" class="toc-h1 toc-link" data-title="Docking Solutions">Docking Solutions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#query-parameters" class="toc-h3 toc-link" data-title="Query Parameters">Query Parameters</a>
-                          </li>
-                      </ul>
+                    <a href="#obtain-the-deposit-address" class="toc-h2 toc-link" data-title="Obtain the deposit address">Obtain the deposit address</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#http-request-2" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
-                          </li>
-                          <li>
-                            <a href="#url-parameters" class="toc-h3 toc-link" data-title="URL Parameters">URL Parameters</a>
-                          </li>
-                      </ul>
+                    <a href="#user-deposit" class="toc-h2 toc-link" data-title="User deposit">User deposit</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#user-withdrawal" class="toc-h2 toc-link" data-title="User withdrawal">User withdrawal</a>
+                  </li>
+                  <li>
+                    <a href="#financial-reconciliation" class="toc-h2 toc-link" data-title="Financial reconciliation">Financial reconciliation</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#preparation-before-development" class="toc-h1 toc-link" data-title="Preparation before development">Preparation before development</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#preparation" class="toc-h2 toc-link" data-title="Preparation">Preparation</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#http-request-3" class="toc-h3 toc-link" data-title="HTTP Request">HTTP Request</a>
+                            <a href="#development-instructions" class="toc-h3 toc-link" data-title="Development Instructions">Development Instructions</a>
                           </li>
                           <li>
-                            <a href="#url-parameters-2" class="toc-h3 toc-link" data-title="URL Parameters">URL Parameters</a>
+                            <a href="#asset-management-account-preparation" class="toc-h3 toc-link" data-title="Asset management account preparation">Asset management account preparation</a>
+                          </li>
+                          <li>
+                            <a href="#interface-interaction-process" class="toc-h3 toc-link" data-title="Interface interaction process">Interface interaction process</a>
+                          </li>
+                          <li>
+                            <a href="#interface-rules" class="toc-h3 toc-link" data-title="Interface rules">Interface rules</a>
                           </li>
                       </ul>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#api-documentation" class="toc-h1 toc-link" data-title="API Documentation">API Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#common-request-parameters" class="toc-h3 toc-link" data-title="Common Request Parameters">Common Request Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#request-example" class="toc-h3 toc-link" data-title="Request Example">Request Example</a>
+                          </li>
+                          <li>
+                            <a href="#common-response-parameters" class="toc-h3 toc-link" data-title="Common Response Parameters">Common Response Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#decrypted-response-parameters" class="toc-h3 toc-link" data-title="Decrypted Response Parameters">Decrypted Response Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#encryption-and-decryption-mode" class="toc-h3 toc-link" data-title="Encryption and Decryption Mode">Encryption and Decryption Mode</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#wallet" class="toc-h2 toc-link" data-title="Wallet">Wallet</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#get-the-main-chain-of-wallet" class="toc-h3 toc-link" data-title="Get the main chain of wallet">Get the main chain of wallet</a>
+                          </li>
+                          <li>
+                            <a href="#create-a-sub-wallet-user" class="toc-h3 toc-link" data-title="Create a sub-wallet (user)">Create a sub-wallet (user)</a>
+                          </li>
+                          <li>
+                            <a href="#get-sub-wallet-user-address" class="toc-h3 toc-link" data-title="Get sub-wallet (user) address">Get sub-wallet (user) address</a>
+                          </li>
+                          <li>
+                            <a href="#get-sub-wallet-user-assets" class="toc-h3 toc-link" data-title="Get sub-wallet (user) assets">Get sub-wallet (user) assets</a>
+                          </li>
+                          <li>
+                            <a href="#modify-the-display-status-of-the-sub-wallet-user-on-the-app" class="toc-h3 toc-link" data-title="Modify the display status of the sub-wallet (user) on the APP">Modify the display status of the sub-wallet (user) on the APP</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#withdrawal" class="toc-h2 toc-link" data-title="Withdrawal">Withdrawal</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#withdrawal-2" class="toc-h3 toc-link" data-title="Withdrawal">Withdrawal</a>
+                          </li>
+                          <li>
+                            <a href="#initiate-a-withdraw" class="toc-h3 toc-link" data-title="Initiate a withdraw">Initiate a withdraw</a>
+                          </li>
+                          <li>
+                            <a href="#withdrawal-estimated-miner-fee" class="toc-h3 toc-link" data-title="Withdrawal Estimated Miner Fee">Withdrawal Estimated Miner Fee</a>
+                          </li>
+                          <li>
+                            <a href="#speed-up-withdrawal" class="toc-h3 toc-link" data-title="Speed Up Withdrawal">Speed Up Withdrawal</a>
+                          </li>
+                          <li>
+                            <a href="#get-withdrawal-records" class="toc-h3 toc-link" data-title="Get withdrawal records">Get withdrawal records</a>
+                          </li>
+                          <li>
+                            <a href="#synchronize-withdrawal-records" class="toc-h3 toc-link" data-title="Synchronize withdrawal records">Synchronize withdrawal records</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#deposit" class="toc-h2 toc-link" data-title="Deposit">Deposit</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#get-deposit-records" class="toc-h3 toc-link" data-title="Get deposit records">Get deposit records</a>
+                          </li>
+                          <li>
+                            <a href="#synchronous-deposit-record" class="toc-h3 toc-link" data-title="Synchronous deposit record">Synchronous deposit record</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transaction-notification" class="toc-h1 toc-link" data-title="Transaction Notification">Transaction Notification</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview-2" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#withdrawal-notification" class="toc-h2 toc-link" data-title="Withdrawal Notification">Withdrawal Notification</a>
+                  </li>
+                  <li>
+                    <a href="#deposit-notification" class="toc-h2 toc-link" data-title="Deposit Notification">Deposit Notification</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
+          </li>
+          <li>
+            <a href="#interface-error-code-list" class="toc-h1 toc-link" data-title="Interface Error Code List">Interface Error Code List</a>
+          </li>
+          <li>
+            <a href="#co-signer" class="toc-h1 toc-link" data-title="Co-signer">Co-signer</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#need-to-implement-the-withdrawal-signature-callback-interface-one-callback-before-signing-another-callback-after-successfully-signed" class="toc-h2 toc-link" data-title="Need to implement the withdrawal signature callback interface (one callback before signing, another callback after successfully signed)">Need to implement the withdrawal signature callback interface (one callback before signing, another callback after successfully signed)</a>
+                  </li>
+              </ul>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1><h2 id='22dfeeb22d'>二级标题</h2><h3 id='516f981774'>三级标题</h3>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='introduction'>Introduction</h1>
+<p><strong>ChainUp Custody&#39;s</strong> implementation of the <strong>MPC technology</strong> ensures that users&#39; investment assets are under the protection of the highest security level in the market. User&#39;s private key will be managed jointly by the user and ChainUp Custody, and the user will have complete control over assets and may use them at any time without limitation. MPC technology not only makes recovery easier but also increases security by removing the single point of failure of a private key.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p><strong>MPC</strong> allows each co-signing component to audit which of the keys participated in the signing but the nature of the MPC protocol does not require participants to reveal their secret share to others, which means that every party’s input is kept private. In addition, the signature-generating parties are not exposed or visible over the network. MPC addresses the problem of enabling collaboration between different parties while providing trustworthy records and preserving the privacy of their individual data.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>You can manage sub-wallets and assets, quickly withdraw and deposit coins, and obtain transaction records through the <strong>API</strong>.</p>
+<h1 id='access-guidelines'>Access Guidelines</h1><h2 id='create-account'>Create Account</h2>
+<p>Follow the instructions below to access ChainUp Custody</p>
 
-<p>API-MPC 英文英文</p>
+<p><a href="https://custodydocs.chainup.com/en/latest/_images/api_plan_jieruzhiyin2.png"><img src="https://custodydocs.chainup.com/en/latest/_images/api_plan_jieruzhiyin2.png" alt="../_images/api_plan_jieruzhiyin2.png" /></a></p>
+<h3 id='download-mpc-wallet'>Download MPC Wallet</h3>
+<p>Method 1：Open the link in your mobile browser：https://custody.chainup.com/download</p>
+
+<p>Method 2： scan the QR code for download:</p>
+
+<p><img src="images/qrCode.png" style="width: 150px" alt="" /></p>
+<h3 id='register-mpc-wallet-account'>Register MPC Wallet Account</h3>
+<p>Open the app and register a new account using email OR mobile phone number.</p>
+
+<p><img src="images/elogin-3d31bb33.png" style="width: 250px" alt="" /></p>
+<h1 id='docking-solutions'>Docking Solutions</h1>
+<p>To allow customers more convenient and quicker access to Custody service, our platform has a comprehensive set of docking solutions based on previous clients’ requirement.</p>
+
+<p>The whole program is divided into four processes:</p>
+
+<p>1.Obtain the deposit address</p>
+
+<p>2.User deposit</p>
+
+<p>3.User withdrawl</p>
+
+<p>4.Financial reconciliation</p>
+
+<p>Note: If the client’s project timeline is urgent, the necessary processes [obtaining the deposit address], [user deposit], [user withdrawal], and [financial reconciliation] can be developed in two weeks.</p>
+<h2 id='obtain-the-deposit-address'>Obtain the deposit address</h2>
+<p>1）Customer registers with Custody system (email address is recommended)</p>
+
+<p>2）After successful registration, the address can be obtained through the UID of the Custody system</p>
+
+<p>Note: Obtaining the address in advance helps to ensure efficient address allocation after user registration; If the user registers and then obtains the address through the interface, it may fail due to reasons such as network issue, resulting in users’ inability to use the services.</p>
+
+<p><a href="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_zhunbei.png"><img src="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_zhunbei.png" alt="../_images/api_tsoulution_zhunbei.png" /></a></p>
+<h2 id='user-deposit'>User deposit</h2>
+<p>1）The user completes registration in their system;</p>
+
+<p>2）When the user checks the currency deposit address on the user interface, the system will assign a currency address to the user;</p>
+
+<p>3）Users send coins to the address;</p>
+
+<p>4）The Custody system monitors and accounts for the transaction of coins in the blockchain address on behalf of the clients, and notifies the client actively or automatically obtaining it within the system.</p>
+
+<p>5）After the system confirms the validity of the information for coin deposit, the coins will be credited into the user’s account;</p>
+
+<p>6）The system notifies the user that the coins are successfully deposited.</p>
+
+<p><a href="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_chongzhi.png"><img src="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_chongzhi.png" alt="../_images/api_tsoulution_chongzhi.png" /></a></p>
+
+<p>Note: The asynchronous callback of teh Custody system will be triggered when each order is final, and it can be sent up to 5 times per day;</p>
+
+<p>Timed task: a total of five callbacks</p>
+
+<p>Notification time: 1s for the first time, 2min for the second time, 8min for the third time, 32min for the fourth time, 128min for the fifth time</p>
+
+<p>Callback logic：</p>
+
+<p>If the callback is successful, update the callback status;</p>
+
+<p>If the callback fails, continue the callback and update the interval between the next callback;</p>
+
+<p>When the callback fails five times, the callback is stopped</p>
+<h2 id='user-withdrawal'>User withdrawal</h2>
+<p>1）The user initiates withdrawal in their system;</p>
+
+<p>2）After the customer’s system has been approved, it will notify the Custody system;</p>
+
+<p>3）The Custody system provides two withdrawal conformation to the customer system;</p>
+
+<p>4）After the customer system confirms that the withdrawal information is valid, the Custody system verifies the withdrawal information, and then the payment is initiated;</p>
+
+<p>5）The Custody system monitors the status of withdrawal orders, and actively notifies the client upon completion of withdrawal or actively acquires it by the customer system;</p>
+
+<p>6）The customer system informs the user that the withdrawal is successful.</p>
+
+<p><a href="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_tibi.png"><img src="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_tibi.png" alt="../_images/api_tsoulution_tibi.png" /></a></p>
+<h2 id='financial-reconciliation'>Financial reconciliation</h2>
+<p>1）Perform checks on accounts between the customer system and Custody system periodically (daily is recommended)</p>
+
+<p>2）At midnight the the next day, the system retrieves all the deposits and withdrawals for the previous day as well as the aggregated orders and collection of the miners’ fees</p>
+
+<p>3）The customer system’s orders are reconciled against those in the Custody system</p>
+
+<p>4）If the order quantity, amount and status are correct, the reconciliation will be successful; Otherwise contact Custody support to resolve the issue</p>
+
+<p><a href="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_duizhang.png"><img src="https://custodydocs.chainup.com/en/latest/_images/api_tsoulution_duizhang.png" alt="../_images/api_tsoulution_duizhang.png" /></a></p>
+
+<p>Note: In the Custody system, there are three kinds of cost expenses in the tripartite system: collecting miners’ fees, extracting miners’ fees, and profit-sharing commission;</p>
+
+<ol>
+<li>Collection of Miners’ Fee: With each currency’s account type, after depositing the coins, the funds on the address will be collected to the hot wallet address and the blockchain network. Part of the main chain blockchain transaction will consume the miner fee and the cost of which will be borne by the client. The client can contact us if they would like this capital expenditure will be handled by us;</li>
+<li>Miner’s fee: Miner’s fee (in some currencies) shall be borne by the three parties when withdrawing coins to the address of non-ChainUp Custody and using the blockchain network. This part of capital expenditure can be viewed directly in the coin withdrawal order;</li>
+<li>Distribution fee: temporarily not charged.</li>
+</ol>
+<h1 id='preparation-before-development'>Preparation before development</h1><h2 id='preparation'>Preparation</h2><h3 id='development-instructions'>Development Instructions</h3>
+<p>To meet the diverse business needs of customers, ChainUp Custody supports two docking methods: SDK and API;</p>
+
+<p><strong>SDK</strong>：Support for Java and PHP</p>
+
+<p>The Java SDK addres：https://github.com/HiCoinCom/java-sdk</p>
+
+<p>The PHP SDK address：https://github.com/HiCoinCom/php-sdk</p>
+
+<p><strong>API</strong>：Please see the documentation</p>
+<h4 id='two-pairs-of-public-and-private-key-functions-api-mode'>Two pairs of public and private key functions (API mode）</h4>
+<p><strong>The first pair of public and private keys</strong>： The developer shall generate a pair of public and private keys in advance when opening the asset management account. The public key (rsa_third_pub) is provided to the platform and the private key is kept by itself. The private key is the only proof for the third-party application to call the wallet service and shall not be disclosed to anyone. When the third party requests the wallet service, the private key is used to encrypt the request parameters. When the platform receives the request, the public key (rsa_third_pub) is used to decrypt the request data.</p>
+
+<p><strong>The second pair of public and private keys</strong>： After the developer opens the asset management account, the platform will provide the wallet public key (rsa_wallet_pub) to the developer. When the third-party application receives the response data or asynchronous notification of the wallet, it needs to use the public key to decrypt.</p>
+<h4 id='why-is-it-necessary-to-confirm-the-withdrawal-twice-api-method'>Why is it necessary to confirm the withdrawal twice (API method)</h4>
+<p>When the wallet service receives a request from a third-party application, in confirm that the request is a legitimate request from a third-party application, it will call the interface provided by the third-party to confirm. To a certain extent, this process can avoid the influence caused by the loss of the third party’s private key, and also provides an effective barrier for the security of the wallet service.</p>
+<h4 id='domain-name-and-api-key-api-mode'>Domain name and API key (API mode)</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Production domain name(test environment not supported):</th>
+<th><a href="https://openapi.hicoin.vip/">https://openapi.hicoin.vip</a></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">app_id:</td>
+<td>Please get it after creating the wallet</td>
+</tr>
+<tr>
+<td style="text-align: left">rsa_wallet_pub:</td>
+<td>Custody system public key; Please create the wallet and get it from the Custody system</td>
+</tr>
+<tr>
+<td style="text-align: left">rsa_third_prv:</td>
+<td>Client private key; Independent generation and preservation</td>
+</tr>
+<tr>
+<td style="text-align: left">rsa_third_pub:</td>
+<td>Client public key; Autonomous generation; Please create the wallet and configure it to the Custody system</td>
+</tr>
+</tbody></table>
+
+<p><strong>RSA public/private key generated address</strong> http://www.metools.info/code/c80.html</p>
+
+<p>Recommended password length：2048</p>
+
+<p>Recommended key format：PKCS#8</p>
+
+<p>Description：</p>
+
+<ol>
+<li>Rsa_third_prv is a private key for third-party applications and is used primarily to encrypt request parameters. In a production environment, rsa_third_prv is generated by the developer and the corresponding public key is provided to the platform. To simplify the docking process for developers, a set of third-party public and private keys is directly provided here to facilitate quick docking for developers.</li>
+<li>Test environment docking is not supported at present, please register to create a wallet according to <strong>Access Guidelines</strong> , and get the API related information of the production environment.</li>
+</ol>
+<h3 id='asset-management-account-preparation'>Asset management account preparation</h3>
+<p><strong>The developer prepares the following information：</strong></p>
+
+<p>1）Generate a pair of public and private keys and provide the public key to the platform;</p>
+
+<p>2）IP of third-party application server;</p>
+
+<p>3）Recharge withdrawal callback notification address;</p>
+
+<p>4）Reconfirm the address for withdrawal;</p>
+
+<p>5）Whether to enable the automatic collection function. After the function is enabled, the system will automatically transfer the user’s recharge funds to the merchant collection account.</p>
+
+<p>Contact relevant personnel of the platform to provide the above five types of information. The platform prepares an asset management account for you and provides you with the following information:</p>
+
+<p>1）Unique identification of the merchant：<code>app_id</code>；</p>
+
+<p>2）The wallet public key：<code>rsa_wallet_pub</code>.</p>
+<h3 id='interface-interaction-process'>Interface interaction process</h3>
+<p>Documentation is the interface that the wallet service provides to third-party applications.</p>
+
+<p><a href="https://custodydocs.chainup.com/en/latest/_images/apiopen-instructions.png"><img src="https://custodydocs.chainup.com/en/latest/_images/apiopen-instructions.png" alt="../_images/apiopen-instructions.png" /></a></p>
+
+<p>The interface providers in the following documents are referred to as <strong>wallet services</strong>，and the interface callers are referred to as <strong>third-party applications</strong>. When the third-party application requests the wallet service, it encrypts the request parameters through the RSA algorithm and decrypts the response data after receiving the wallet service</p>
+<h3 id='interface-rules'>Interface rules</h3>
+<table><thead>
+<tr>
+<th style="text-align: left">Transfer mode:</th>
+<th>https(HTTP is temporarily used in the test environment)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Signature field:</td>
+<td>All Required fields, except the Sign field, need to be signed</td>
+</tr>
+<tr>
+<td style="text-align: left">The response status code is:</td>
+<td>0, indicating successful processing, and non-0 indicates request error or system exception</td>
+</tr>
+<tr>
+<td style="text-align: left">Request address:</td>
+<td>domain name + interface address</td>
+</tr>
+<tr>
+<td style="text-align: left">Encryption algorithm:</td>
+<td>See <code>Encryption and Decryption Mode</code> at <strong>API doc</strong> - Overview for details</td>
+</tr>
+</tbody></table>
+<h1 id='api-documentation'>API Documentation</h1><h2 id='overview'>Overview</h2><h3 id='common-request-parameters'>Common Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>app_id</td>
+<td>String</td>
+<td>optional</td>
+<td>merchant unique identifier</td>
+</tr>
+<tr>
+<td>data</td>
+<td>String</td>
+<td>optional</td>
+<td>encrypted String, decrypted format is defined as <code>Decrypted Request Parameters</code></td>
+</tr>
+</tbody></table>
+<h3 id='request-example'>Request Example</h3><h4 id='http-request'>HTTP Request</h4>
+<p><code>POST/api/mpc/sub_wallet/assets</code></p>
 
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Request Example</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="no">POST</span> <span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">mpc</span><span class="o">/</span><span class="n">sub_wallet</span><span class="o">/</span><span class="n">assets</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="n">app_id</span><span class="o">=</span><span class="mi">2128</span><span class="n">eb8de9e932a4376909f3d69424cc</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">SWYYr</span><span class="o">-</span><span class="nc">LBVAmaS0eq8n</span><span class="o">-</span><span class="n">CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov</span><span class="o">-</span><span class="mi">7</span><span class="n">hsRsVmOhyPqC</span><span class="o">-</span><span class="n">JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8</span><span class="o">-</span><span class="n">BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht</span><span class="o">-</span><span class="n">n_ZcBdxIDt975dbOFUiH</span><span class="o">-</span><span class="n">oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ</span><span class="o">-</span><span class="mi">6</span><span class="n">cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb</span><span class="o">-</span><span class="mi">5</span><span class="n">g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI</span>
+</code></pre></div><h3 id='common-response-parameters'>Common Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>data</td>
+<td>String</td>
+<td>optional</td>
+<td>encrypted String decrypted format is defined as <code>Decrypted Response Parameters</code></td>
+</tr>
+</tbody></table>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Response Example</p>
 </blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span><span class="s">"data"</span><span class="o">:</span> <span class="s">"SWYYr-LBVAmaS0eq8n-CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov-7hsRsVmOhyPqC-JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8-BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht-n_ZcBdxIDt975dbOFUiH-oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ-6cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb-5g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI"</span><span class="o">}</span>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+</code></pre></div><h3 id='decrypted-response-parameters'>Decrypted Response Parameters</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>Required</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>Required</td>
+<td>description of the response result</td>
+</tr>
+<tr>
+<td>data</td>
+<td>String</td>
+<td>optional</td>
+<td>the specific response data, the data structure is defined as <code>Response Data Parameters</code></td>
+</tr>
+</tbody></table>
+<h3 id='encryption-and-decryption-mode'>Encryption and Decryption Mode</h3>
+<p>The values of the request parameter DATA and the response field DATA are both encrypted by RSA and encrypted by <strong>base64urlsafe</strong></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+*Matters needing attention*
+<br/>
+<br/>
+1. There are two symbols + and/that are escaped directly by URL in Base64 traditional encoding. Therefore, if we want to transfer these encoded strings through URL, we need to do traditional Base64 encoding first, then replace + and/with two characters - _ respectively, and do the opposite action decoding at the receiving end. 
+<br/>
+<br/>
+2. RSA encryption and decryption using segmented encryption
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='wallet'>Wallet</h2><h3 id='get-the-main-chain-of-wallet'>Get the main chain of wallet</h3>
+<p>Get the main chain and coins supported by ChainUp Custody.</p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>GET /api/mpc/wallet/open_coin</code></p>
+<h4 id='decrypted-request-parameters'>Decrypted Request Parameters</h4>
+<p>None</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"open_main_chain"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"coin_net"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol_alias"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"support_main_chain"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"coin_net"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"if_open_chain"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol_alias"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters'>Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">open_main_chain</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The main chain opened by the wallet</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, used when withdrawing, for example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol_alias</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The real name of the coin, for example: USDT</td>
+</tr>
+<tr>
+<td style="text-align: left">support_main_chain</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Main chain supported by MPC wallet</td>
+</tr>
+<tr>
+<td style="text-align: left">coin_net</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Coin network, for example: ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">if_open_chain</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Whether to open the main chain: <code>false</code>,not opened; <code>true</code>,opened.</td>
+</tr>
+</tbody></table>
+<h3 id='create-a-sub-wallet-user'>Create a sub-wallet (user)</h3>
+<p>Pass in the specified sub-wallet name to create a new sub-wallet for the wallet</p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>POST /api/mpc/sub_wallet/create</code></p>
+<h4 id='decrypted-request-parameters-2'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_name</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The name of the sub-wallet, up to 50 characters. Sub-wallets in the same wallet cannot have the same name, for example: mpc mining pool</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"sub_wallet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10234122</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-2'>Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+</tbody></table>
+<h3 id='get-sub-wallet-user-address'>Get sub-wallet (user) address</h3>
+<p>Obtain the deposit address under the specified sub-wallet and coin</p>
+<h4 id='http-request-4'>HTTP Request</h4>
+<p><code>POST /api/mpc/sub_wallet/get_address</code></p>
+<h4 id='decrypted-request-parameters-3'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-3'>Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit address, for example: 0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+</tbody></table>
+<h3 id='get-sub-wallet-user-assets'>Get sub-wallet (user) assets</h3>
+<p>Get the account assets under the specified sub-wallet and coin.</p>
+<h4 id='http-request-5'>HTTP Request</h4>
+<p><code>GET /api/mpc/sub_wallet/assets</code></p>
+<h4 id='decrypted-request-parameters-4'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"normal_balance"</span><span class="p">:</span><span class="s2">"1.23"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deposit_address"</span><span class="p">:</span><span class="s2">"0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lock_balance"</span><span class="p">:</span><span class="s2">"0.77"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-4'>Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">deposit_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit address, example: 0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+<tr>
+<td style="text-align: left">normal_balance</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Available balance, example: 1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">lock_balance</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Freeze balance, example: 0.77</td>
+</tr>
+</tbody></table>
+<h3 id='modify-the-display-status-of-the-sub-wallet-user-on-the-app'>Modify the display status of the sub-wallet (user) on the APP</h3>
+<p>Specify the display status of the sub-wallet on the APP client, if it is not displayed, the transaction cannot be initiated on the APP.</p>
+<h4 id='http-request-6'>HTTP Request</h4>
+<p><code>POST /api/mpc/sub_wallet/change_show_status</code></p>
+<h4 id='decrypted-request-parameters-5'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_ids</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">A string of multiple sub-wallet ids, separated by commas, for example: 10234122, 10234123</td>
+</tr>
+<tr>
+<td style="text-align: left">app_show_status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left"><code>1</code> show ,<code>2</code> don&#39;t show</td>
+</tr>
+</tbody></table>
+<h4 id='response-data-parameters-5'>Response Data Parameters</h4>
+<p>None</p>
+<h2 id='withdrawal'>Withdrawal</h2><h3 id='withdrawal-2'>Withdrawal</h3><h3 id='initiate-a-withdraw'>Initiate a withdraw</h3><h4 id='http-request-7'>HTTP Request</h4>
+<p><code>POST /api/mpc/billing/withdraw</code></p>
+<h4 id='decrypted-request-parameters-6'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal address, for example: 0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Withdrawal address memo, Memo type can be filled in if available,  example: 123321</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal amount, for example: 1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier for withdrawing coins, example: 0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Withdrawal remarks, for example: mpc mining pool</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">when custom miner fee is passed in, and the reference value is obtained through the <code>estimated miner fee interface</code>, and the value greater than or equal to <code>0</code> is filled in fee and gas_price, one of which is 0, and the other is not 0;</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The custom miner fee is passed in, and the reference value is obtained through the <code>estimated miner fee interface</code>, fill in a value greater than or equal to 0 .</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Custom miner fee is passed in, get the reference value through <code>estimated miner fee interface</code>, fill in a value greater than or equal to 0; whether it is a real miner fee, no precision, you need to pay attention to choosing one of fee and gas_price when filling in is 0, the other is not 0;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"withdraw_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-6'>Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal id, example: 12345</td>
+</tr>
+</tbody></table>
+<h3 id='withdrawal-estimated-miner-fee'>Withdrawal Estimated Miner Fee</h3>
+<p>Obtain the estimated miner fee required for withdrawal. </p>
+<h4 id='http-request-8'>HTTP Request</h4>
+<p><code>GET /api/mpc/billing/gas_estimate</code></p>
+<h4 id='decrypted-request-parameters-7'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdrawal from address，example：0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b84</td>
+</tr>
+<tr>
+<td style="text-align: left">to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdrawal to address，example：0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Withdrawal address memo, Memo type can be filled in if available,  example: 123321</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">amount，example：1.23</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"gas_limit"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee_unit"</span><span class="p">:</span><span class="s2">"Gwei"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price1"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.00159"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price2"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gas_price3"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-7'>Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">gas_price1</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The first recommended unit price of the gas fee，example：12.4</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price2</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The second recommended unit price of the gas fee，example：13.4</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price3</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The third recommended unit price of the gas fee，example：14.4</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_limit</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Gas fee limit，example：21000</td>
+</tr>
+<tr>
+<td style="text-align: left">fee_unit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Gas fee unit，example：Gwei</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The recommended value of the gas fee，example：0</td>
+</tr>
+</tbody></table>
+<h3 id='speed-up-withdrawal'>Speed Up Withdrawal</h3>
+<p>After the withdrawal signature is completed, if the transaction fee has not been process on the chain for a long time due to insufficient gas fee, you can re-specify a higher gas fee to speed up the process on the blockchain.</p>
+<h4 id='http-request-9'>HTTP Request</h4>
+<p><code>POST /api/mpc/billing/withdraw_pending</code></p>
+<h4 id='decrypted-request-parameters-8'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal id, example: 12345</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_price</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">when custom miner fee is passed in, and the reference value is obtained through the <code>estimated miner fee interface</code>, and the value greater than or equal to <code>0</code> is filled in fee and gas_price, one of which is 0, and the other is not 0;</td>
+</tr>
+<tr>
+<td style="text-align: left">gas_limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The custom miner fee is passed in, and the reference value is obtained through the <code>estimated miner fee interface</code>, fill in a value greater than or equal to 0 .</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Custom miner fee is passed in, get the reference value through <code>estimated miner fee interface</code>, fill in a value greater than or equal to 0; whether it is a real miner fee, no precision, you need to pay attention to choosing one of fee and gas_price when filling in is 0, the other is not 0;</td>
+</tr>
+</tbody></table>
+<h4 id='response-data-parameters-8'>Response Data Parameters</h4>
+<p>None</p>
+<h3 id='get-withdrawal-records'>Get withdrawal records</h3>
+<p>Get all sub-wallet withdrawal records under the main wallet, and return up to 100 records</p>
+<h4 id='http-request-10'>HTTP Request</h4>
+<p><code>GET /api/mpc/billing/withdraw_list</code></p>
+<h4 id='decrypted-request-parameters-9'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">ids</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">many <code>request_id</code>string，separated by commas，example：<code>0d766c03-8382-4005-b976-16c33f780f21,0db54264-7ea0-41c2-af85-4dd22b5e74d</code></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0000111"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wihdraw_source"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.0002782353"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1672304978000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0x8e6beba81b90835fc9fcd40a2bdca33243c7c3b81ac765c240837d4810874a55"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sub_wallet_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1672318660000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">242</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"57fdc296-1e14-47fa-a99d-5e86f8e51008"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1200</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+</span></code></pre></div><h4 id='response-data-parameters-9'>Response Data Parameters</h4>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td style="text-align: left">id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal id, example: 12345</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier for withdrawing coins, example: 0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal amount, for example: 1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">fee_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">gas fee coins，example：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">gas fee，example：0.00123</td>
+</tr>
+<tr>
+<td style="text-align: left">real_fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The actual gas fee consumed，example：0.00111</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Creation time timestamp，example：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Modification time timestamp，example：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdrawal from address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdrawal to address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Withdrawal address memo，example：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Transaction hash，example：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Number of block confirmations，example：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal status: 1000 awaiting approval, 1100 Approved while awaiting signature, 1200 Payment in progress, 2000 Payment completed, 2100 Not Approved, 2200 Rejected, 2300 Transaction discarded, 2400 Payment failed</td>
+</tr>
+<tr>
+<td style="text-align: left">withdraw_source</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal Type： 1.app, 2.openapi</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be withdrawn, for example: ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Withdrawal coin&#39;s  contract address，example：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<h3 id='synchronize-withdrawal-records'>Synchronize withdrawal records</h3>
+<p>Get all sub-wallet withdrawal records under the main wallet, and return up to 100 records</p>
+<h4 id='http-request-11'>HTTP Request</h4>
+<p><code>GET /api/mpc/billing/sync_withdraw_list</code></p>
+<h4 id='decrypted-request-parameters-10'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">max_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal record initial id, example: 12345</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0000111"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wihdraw_source"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.0002782353"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1672304978000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0x8e6beba81b90835fc9fcd40a2bdca33243c7c3b81ac765c240837d4810874a55"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sub_wallet_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1672318660000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">242</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"57fdc296-1e14-47fa-a99d-5e86f8e51008"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1200</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-10'>Response Data Parameters</h4>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td style="text-align: left">id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdrawal id，example：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier for withdrawing coins, example: 0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal amount, for example: 1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">fee_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">gas fee coins，example：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">gas fee，example：0.00123</td>
+</tr>
+<tr>
+<td style="text-align: left">real_fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The actual gas fee consumed，example：0.00111</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Created time timestamp，example：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Modified time timestamp，example：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">from account address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">to account address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">to account address memo，example：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Transaction hash，example：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Number of block confirmations，example：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal status: 1000 awaiting approval, 1100 Approved while awaiting signature, 1200 Payment in progress, 2000 Payment completed, 2100 Not Approved, 2200 Rejected, 2300 Transaction discarded, 2400 Payment failed</td>
+</tr>
+<tr>
+<td style="text-align: left">withdraw_source</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal Type： 1.app, 2.openapi</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be withdrawn, for example: ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Withdrawal coin&#39;s  contract address，example：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='deposit'>Deposit</h2><h3 id='get-deposit-records'>Get deposit records</h3>
+<p>Get all sub-wallet deposit records under the main wallet, and return up to 100 records</p>
+<h4 id='http-request-12'>HTTP Request</h4>
+<p><code>GET/api/mpc/billing/deposit_list</code></p>
+<h4 id='decrypted-request-parameters-11'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">ids</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">A string of multiple ids, separated by commas, example: 123,345</td>
+</tr>
+</tbody></table>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0x33648fACAD6CECA85cf717841Ddd87c40B12438F"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1672107533000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0xfd0b04024bd1d849ba69e301733194154cb42a05c1dd32065367d8c6336af711"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sub_wallet_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1672323030000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">43</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2000</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-11'>Response Data Parameters</h4>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td style="text-align: left">id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Depositid，example：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit amount，example：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Created time timestamp ，example：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Modified time timestamp，example：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdrawal from address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">deposit address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">deposit address memo，example：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Transaction hash，example：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Number of block confirmations，example：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit status: 1000 unconfirmed, 1100 confirmed (transaction block confirmed), 2000 completed (shown at account), 3000 abnormal</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be deposited, example：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Deposit coin&#39;s contract address，example：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
+<h3 id='synchronous-deposit-record'>Synchronous deposit record</h3>
+<p>Get all sub-wallet deposit records under the main wallet, and return up to 100 records</p>
+<h4 id='http-request-13'>HTTP Request</h4>
+<p><code>GET /api/mpc/billing/sync_deposit_list</code></p>
+<h4 id='decrypted-request-parameters-12'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td style="text-align: left">max_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">deposit record initial id，example：100</td>
 </tr>
 </tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0x33648fACAD6CECA85cf717841Ddd87c40B12438F"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1672107533000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0xfd0b04024bd1d849ba69e301733194154cb42a05c1dd32065367d8c6336af711"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sub_wallet_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1672323030000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">43</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2000</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-12'>Response Data Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Depositid，example：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">deposit amount，example：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Created time timestamp ，example：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Modified time timestamp，example：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdrawal from address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">deposit address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">deposit address memo，example：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Transaction hash，example：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Number of block confirmations，example：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit status: 1000 unconfirmed, 1100 confirmed (transaction block confirmed), 2000 completed (shown at account), 3000 abnormal</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be deposited, example：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Deposit coin&#39;s contract address，example：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<h1 id='transaction-notification'>Transaction Notification</h1><h2 id='overview-2'>Overview</h2>
+<p><code>POST /user callback notification address</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">app_id=</span><span class="mi">2128</span><span class="err">eb</span><span class="mi">8</span><span class="err">de</span><span class="mi">9e932</span><span class="err">a</span><span class="mi">4376909</span><span class="err">f</span><span class="mi">3</span><span class="err">d</span><span class="mi">69424</span><span class="err">cc&amp;data=SWYYr-LBVAmaS</span><span class="mi">0</span><span class="err">eq</span><span class="mi">8</span><span class="err">n-CUT_nHkM</span><span class="mi">3</span><span class="err">OBxyWOsImMTe</span><span class="mi">41</span><span class="err">UaqAoYI</span><span class="mi">2</span><span class="err">ZghmaphXHov</span><span class="mi">-7</span><span class="err">hsRsVmOhyPqC-JFuRGvonJKFd</span><span class="mi">2</span><span class="err">Jirxv</span><span class="mi">6</span><span class="err">Vn_</span><span class="mi">8</span><span class="err">V</span><span class="mi">40</span><span class="err">r_MMYTkhqcviQbZWYW</span><span class="mi">5</span><span class="err">xX</span><span class="mi">8</span><span class="err">Ai</span><span class="mi">8</span><span class="err">CIpqas</span><span class="mi">9</span><span class="err">fIWVDIYA_NKBl</span><span class="mi">0</span><span class="err">UCJpwGxscxLNpjq</span><span class="mi">5</span><span class="err">Z</span><span class="mi">8</span><span class="err">-BTyIYDsVBquM</span><span class="mi">9</span><span class="err">zEQGBCfcA</span><span class="mi">7</span><span class="err">szD</span><span class="mi">9</span><span class="err">n</span><span class="mi">2</span><span class="err">fN_loSkoexlwqV</span><span class="mi">8</span><span class="err">wg</span><span class="mi">9</span><span class="err">HIZO</span><span class="mi">5</span><span class="err">yQ</span><span class="mi">6</span><span class="err">utZ_Kt</span><span class="mi">0</span><span class="err">lNDQQb</span><span class="mi">8</span><span class="err">zn</span><span class="mi">8</span><span class="err">BwfAvsEsbJlOINUAqhxh</span><span class="mi">1</span><span class="err">vV_AJ</span><span class="mi">4</span><span class="err">bXn</span><span class="mi">2</span><span class="err">uYx</span><span class="mi">8</span><span class="err">TaYcBht-n_ZcBdxIDt</span><span class="mi">975</span><span class="err">dbOFUiH-oCzIuDi</span><span class="mi">1</span><span class="err">oLDtb</span><span class="mi">4</span><span class="err">EylfCvhU</span><span class="mi">5E4</span><span class="err">ozel_lQ</span><span class="mi">-6</span><span class="err">cyIG</span><span class="mi">0</span><span class="err">Dqiiyx</span><span class="mi">0</span><span class="err">RFFOCJzPSXIoV</span><span class="mi">031</span><span class="err">pvoa</span><span class="mi">8</span><span class="err">pTCpkWklh</span><span class="mi">8</span><span class="err">mRw</span><span class="mi">1</span><span class="err">rylBgeZtqSxpnJO</span><span class="mi">2</span><span class="err">_u</span><span class="mi">2</span><span class="err">RIlXq</span><span class="mi">6</span><span class="err">Hs</span><span class="mi">8</span><span class="err">Yly</span><span class="mi">9</span><span class="err">CmhIXaSrUgPir</span><span class="mi">0</span><span class="err">h</span><span class="mi">6</span><span class="err">xVxlf</span><span class="mi">4</span><span class="err">VC</span><span class="mi">6</span><span class="err">PFVCkiiTlp</span><span class="mi">0</span><span class="err">kZ_H_UbKm</span><span class="mi">0</span><span class="err">nUis</span><span class="mi">3</span><span class="err">v</span><span class="mi">3</span><span class="err">U</span><span class="mi">2</span><span class="err">sflWJ</span><span class="mi">2</span><span class="err">C</span><span class="mi">449</span><span class="err">waSrikhuxVrFAQ</span><span class="mi">6</span><span class="err">PQmrFVCAE</span><span class="mi">6</span><span class="err">MYXNrFXJQuam</span><span class="mi">2</span><span class="err">HAIQNSGbFQjspw</span><span class="mi">8</span><span class="err">b_bXyfyZMGZ</span><span class="mi">3</span><span class="err">K</span><span class="mi">2</span><span class="err">oBC</span><span class="mi">4</span><span class="err">I_v</span><span class="mi">3</span><span class="err">eETTdPe</span><span class="mi">0</span><span class="err">pfSNJb</span><span class="mi">-5</span><span class="err">g</span><span class="mi">37</span><span class="err">K</span><span class="mi">0</span><span class="err">tOAr_UFbWK</span><span class="mi">8</span><span class="err">pkC</span><span class="mi">8</span><span class="err">yl</span><span class="mi">56</span><span class="err">fSjn</span><span class="mi">8</span><span class="err">tcR</span><span class="mi">3</span><span class="err">yCRWwoi</span><span class="mi">8</span><span class="err">jxTcUBiswTtvXZtzgG</span><span class="mi">4</span><span class="err">dyzkaHXjsZjSGiywXSqP</span><span class="mi">76</span><span class="err">VZWlyOmAx</span><span class="mi">6</span><span class="err">IDSViLcPLPISdU</span><span class="mi">3</span><span class="err">ruCI</span><span class="w">
+</span></code></pre></div><h4 id='common-request-parameters-2'>Common Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Param</td>
+<td style="text-align: left">Type</td>
+<td style="text-align: left">Requried</td>
+<td style="text-align: left">Description</td>
+</tr>
+<tr>
+<td style="text-align: left">app_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Requried</td>
+<td style="text-align: left">merchant unique identifier</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Requried</td>
+<td style="text-align: left">encrypted String, decrypted format is defined as <code>Decrypted Request Parameters</code></td>
+</tr>
+</tbody></table>
+<h4 id='common-response'>Common Response</h4>
+<p>Return string: <code>SUCCESS</code> means SUCCESS, <code>FAILURE</code> means FAILURE (note that the return parameter does not need to be encrypted here)</p>
+<h2 id='withdrawal-notification'>Withdrawal Notification</h2><h4 id='decrypted-request-parameters-13'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">charset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Encoding format, no special circumstances, pass parameter <code>utf-8</code></td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Notification type, DEPOSIT notification: <code>deposit</code>, WITHDRAWAL notification: <code>withdraw</code></td>
+</tr>
+<tr>
+<td style="text-align: left">notify_time</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Notification time，example：2022-11-02 11:04:05</td>
+</tr>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal id, example: 12345</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier for withdrawing coins, example: 0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal amount, for example: 1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">fee_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">gas fee coins，example：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">gas fee，example：0.00123</td>
+</tr>
+<tr>
+<td style="text-align: left">real_fee</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The actual gas fee consumed，example：0.00111</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Created time timestamp，example：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Modified time timestamp，example：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">from account address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">to account address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">to account address memo，example：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Transaction hash，example：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Number of block confirmations，example：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal status: <code>1000</code> awaiting approval, <code>1100</code> Approved while awaiting signature, <code>1200</code> Payment in progress, <code>2000</code>Payment completed, <code>2100</code> Not Approved, <code>2200</code> Rejected, <code>2300</code> Transaction discarded, <code>2400</code>Payment failed</td>
+</tr>
+<tr>
+<td style="text-align: left">withdraw_source</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal Type：<code>1</code>app, <code>2</code>openapi</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be withdrawn, for example: ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Withdrawal coin&#39;s contract address，example：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<h2 id='deposit-notification'>Deposit Notification</h2><h4 id='decrypted-request-parameters-14'>Decrypted Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">charset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Encoding format, no special circumstances, pass parameter <code>utf-8</code></td>
+</tr>
+<tr>
+<td style="text-align: left">side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Notification type, DEPOSIT notification: <code>deposit</code>, WITHDRAWAL notification: <code>withdraw</code></td>
+</tr>
+<tr>
+<td style="text-align: left">notify_time</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Notification time，example：2022-11-02 11:04:05</td>
+</tr>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit id，example：12345</td>
+</tr>
+<tr>
+<td style="text-align: left">sub_wallet_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Sub wallet id, example: 10234122</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit amount，example：1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">created_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Created time timestamp ，example：1643349275000</td>
+</tr>
+<tr>
+<td style="text-align: left">updated_at</td>
+<td style="text-align: left">Long</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Modified time timestamp，example：1643349275001</td>
+</tr>
+<tr>
+<td style="text-align: left">address_from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">from account address，example: 0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">address_to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">to account address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">to account address memo，example：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">txid</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Transaction hash，example：0x1f4b543f17fb429b90daa8971a8d0175a1a666adc93692182925a5ac19de0741</td>
+</tr>
+<tr>
+<td style="text-align: left">confirmations</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Number of block confirmations，example：10</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Deposit status: <code>1000</code> unconfirmed, <code>1100</code> confirmed (transaction block confirmed), <code>2000</code> completed (shown at account), <code>3000</code> abnormal</td>
+</tr>
+<tr>
+<td style="text-align: left">base_symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be deposited, example：ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">contract_address</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Deposit coin&#39;s contract address，example：0xdac17f958d2ee523a2206206994597c13d831ec7</td>
+</tr>
+</tbody></table>
+<h1 id='sdk'>SDK</h1>
+<p>To meet the diverse business needs of customers, <strong>ChainUp MPC Wallet</strong> supports two docking methods: SDK and API;</p>
+
+<p><strong>SDK</strong>：Support for Java and PHP</p>
+
+<p>The Java SDK addres：https://github.com/HiCoinCom/java-sdk</p>
+
+<p>The PHP SDK address：https://github.com/HiCoinCom/php-sdk</p>
+
+<p><strong>API</strong>：Please see the documentation</p>
+<h1 id='interface-error-code-list'>Interface Error Code List</h1>
+<table><thead>
+<tr>
+<th>code</th>
+<th>msg</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>success</td>
+</tr>
+<tr>
+<td>100001</td>
+<td>system error</td>
+</tr>
+<tr>
+<td>100004</td>
+<td>request parameter is not valid</td>
+</tr>
+<tr>
+<td>100005</td>
+<td>signature verification failed</td>
+</tr>
+<tr>
+<td>100007</td>
+<td>illegal IP</td>
+</tr>
+<tr>
+<td>100015</td>
+<td>merchant ID is invalid</td>
+</tr>
+<tr>
+<td>100016</td>
+<td>merchant information expired</td>
+</tr>
+<tr>
+<td>110004</td>
+<td>users are frozen and cannot withdraw money</td>
+</tr>
+<tr>
+<td>110023</td>
+<td>mobile phone number has been registered</td>
+</tr>
+<tr>
+<td>110037</td>
+<td>withdrawal address is at risk</td>
+</tr>
+<tr>
+<td>110055</td>
+<td>correct withdrawal address for</td>
+</tr>
+<tr>
+<td>110065</td>
+<td>user does not exist (used to obtain user balance, withdraw money, or transfer money)</td>
+</tr>
+<tr>
+<td>110078</td>
+<td>withdrawal or transfer amount less than the minimum transfer amount</td>
+</tr>
+<tr>
+<td>110087</td>
+<td>withdrawal or transfer amount is greater than the maximum transfer amount</td>
+</tr>
+<tr>
+<td>110088</td>
+<td>please do not repeat the request</td>
+</tr>
+<tr>
+<td>110089</td>
+<td>registered mobile phone number is incorrect</td>
+</tr>
+<tr>
+<td>110101</td>
+<td>user registration failed</td>
+</tr>
+<tr>
+<td>110161</td>
+<td>exceeds the maximum withdrawal support accuracy</td>
+</tr>
+<tr>
+<td>120202</td>
+<td>currency is not supported</td>
+</tr>
+<tr>
+<td>120206</td>
+<td>withdrawal second confirmation failed</td>
+</tr>
+<tr>
+<td>120402</td>
+<td>insufficient balance in withdrawal or transfer</td>
+</tr>
+<tr>
+<td>120403</td>
+<td>insufficient balance of withdrawal fee</td>
+</tr>
+<tr>
+<td>120404</td>
+<td>withdrawal or transfer amount is too small, less than or equal to the commission fee</td>
+</tr>
+<tr>
+<td>900006</td>
+<td>the user is at risk. Withdrawal is prohibited</td>
+</tr>
+<tr>
+<td>3040006</td>
+<td>cannot transfer money to itself</td>
+</tr>
+</tbody></table>
+<h1 id='co-signer'>Co-signer</h1><h2 id='need-to-implement-the-withdrawal-signature-callback-interface-one-callback-before-signing-another-callback-after-successfully-signed'>Need to implement the withdrawal signature callback interface (one callback before signing, another callback after successfully signed)</h2><h4 id='http-request-14'>HTTP Request</h4>
+<p><code>POST /custom address</code></p>
+<h4 id='request-parameters-no-encryption-required'>Request Parameters（No encryption required）</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Requried</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal id, example: 12345</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier for withdrawing coins, example: 0d766c03-8382-4005-b976-16c33f780f21</td>
+</tr>
+<tr>
+<td style="text-align: left">pending_round</td>
+<td style="text-align: left">Bool</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Speed Up status, <code>false</code> means in withdrawing transaction , <code>true</code> means speeding up the transaction</td>
+</tr>
+<tr>
+<td style="text-align: left">from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">from account address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">to account address，example：0xf4918d61b204bc0bb888f59dda13742ce998ad23</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">to account address memo，example：123321</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">Decimal</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Withdrawal amount, for example: 1.23</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">The unique identifier of the coin, example: USDTERC20</td>
+</tr>
+</tbody></table>
+<h4 id='common-response-2'>Common Response</h4>
+<p>Return string: <code>SUCCESS</code> means SUCCESS, <code>FAILURE</code> means FAILURE (note that the return parameter does not need to be encrypted here)</p>
 
       </div>
       <div class="dark-box">

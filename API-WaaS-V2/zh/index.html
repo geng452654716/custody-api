@@ -439,20 +439,6 @@
                           </li>
                       </ul>
                   </li>
-                  <li>
-                    <a href="#f8519014aa" class="toc-h2 toc-link" data-title="附录">附录</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#1" class="toc-h3 toc-link" data-title="附 1:加解密方式">附 1:加解密方式</a>
-                          </li>
-                          <li>
-                            <a href="#2" class="toc-h3 toc-link" data-title="附 2:接口错误码表 - 表格">附 2:接口错误码表 - 表格</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                    <a href="#faq" class="toc-h2 toc-link" data-title="常见问题(FAQ)">常见问题(FAQ)</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -472,6 +458,9 @@
                           </li>
                           <li>
                             <a href="#data" class="toc-h3 toc-link" data-title="响应结果data解密后格式">响应结果data解密后格式</a>
+                          </li>
+                          <li>
+                            <a href="#8c20d5369f" class="toc-h3 toc-link" data-title="加解密方式">加解密方式</a>
                           </li>
                       </ul>
                   </li>
@@ -561,6 +550,12 @@
                       </ul>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
           </li>
       </ul>
     </div>
@@ -723,17 +718,7 @@
 <li>提币矿工费：提币到非ChainUP Custody的地址，走区块链网络需要消耗矿工费（部分币种），消耗的矿工费由三方承担；此部分资金支出在提币订单内可以直接查看；</li>
 <li>分润手续费：暂不收取</li>
 </ol>
-<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='4390a3fb6e'>前期准备</h2><h3 id='72706ccb1b'>开发须知</h3><h4 id='e30883fd00'>开发方式</h4>
-<p>为满足客户多样性的业务需求，ChainUp Custody支持两种对接方式：SDK与API；</p>
-
-<p>SDK：支持java与PHP</p>
-
-<p>java SDK地址：<code>https://github.com/HiCoinCom/java-sdk</code></p>
-
-<p>PHP SDK地址：<code>https://github.com/HiCoinCom/php-sdk</code></p>
-
-<p>API：<code>请查看相关文档</code></p>
-<h4 id='api-2'>两对公私钥作用（API方式）</h4>
+<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='4390a3fb6e'>前期准备</h2><h3 id='72706ccb1b'>开发须知</h3><h4 id='api-2'>两对公私钥作用（API方式）</h4>
 <p><strong>第一对公私钥：</strong> 开发者在开通资管账号时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台B，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。</p>
 
 <p><strong>第二对公私钥：</strong> 开发者开通资管账号后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。</p>
@@ -825,153 +810,10 @@
 </tr>
 <tr>
 <td style="text-align: left">加密算法:</td>
-<td>详见<code>附 1</code></td>
+<td>详见 API 文档 <code>加解密方式</code></td>
 </tr>
 </tbody></table>
-<h2 id='f8519014aa'>附录</h2>
-<blockquote>
-<p>请求参数加密示例:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="c1">// 原始请求参数</span>
-<span class="nc">String</span> <span class="n">originReqData</span> <span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"charset"</span><span class="o">:</span><span class="s">"utf-8"</span><span class="o">,</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"eth"</span><span class="o">,</span><span class="s">"sign"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span><span class="s">"time"</span><span class="o">:</span><span class="s">"1586420916306"</span><span class="o">,</span><span class="s">"app_id"</span><span class="o">:</span><span class="s">"baaceb1e506e1b5d7d1f0a3b1622583b"</span><span class="o">,</span><span class="s">"version"</span><span class="o">:</span><span class="s">"2.0"</span><span class="o">}</span><span class="err">'</span>
-<span class="c1">// encryptByPrivate方法封装在下列公共类RSAHelper.java中</span>
-<span class="nc">String</span> <span class="n">encryptReqData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">encryptByPrivate</span><span class="o">(</span><span class="n">originReqData</span><span class="o">,</span> <span class="s">"第三方自己的私钥"</span><span class="o">)</span>
-<span class="c1">//http post</span>
-<span class="nc">String</span> <span class="n">httpBuildParams</span> <span class="o">=</span> <span class="s">"app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data="</span> <span class="o">+</span> <span class="n">encryptReqData</span>
-</code></pre></div>
-<blockquote>
-<p>响应数据解密示例:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="c1">// 响应的原始数据</span>
-<span class="nc">String</span> <span class="n">originResp</span><span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"jwtkGrhh2EVJS8xe93MpUYd-SQ-TyK0Bx5sXjE4hygFNg4wmctiahtIYXRpR2j8yDaEF5YzVstnUKbOH2p44FSMjXMQU4qFrhD00WOfW7v4LNALyiQXRb_5sakR0Zf573lGfLRTPlzLtTho3gqu3hMwuAv5e3r2dpb6_jxh1Z9BjkzSsNRX_bjLcHLUOPhMvo6rTUKSa9LQ6QnT8RX0eqzOZPlnCw3TeX_zcWWjxp6fcpKcdODxoI86gHwWRpSd-2qbEbFcaT12CJd9nPXA0KnLPNNHWz8sxQGiAg7Jg_-cN_yBHL9cS15zecTemYGqpOXRkojM1JwLsjM-7txf_dw"</span><span class="o">}</span><span class="err">'</span>
-<span class="c1">// 解密响应数据</span>
-<span class="nc">String</span> <span class="n">encryptRespData</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">originResp</span><span class="o">)[</span><span class="err">'</span><span class="n">data</span><span class="err">'</span><span class="o">]</span>
-<span class="c1">// decryptByPublic 方法封装在下列公共类 RSAHelper.java中</span>
-<span class="nc">String</span> <span class="n">decryptRespData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">decryptByPublic</span><span class="o">(</span> <span class="n">encryptRespData</span><span class="o">,</span> <span class="s">"托管平台提供的公钥"</span> <span class="o">)</span>
-</code></pre></div><h3 id='1'>附 1:加解密方式</h3>
-<p>请求参数data与响应字段data的值都是经过rsa加密后再通过 <strong>base64urlsafe</strong> 加密的结果</p>
-
-<aside class="notice">
-*注意事项*
-<br/>
-<br/>
-1）base64传统编码中会出现+, /两个会被url直接转义的符号，因此如果希望通过url传输这些编码字符串，我们需要先做传统base64编码，随后将+和/分别替换为- _两个字符，在接收端则做相反的动作解码
-<br/>
-<br/>
-2）java Demo ： https://github.com/HiCoinCom/WaaSDemo
-<br/>
-<br/>
-3）rsa加密与解密使用分段加密
-</aside>
-<h3 id='2'>附 2:接口错误码表 - 表格</h3>
-<table><thead>
-<tr>
-<th>code</th>
-<th>msg</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>0</td>
-<td>成功</td>
-</tr>
-<tr>
-<td>100001</td>
-<td>系统错误</td>
-</tr>
-<tr>
-<td>100004</td>
-<td>请求参数不合法(提现二次确认接口回调失败)</td>
-</tr>
-<tr>
-<td>100005</td>
-<td>签名校验失败</td>
-</tr>
-<tr>
-<td>100007</td>
-<td>非法IP</td>
-</tr>
-<tr>
-<td>100015</td>
-<td>商户ID无效</td>
-</tr>
-<tr>
-<td>100016</td>
-<td>商户信息过期</td>
-</tr>
-<tr>
-<td>110004</td>
-<td>用户被冻结不可提现</td>
-</tr>
-<tr>
-<td>110023</td>
-<td>手机号已注册</td>
-</tr>
-<tr>
-<td>110037</td>
-<td>提现地址存在风险</td>
-</tr>
-<tr>
-<td>110055</td>
-<td>提现地址错误</td>
-</tr>
-<tr>
-<td>110065</td>
-<td>请求用户用户不存在（获取用户余额、提现或转账时用到）</td>
-</tr>
-<tr>
-<td>110078</td>
-<td>提现或转账金额小于最小转出金额</td>
-</tr>
-<tr>
-<td>110087</td>
-<td>提现或转账金额大于最大转出金额</td>
-</tr>
-<tr>
-<td>110088</td>
-<td>请勿重复提交请求</td>
-</tr>
-<tr>
-<td>110089</td>
-<td>注册手机号不正确</td>
-</tr>
-<tr>
-<td>110101</td>
-<td>用户注册失败</td>
-</tr>
-<tr>
-<td>110161</td>
-<td>超过提现最大支持精度</td>
-</tr>
-<tr>
-<td>120202</td>
-<td>币种不支持</td>
-</tr>
-<tr>
-<td>120206</td>
-<td>提现二次确认失败</td>
-</tr>
-<tr>
-<td>120402</td>
-<td>提现或转账余额不足</td>
-</tr>
-<tr>
-<td>120403</td>
-<td>提现手续费余额不足</td>
-</tr>
-<tr>
-<td>120404</td>
-<td>提现或转账金额太小, 小于等于手续费</td>
-</tr>
-<tr>
-<td>900006</td>
-<td>用户存在风险，禁止提现</td>
-</tr>
-<tr>
-<td>3040006</td>
-<td>不能给自己转账</td>
-</tr>
-</tbody></table>
-<h2 id='faq'>常见问题(FAQ)</h2><h1 id='api-4'>API文档</h1>
+<h1 id='api-4'>API文档</h1>
 <p>为满足客户多样性的业务需求，ChainUp Custody支持两种对接方式：SDK与API；</p>
 
 <p><strong>SDK</strong>：支持java、PHP和node</p>
@@ -1037,8 +879,7 @@
 <blockquote>
 <p>响应结果示例:   </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"LK4D5mrtvTubDxCQM4lqyN2h8TTIkEBL_06FrrrzLrImyMO4Yuac-wdbk5VnGVfCKB5EFaUb162xXUJdTHhpA5CGBCAQKl64h_Dt10C-H8KIoap9dZI90qE4f-mAMAyjF1QzKXJ-f-R_3J3bRGqfHFBRXebh08R8MdRDssniopVOhsFUs4gBxUensKas3_ta15eFIqXPjIgJWfYQCD2DUi1gaKgmN-5Q_tgt-qXp5Y2uh3yfM4g4k71Ahyel3G8S_AktbWl2G9wU3cri3ZVQEo0faIpkX_CKsk9V1YoY5yRopvJbxNtkG9lBFxKnureAQo0KP3f1tsIMOzgcyEXPnA"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"LK4D5mrtvTubDxCQM4lqyN2h8TTIkEBL_06FrrrzLrImyMO4Yuac-wdbk5VnGVfCKB5EFaUb162xXUJdTHhpA5CGBCAQKl64h_Dt10C-H8KIoap9dZI90qE4f-mAMAyjF1QzKXJ-f-R_3J3bRGqfHFBRXebh08R8MdRDssniopVOhsFUs4gBxUensKas3_ta15eFIqXPjIgJWfYQCD2DUi1gaKgmN-5Q_tgt-qXp5Y2uh3yfM4g4k71Ahyel3G8S_AktbWl2G9wU3cri3ZVQEo0faIpkX_CKsk9V1YoY5yRopvJbxNtkG9lBFxKnureAQo0KP3f1tsIMOzgcyEXPnA"</span><span class="o">}</span>
 </code></pre></div><h3 id='data'>响应结果data解密后格式</h3>
 <table><thead>
 <tr>
@@ -1067,6 +908,18 @@
 <td style="text-align: left">具体响应数据，数据结构定义见各接口  <code>响应参数数据结构</code></td>
 </tr>
 </tbody></table>
+<h3 id='8c20d5369f'>加解密方式</h3>
+<p>请求参数data与响应字段data的值都是经过rsa加密后再通过 <strong>base64urlsafe</strong> 加密的结果</p>
+
+<aside class="notice">
+*注意事项*
+<br/>
+<br/>
+1）base64传统编码中会出现+, /两个会被url直接转义的符号，因此如果希望通过url传输这些编码字符串，我们需要先做传统base64编码，随后将+和/分别替换为- _两个字符，在接收端则做相反的动作解码
+<br/>
+<br/>
+2）rsa加密与解密使用分段加密
+</aside>
 <h2 id='a1cda4baf4'>获取地址</h2>
 <p>请注意，默认注册用户量为5万个，如果用户超过上限，请联系相关运营人员进行协助</p>
 <h3 id='7cdaa5821f'>用户手机注册</h3>
@@ -1117,14 +970,14 @@
 <blockquote>
 <p>响应结果示例：</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-3'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">3529218</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-3'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1182,14 +1035,14 @@
 <blockquote>
 <p>响应数据解密后示例:  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-5'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">3529218</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-5'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1253,14 +1106,14 @@
 <blockquote>
 <p>响应数据解密后示例</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-<span class="s">"uid"</span><span class="o">:</span><span class="s">"3529218"</span><span class="o">,</span>     <span class="s">"address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-7'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+</span><span class="nl">"uid"</span><span class="p">:</span><span class="s2">"3529218"</span><span class="p">,</span><span class="w">     </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-7'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1336,15 +1189,15 @@
 <blockquote>
 <p>响应数据解密后示例:  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">,</span>
-        <span class="s">"nickname"</span><span class="o">:</span><span class="s">""</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-9'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">3529218</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nickname"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-9'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1402,28 +1255,28 @@
 <blockquote>
 <p>响应数据解密后示例:  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span>
-  <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-  <span class="s">"data"</span><span class="o">:[</span>
-      <span class="o">{</span>
-          <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"icon"</span><span class="o">:</span><span class="s">"http://chainup-oss.oss-cn-beijing.aliyuncs.com/saas/1565681771193.png"</span><span class="o">,</span>
-          <span class="s">"real_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"decimals"</span><span class="o">:</span><span class="s">"8"</span><span class="o">,</span>
-          <span class="s">"name"</span><span class="o">:</span><span class="s">"Bitcoin"</span><span class="o">,</span>
-          <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"deposit_confirmation"</span><span class="o">:</span><span class="s">"2"</span><span class="o">,</span>
-          <span class="s">"explorer"</span><span class="o">:</span><span class="s">"https://btc.com/"</span><span class="o">,</span>
-          <span class="s">"address_regex"</span><span class="o">:</span><span class="s">"^(1|3)[a-zA-Z0-9]{24,36}$"</span><span class="o">,</span>
-          <span class="s">"address_tag_regex"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"support_memo"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-          <span class="s">"support_token"</span><span class="o">:</span><span class="s">"0"</span>
-      <span class="o">}</span>
-   <span class="o">]</span>
- <span class="o">}</span>
-</code></pre></div><h4 id='data-11'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"icon"</span><span class="p">:</span><span class="s2">"http://chainup-oss.oss-cn-beijing.aliyuncs.com/saas/1565681771193.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"real_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"decimals"</span><span class="p">:</span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"deposit_confirmation"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"explorer"</span><span class="p">:</span><span class="s2">"https://btc.com/"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_regex"</span><span class="p">:</span><span class="s2">"^(1|3)[a-zA-Z0-9]{24,36}$"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_tag_regex"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"support_memo"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"support_token"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-11'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1559,16 +1412,16 @@
 <blockquote>
 <p>响应数据解密后示例:  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"normal_balance"</span><span class="o">:</span><span class="s">"2.99400066"</span><span class="o">,</span>
-        <span class="s">"deposit_address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="o">,</span>
-        <span class="s">"lock_balance"</span><span class="o">:</span><span class="s">"0"</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-13'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"normal_balance"</span><span class="p">:</span><span class="s2">"2.99400066"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_address"</span><span class="p">:</span><span class="s2">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lock_balance"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-13'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1638,15 +1491,15 @@
 <blockquote>
 <p>响应数据解密后示例</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"balance"</span><span class="o">:</span><span class="s">"64.97599802"</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-15'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="s2">"64.97599802"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-15'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1708,55 +1561,55 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.0001"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"1CfYiePwcf3mWhLBQH2ac35C7jmE2udQqH"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1539050731000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10596</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1543483252000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">45325</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">2</span>
-        <span class="o">},</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0.0000001"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.0001"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0.0000001"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"17m2GM8aRrrnxPt5JhYPJd4qUFqF8rJDop"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1539065092000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10595</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1543851222000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">45332</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">2</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-17'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"1CfYiePwcf3mWhLBQH2ac35C7jmE2udQqH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1539050731000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10596</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1543483252000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">45325</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0.0000001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.0000001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"17m2GM8aRrrnxPt5JhYPJd4qUFqF8rJDop"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1539065092000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10595</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1543851222000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">45332</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-17'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1872,37 +1725,37 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span> <span class="s">"0"</span><span class="o">,</span>
-        <span class="s">"msg"</span><span class="o">:</span> <span class="s">"suc"</span><span class="o">,</span>
-        <span class="s">"data"</span><span class="o">:</span> <span class="o">[</span>
-                <span class="o">{</span>
-                        <span class="s">"id"</span> <span class="err">：</span><span class="mi">1</span><span class="o">,</span>
-                <span class="s">"uid"</span> <span class="err">：</span><span class="mi">11</span><span class="o">,</span>
-                <span class="s">"symbol"</span><span class="err">：</span><span class="s">"ETH"</span><span class="o">,</span>
-                <span class="s">"amount"</span><span class="err">：</span><span class="s">"0.0002000000000000"</span><span class="o">,</span>
-                <span class="s">"created_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"updated_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"txid"</span><span class="o">:</span><span class="s">"78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de"</span><span class="o">,</span>
-                        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">11</span><span class="o">,</span>
-                <span class="s">"status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-                <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span>
-                <span class="o">},</span>
-        <span class="o">{</span>
-                <span class="s">"id"</span> <span class="err">：</span><span class="mi">2</span><span class="o">,</span>
-                <span class="s">"uid"</span> <span class="err">：</span><span class="mi">12</span><span class="o">,</span>
-                        <span class="s">"symbol"</span> <span class="err">：</span><span class="s">"ETH"</span><span class="o">,</span>
-                <span class="s">"amount"</span><span class="err">：</span><span class="s">"0.0002000000000000"</span><span class="o">,</span>
-                <span class="s">"created_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"updated_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"txid"</span><span class="o">:</span><span class="s">"0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e"</span><span class="o">,</span>
-                        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">11</span><span class="o">,</span>
-                <span class="s">"status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-                <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span>
-        <span class="o">}</span>
-        <span class="o">]</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-19'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="w"> </span><span class="err">：</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"uid"</span><span class="w"> </span><span class="err">：</span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"symbol"</span><span class="err">：</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="err">：</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="w"> </span><span class="err">：</span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"uid"</span><span class="w"> </span><span class="err">：</span><span class="mi">12</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"symbol"</span><span class="w"> </span><span class="err">：</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="err">：</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-19'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2134,30 +1987,30 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span> <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-  <span class="s">"data"</span><span class="o">:[</span>
-         <span class="o">{</span>
-         <span class="s">"id"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-          <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"amount"</span><span class="o">:</span><span class="s">"11"</span><span class="o">,</span>
-          <span class="s">"fee"</span><span class="o">:</span><span class="s">"0.00111"</span><span class="o">,</span>
-          <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1539050731000</span><span class="o">,</span>
-          <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1543483252000</span><span class="o">,</span>
-          <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-          <span class="s">"status"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
-          <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"address_to"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"txid_type"</span><span class="o">:</span><span class="s">"1"</span><span class="o">,</span>
-          <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"contract_address"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-          <span class="s">"email"</span><span class="o">:</span><span class="s">""</span>
-          <span class="o">}</span>
-     <span class="o">],</span>
-  <span class="s">"msg"</span><span class="o">:</span> <span class="s">"成功"</span>
-  <span class="o">}</span>
-</code></pre></div><h4 id='data-22'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.00111"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1539050731000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1543483252000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"txid_type"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+     </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"成功"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-22'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2323,15 +2176,15 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="mi">48680</span><span class="o">,</span>
-        <span class="s">"status"</span><span class="o">:</span><span class="mi">0</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-24'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">48680</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-24'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>param</th>
@@ -2431,11 +2284,11 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"check_sum"</span><span class="o">:</span><span class="s">"1234"</span><span class="o">,</span>
-    <span class="s">"time"</span><span class="o">:</span><span class="s">"12345678"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-26'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"check_sum"</span><span class="p">:</span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="s2">"12345678"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-26'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2643,34 +2496,34 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0.4"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"10"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10739</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">48393</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">0</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-29'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10739</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">48393</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-29'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2830,34 +2683,34 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0.4"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"10"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10739</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">48393</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">0</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-31'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10739</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">48393</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-31'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3041,16 +2894,16 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"receipt"</span><span class="o">:</span><span class="s">"abcdesd"</span><span class="o">,</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='data-33'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"abcdesd"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-33'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3138,17 +2991,17 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>    <span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-<span class="s">"data"</span><span class="o">:[</span>
-    <span class="o">{</span>
-        <span class="s">"time"</span><span class="o">:</span><span class="mi">1551429063111</span><span class="o">,</span>
-        <span class="s">"check_sum"</span><span class="o">:</span><span class="s">"123124"</span><span class="o">,</span>
-    <span class="o">}</span>
-<span class="o">],</span>
-<span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-    <span class="o">}</span>
-</code></pre></div><h4 id='data-35'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="mi">1551429063111</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"check_sum"</span><span class="p">:</span><span class="s2">"123124"</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-35'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3216,35 +3069,35 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>    <span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-<span class="s">"data"</span><span class="o">:[</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123123"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444444"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"备注信息"</span>
-    <span class="o">}</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"124"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063111</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123124"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444445"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"备注信息"</span>
-    <span class="o">}</span>
-<span class="o">],</span>
-<span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-    <span class="o">}</span>
-</code></pre></div><h4 id='data-37'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444444"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"备注信息"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063111</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444445"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"备注信息"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-37'>响应参数data解密之后数据结构:</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3366,36 +3219,156 @@
 <blockquote>
 <p>响应数据解密后示例:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>   <span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-<span class="s">"data"</span><span class="o">:[</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123123"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444444"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"备注信息"</span>
-    <span class="o">}</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"124"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063111</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123124"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444445"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"备注信息"</span>
-    <span class="o">}</span>
-<span class="o">],</span>
-<span class="s">"msg"</span><span class="o">:</span><span class="s">"成功"</span>
-    <span class="o">}</span>
-</code></pre></div><h4 id='data-39'>响应参数data解密之后数据结构:</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444444"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"备注信息"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063111</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444445"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"备注信息"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='data-39'>响应参数data解密之后数据结构:</h4>
 <p>无</p>
+<h1 id='sdk'>SDK</h1>
+<p>为满足客户多样性的业务需求，ChainUp Custody支持两种对接方式：SDK与API</p>
+
+<p>SDK：支持java与PHP和node</p>
+
+<p>java SDK地址：<code>https://github.com/HiCoinCom/java-sdk</code></p>
+
+<p>PHP SDK地址：<code>https://github.com/HiCoinCom/php-sdk</code></p>
+
+<p>node SDK地址：<code>https://github.com/HiCoinCom/js-sdk</code></p>
+
+<p>API：<code>请查看相关文档</code></p>
+<h1 id='e08c1d4f9a'>错误码</h1>
+<table><thead>
+<tr>
+<th>code</th>
+<th>msg</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>100001</td>
+<td>系统错误</td>
+</tr>
+<tr>
+<td>100004</td>
+<td>请求参数不合法(提现二次确认接口回调失败)</td>
+</tr>
+<tr>
+<td>100005</td>
+<td>签名校验失败</td>
+</tr>
+<tr>
+<td>100007</td>
+<td>非法IP</td>
+</tr>
+<tr>
+<td>100015</td>
+<td>商户ID无效</td>
+</tr>
+<tr>
+<td>100016</td>
+<td>商户信息过期</td>
+</tr>
+<tr>
+<td>110004</td>
+<td>用户被冻结不可提现</td>
+</tr>
+<tr>
+<td>110023</td>
+<td>手机号已注册</td>
+</tr>
+<tr>
+<td>110037</td>
+<td>提现地址存在风险</td>
+</tr>
+<tr>
+<td>110055</td>
+<td>提现地址错误</td>
+</tr>
+<tr>
+<td>110065</td>
+<td>请求用户用户不存在（获取用户余额、提现或转账时用到）</td>
+</tr>
+<tr>
+<td>110078</td>
+<td>提现或转账金额小于最小转出金额</td>
+</tr>
+<tr>
+<td>110087</td>
+<td>提现或转账金额大于最大转出金额</td>
+</tr>
+<tr>
+<td>110088</td>
+<td>请勿重复提交请求</td>
+</tr>
+<tr>
+<td>110089</td>
+<td>注册手机号不正确</td>
+</tr>
+<tr>
+<td>110101</td>
+<td>用户注册失败</td>
+</tr>
+<tr>
+<td>110161</td>
+<td>超过提现最大支持精度</td>
+</tr>
+<tr>
+<td>120202</td>
+<td>币种不支持</td>
+</tr>
+<tr>
+<td>120206</td>
+<td>提现二次确认失败</td>
+</tr>
+<tr>
+<td>120402</td>
+<td>提现或转账余额不足</td>
+</tr>
+<tr>
+<td>120403</td>
+<td>提现手续费余额不足</td>
+</tr>
+<tr>
+<td>120404</td>
+<td>提现或转账金额太小, 小于等于手续费</td>
+</tr>
+<tr>
+<td>900006</td>
+<td>用户存在风险，禁止提现</td>
+</tr>
+<tr>
+<td>3040006</td>
+<td>不能给自己转账</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">

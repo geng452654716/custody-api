@@ -423,9 +423,6 @@
                     <a href="#preparation" class="toc-h2 toc-link" data-title="Preparation">Preparation</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#development-instructions" class="toc-h3 toc-link" data-title="Development Instructions">Development Instructions</a>
-                          </li>
-                          <li>
                             <a href="#asset-management-account-preparation" class="toc-h3 toc-link" data-title="Asset management account preparation">Asset management account preparation</a>
                           </li>
                           <li>
@@ -435,20 +432,6 @@
                             <a href="#interface-rules" class="toc-h3 toc-link" data-title="Interface rules">Interface rules</a>
                           </li>
                       </ul>
-                  </li>
-                  <li>
-                    <a href="#appendix" class="toc-h2 toc-link" data-title="Appendix">Appendix</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#appendix-1-encryption-and-decryption-mode" class="toc-h3 toc-link" data-title="Appendix 1: Encryption and Decryption Mode">Appendix 1: Encryption and Decryption Mode</a>
-                          </li>
-                          <li>
-                            <a href="#appendix-2-interface-error-code-list" class="toc-h3 toc-link" data-title="Appendix 2: Interface error code list">Appendix 2: Interface error code list</a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                    <a href="#faq" class="toc-h2 toc-link" data-title="FAQ">FAQ</a>
                   </li>
               </ul>
           </li>
@@ -469,6 +452,9 @@
                           </li>
                           <li>
                             <a href="#decrypted-response-parameters" class="toc-h3 toc-link" data-title="Decrypted Response Parameters">Decrypted Response Parameters</a>
+                          </li>
+                          <li>
+                            <a href="#encryption-and-decryption-mode" class="toc-h3 toc-link" data-title="Encryption and Decryption Mode">Encryption and Decryption Mode</a>
                           </li>
                       </ul>
                   </li>
@@ -558,6 +544,12 @@
                       </ul>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
+          </li>
+          <li>
+            <a href="#interface-error-code-list" class="toc-h1 toc-link" data-title="Interface Error Code List">Interface Error Code List</a>
           </li>
       </ul>
     </div>
@@ -716,23 +708,13 @@
 <li>Miner’s fee: Miner’s fee (in some currencies) shall be borne by the three parties when withdrawing coins to the address of non-ChainUp Custody and using the blockchain network. This part of capital expenditure can be viewed directly in the coin withdrawal order;</li>
 <li>Distribution fee: temporarily not charged.</li>
 </ol>
-<h1 id='preparation-before-development'>Preparation before development</h1><h2 id='preparation'>Preparation</h2><h3 id='development-instructions'>Development Instructions</h3><h4 id='1-development-mode'>1) Development mode</h4>
-<p>To meet the diverse business needs of customers, ChainUp Custody supports two docking methods: SDK and API;</p>
-
-<p><strong>SDK</strong>：Support for Java and PHP</p>
-
-<p>The Java SDK addres：https://github.com/HiCoinCom/java-sdk</p>
-
-<p>The PHP SDK address：https://github.com/HiCoinCom/php-sdk</p>
-
-<p><strong>API</strong>：Please see the documentation</p>
-<h4 id='2-two-pairs-of-public-and-private-key-functions-api-mode'>2) Two pairs of public and private key functions (API mode）</h4>
+<h1 id='preparation-before-development'>Preparation before development</h1><h2 id='preparation'>Preparation</h2><h4 id='two-pairs-of-public-and-private-key-functions-api-mode'>Two pairs of public and private key functions (API mode）</h4>
 <p><strong>The first pair of public and private keys</strong>： The developer shall generate a pair of public and private keys in advance when opening the asset management account. The public key (rsa_third_pub) is provided to the platform and the private key is kept by itself. The private key is the only proof for the third-party application to call the wallet service and shall not be disclosed to anyone. When the third party requests the wallet service, the private key is used to encrypt the request parameters. When the platform receives the request, the public key (rsa_third_pub) is used to decrypt the request data.</p>
 
 <p><strong>The second pair of public and private keys</strong>： After the developer opens the asset management account, the platform will provide the wallet public key (rsa_wallet_pub) to the developer. When the third-party application receives the response data or asynchronous notification of the wallet, it needs to use the public key to decrypt.</p>
-<h4 id='3-why-is-it-necessary-to-confirm-the-withdrawal-twice-api-method'>3）Why is it necessary to confirm the withdrawal twice (API method)</h4>
+<h4 id='why-is-it-necessary-to-confirm-the-withdrawal-twice-api-method'>Why is it necessary to confirm the withdrawal twice (API method)</h4>
 <p>When the wallet service receives a request from a third-party application, in confirm that the request is a legitimate request from a third-party application, it will call the interface provided by the third-party to confirm. To a certain extent, this process can avoid the influence caused by the loss of the third party’s private key, and also provides an effective barrier for the security of the wallet service.</p>
-<h4 id='4-domain-name-and-api-key-api-mode'>4）Domain name and API key (API mode)</h4>
+<h4 id='domain-name-and-api-key-api-mode'>Domain name and API key (API mode)</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Production domain name(test environment not supported):</th>
@@ -759,9 +741,9 @@
 
 <p><strong>RSA public/private key generated address</strong> http://www.metools.info/code/c80.html</p>
 
-<p>Recommended password length：2048</p>
+<p>Recommended password length：<code>2048</code></p>
 
-<p>Recommended key format：PKCS#8</p>
+<p>Recommended key format：<code>PKCS#8</code></p>
 
 <p>Description：</p>
 
@@ -769,9 +751,7 @@
 <li>Rsa_third_prv is a private key for third-party applications and is used primarily to encrypt request parameters. In a production environment, rsa_third_prv is generated by the developer and the corresponding public key is provided to the platform. To simplify the docking process for developers, a set of third-party public and private keys is directly provided here to facilitate quick docking for developers.</li>
 <li>Test environment docking is not supported at present, please register to create a wallet according to <strong>Access Guidelines</strong> , and get the API related information of the production environment.</li>
 </ol>
-<h3 id='asset-management-account-preparation'>Asset management account preparation</h3>
-<p>The developer prepares the following information：</p>
-
+<h3 id='asset-management-account-preparation'>Asset management account preparation</h3><h4 id='the-developer-prepares-the-following-information'>The developer prepares the following information：</h4>
 <p>1）Generate a pair of public and private keys and provide the public key to the platform;</p>
 
 <p>2）IP of third-party application server;</p>
@@ -784,9 +764,9 @@
 
 <p>Contact relevant personnel of the platform to provide the above five types of information. The platform prepares an asset management account for you and provides you with the following information:</p>
 
-<p>1）Unique identification of the merchant：app_id；</p>
+<p>1）Unique identification of the merchant：<code>app_id</code>；</p>
 
-<p>2）The wallet public key：rsa_wallet_pub。</p>
+<p>2）The wallet public key：<code>rsa_wallet_pub</code>.</p>
 <h3 id='interface-interaction-process'>Interface interaction process</h3>
 <p>Documentation is the interface that the wallet service provides to third-party applications.</p>
 
@@ -814,154 +794,11 @@
 </tr>
 <tr>
 <td style="text-align: left">Encryption algorithm:</td>
-<td>See <code>Appendix 1</code> for details</td>
+<td>See <code>Encryption and Decryption Mode</code> at <strong>API doc</strong> - Overview for details</td>
 </tr>
 </tbody></table>
-<h2 id='appendix'>Appendix</h2>
-<blockquote>
-<p>Example of Request Parameter Encryption</p>
-</blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="c1">// Raw request data</span>
-<span class="nc">String</span> <span class="n">originReqData</span> <span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"charset"</span><span class="o">:</span><span class="s">"utf-8"</span><span class="o">,</span><span class="s">"symbol"</span><span class="o">:</span><span class="s">"eth"</span><span class="o">,</span><span class="s">"sign"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span><span class="s">"time"</span><span class="o">:</span><span class="s">"1586420916306"</span><span class="o">,</span><span class="s">"app_id"</span><span class="o">:</span><span class="s">"baaceb1e506e1b5d7d1f0a3b1622583b"</span><span class="o">,</span><span class="s">"version"</span><span class="o">:</span><span class="s">"2.0"</span><span class="o">}</span><span class="err">'</span>
-<span class="c1">// encrypt</span>
-<span class="nc">String</span> <span class="n">encryptReqData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">encryptByPrivate</span><span class="o">(</span><span class="n">originReqData</span><span class="o">,</span> <span class="s">"The third party's own private key"</span><span class="o">)</span>
-<span class="c1">//http post</span>
-<span class="nc">String</span> <span class="n">httpBuildParams</span> <span class="o">=</span> <span class="s">"app_id=baaceb1e506e1b5d7d1f0a3b1622583b&amp;data="</span> <span class="o">+</span> <span class="n">encryptReqData</span>
-</code></pre></div>
-<blockquote>
-<p>Example of Response Parameter Decryption</p>
-</blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="c1">// Raw response data</span>
-<span class="nc">String</span> <span class="n">originResp</span><span class="o">=</span> <span class="err">'</span><span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"jwtkGrhh2EVJS8xe93MpUYd-SQ-TyK0Bx5sXjE4hygFNg4wmctiahtIYXRpR2j8yDaEF5YzVstnUKbOH2p44FSMjXMQU4qFrhD00WOfW7v4LNALyiQXRb_5sakR0Zf573lGfLRTPlzLtTho3gqu3hMwuAv5e3r2dpb6_jxh1Z9BjkzSsNRX_bjLcHLUOPhMvo6rTUKSa9LQ6QnT8RX0eqzOZPlnCw3TeX_zcWWjxp6fcpKcdODxoI86gHwWRpSd-2qbEbFcaT12CJd9nPXA0KnLPNNHWz8sxQGiAg7Jg_-cN_yBHL9cS15zecTemYGqpOXRkojM1JwLsjM-7txf_dw"</span><span class="o">}</span><span class="err">'</span>
-<span class="c1">// decrypt response data</span>
-<span class="nc">String</span> <span class="n">encryptRespData</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">originResp</span><span class="o">)[</span><span class="err">'</span><span class="n">data</span><span class="err">'</span><span class="o">]</span>
-<span class="c1">// decrypt</span>
-<span class="nc">String</span> <span class="n">decryptRespData</span> <span class="o">=</span> <span class="nc">RSAHelper</span><span class="o">.</span><span class="na">decryptByPublic</span><span class="o">(</span> <span class="n">encryptRespData</span><span class="o">,</span> <span class="s">"Public key provided by ChainUp Custody"</span> <span class="o">)</span>
-</code></pre></div><h3 id='appendix-1-encryption-and-decryption-mode'>Appendix 1: Encryption and Decryption Mode</h3>
-<p>The values of the request parameter DATA and the response field DATA are both encrypted by RSA and encrypted by <strong>base64urlsafe</strong></p>
-
-<aside class="notice">
-*Matters needing attention*
-<br/>
-<br/>
-1. There are two symbols + and/that are escaped directly by URL in Base64 traditional encoding. Therefore, if we want to transfer these encoded strings through URL, we need to do traditional Base64 encoding first, then replace + and/with two characters - _ respectively, and do the opposite action decoding at the receiving end. 
-<br/>
-<br/>
-2) Java Demo ： https://github.com/HiCoinCom/WaaSDemo
-<br/>
-<br/>
-3) RSA encryption and decryption using segmented encryption
-</aside>
-<h3 id='appendix-2-interface-error-code-list'>Appendix 2: Interface error code list</h3>
-<table><thead>
-<tr>
-<th>code</th>
-<th>msg</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>0</td>
-<td>success</td>
-</tr>
-<tr>
-<td>100001</td>
-<td>system error</td>
-</tr>
-<tr>
-<td>100004</td>
-<td>request parameter is not valid</td>
-</tr>
-<tr>
-<td>100005</td>
-<td>signature verification failed</td>
-</tr>
-<tr>
-<td>100007</td>
-<td>illegal IP</td>
-</tr>
-<tr>
-<td>100015</td>
-<td>merchant ID is invalid</td>
-</tr>
-<tr>
-<td>100016</td>
-<td>merchant information expired</td>
-</tr>
-<tr>
-<td>110004</td>
-<td>users are frozen and cannot withdraw money</td>
-</tr>
-<tr>
-<td>110023</td>
-<td>mobile phone number has been registered</td>
-</tr>
-<tr>
-<td>110037</td>
-<td>withdrawal address is at risk</td>
-</tr>
-<tr>
-<td>110055</td>
-<td>correct withdrawal address for</td>
-</tr>
-<tr>
-<td>110065</td>
-<td>user does not exist (used to obtain user balance, withdraw money, or transfer money)</td>
-</tr>
-<tr>
-<td>110078</td>
-<td>withdrawal or transfer amount less than the minimum transfer amount</td>
-</tr>
-<tr>
-<td>110087</td>
-<td>withdrawal or transfer amount is greater than the maximum transfer amount</td>
-</tr>
-<tr>
-<td>110088</td>
-<td>please do not repeat the request</td>
-</tr>
-<tr>
-<td>110089</td>
-<td>registered mobile phone number is incorrect</td>
-</tr>
-<tr>
-<td>110101</td>
-<td>user registration failed</td>
-</tr>
-<tr>
-<td>110161</td>
-<td>exceeds the maximum withdrawal support accuracy</td>
-</tr>
-<tr>
-<td>120202</td>
-<td>currency is not supported</td>
-</tr>
-<tr>
-<td>120206</td>
-<td>withdrawal second confirmation failed</td>
-</tr>
-<tr>
-<td>120402</td>
-<td>insufficient balance in withdrawal or transfer</td>
-</tr>
-<tr>
-<td>120403</td>
-<td>insufficient balance of withdrawal fee</td>
-</tr>
-<tr>
-<td>120404</td>
-<td>withdrawal or transfer amount is too small, less than or equal to the commission fee</td>
-</tr>
-<tr>
-<td>900006</td>
-<td>the user is at risk. Withdrawal is prohibited</td>
-</tr>
-<tr>
-<td>3040006</td>
-<td>cannot transfer money to itself</td>
-</tr>
-</tbody></table>
-<h2 id='faq'>FAQ</h2><h1 id='api-documentation'>API Documentation</h1>
-<p>To meet the diverse business needs of customers, ChainUp Custody supports two docking methods: SDK and API;</p>
+<h1 id='api-documentation'>API Documentation</h1>
+<p>To meet the diverse business needs of customers, ChainUp Custody supports two docking methods: <strong>SDK and API;</strong></p>
 
 <p><strong>SDK</strong>：Support for Java、PHP and node</p>
 
@@ -1053,6 +890,18 @@
 <td>the specific response data, the data structure is defined as <code>Response Data Parameters</code></td>
 </tr>
 </tbody></table>
+<h3 id='encryption-and-decryption-mode'>Encryption and Decryption Mode</h3>
+<p>The values of the request parameter DATA and the response field DATA are both encrypted by RSA and encrypted by <strong>base64urlsafe</strong></p>
+
+<aside class="notice">
+*Matters needing attention*
+<br/>
+<br/>
+1. There are two symbols + and/that are escaped directly by URL in Base64 traditional encoding. Therefore, if we want to transfer these encoded strings through URL, we need to do traditional Base64 encoding first, then replace + and/with two characters - _ respectively, and do the opposite action decoding at the receiving end. 
+<br/>
+<br/>
+2. RSA encryption and decryption using segmented encryption
+</aside>
 <h2 id='get-the-address'>Get the address</h2>
 <p>Please note that the default number of registered users is 50,000. If the number of users exceeds the upper limit, please contact the relevant operation personnel for assistance.</p>
 <h3 id='user-mobile-registration'>User Mobile Registration</h3>
@@ -1103,14 +952,14 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">3529218</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1168,14 +1017,14 @@
 <blockquote>
 <p>Response  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-2'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">3529218</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-2'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1239,15 +1088,15 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"uid"</span><span class="o">:</span><span class="s">"3529218"</span><span class="o">,</span>
-        <span class="s">"address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-3'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="s2">"3529218"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-3'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1323,15 +1172,15 @@
 <blockquote>
 <p>Response  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"uid"</span><span class="o">:</span><span class="mi">3529218</span><span class="o">,</span>
-        <span class="s">"nickname"</span><span class="o">:</span><span class="s">""</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-4'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">3529218</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"nickname"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-4'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1389,27 +1238,27 @@
 <blockquote>
 <p>Response  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-  <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-  <span class="s">"data"</span><span class="o">:[</span>
-      <span class="o">{</span>
-          <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"icon"</span><span class="o">:</span><span class="s">"http://chainup-oss.oss-cn-beijing.aliyuncs.com/saas/1565681771193.png"</span><span class="o">,</span>
-          <span class="s">"real_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"decimals"</span><span class="o">:</span><span class="s">"8"</span><span class="o">,</span>
-          <span class="s">"name"</span><span class="o">:</span><span class="s">"Bitcoin"</span><span class="o">,</span>
-          <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"contract_address"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"deposit_confirmation"</span><span class="o">:</span><span class="s">"2"</span><span class="o">,</span>
-          <span class="s">"explorer"</span><span class="o">:</span><span class="s">"https://btc.com/"</span><span class="o">,</span>
-          <span class="s">"address_regex"</span><span class="o">:</span><span class="s">"^(1|3)[a-zA-Z0-9]{24,36}$"</span><span class="o">,</span>
-          <span class="s">"address_tag_regex"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"support_memo"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-          <span class="s">"support_token"</span><span class="o">:</span><span class="s">"0"</span>
-      <span class="o">}</span>
-   <span class="o">]</span>
- <span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-5'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"icon"</span><span class="p">:</span><span class="s2">"http://chainup-oss.oss-cn-beijing.aliyuncs.com/saas/1565681771193.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"real_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"decimals"</span><span class="p">:</span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"deposit_confirmation"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"explorer"</span><span class="p">:</span><span class="s2">"https://btc.com/"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_regex"</span><span class="p">:</span><span class="s2">"^(1|3)[a-zA-Z0-9]{24,36}$"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_tag_regex"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"support_memo"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"support_token"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-5'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1545,16 +1394,16 @@
 <blockquote>
 <p>Response  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"normal_balance"</span><span class="o">:</span><span class="s">"2.99400066"</span><span class="o">,</span>
-        <span class="s">"deposit_address"</span><span class="o">:</span><span class="s">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="o">,</span>
-        <span class="s">"lock_balance"</span><span class="o">:</span><span class="s">"0"</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-6'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"normal_balance"</span><span class="p">:</span><span class="s2">"2.99400066"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_address"</span><span class="p">:</span><span class="s2">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lock_balance"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-6'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1624,15 +1473,15 @@
 <blockquote>
 <p>Response  </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"balance"</span><span class="o">:</span><span class="s">"64.97599802"</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-7'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="s2">"64.97599802"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-7'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1696,55 +1545,55 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.0001"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"1CfYiePwcf3mWhLBQH2ac35C7jmE2udQqH"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1539050731000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10596</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1543483252000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">45325</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">2</span>
-        <span class="o">},</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0.0000001"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.0001"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0.0000001"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"17m2GM8aRrrnxPt5JhYPJd4qUFqF8rJDop"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1539065092000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10595</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1543851222000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">45332</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">2</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-8'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"1CfYiePwcf3mWhLBQH2ac35C7jmE2udQqH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1539050731000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10596</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1543483252000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">45325</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0.0000001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.0000001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"17m2GM8aRrrnxPt5JhYPJd4qUFqF8rJDop"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1539065092000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10595</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1543851222000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">45332</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-8'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -1862,37 +1711,37 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span> <span class="s">"0"</span><span class="o">,</span>
-        <span class="s">"msg"</span><span class="o">:</span> <span class="s">"suc"</span><span class="o">,</span>
-        <span class="s">"data"</span><span class="o">:</span> <span class="o">[</span>
-                <span class="o">{</span>
-                        <span class="s">"id"</span> <span class="err">：</span><span class="mi">1</span><span class="o">,</span>
-                <span class="s">"uid"</span> <span class="err">：</span><span class="mi">11</span><span class="o">,</span>
-                <span class="s">"symbol"</span><span class="err">：</span><span class="s">"ETH"</span><span class="o">,</span>
-                <span class="s">"amount"</span><span class="err">：</span><span class="s">"0.0002000000000000"</span><span class="o">,</span>
-                <span class="s">"created_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"updated_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"txid"</span><span class="o">:</span><span class="s">"78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de"</span><span class="o">,</span>
-                        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">11</span><span class="o">,</span>
-                <span class="s">"status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-                <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span>
-                <span class="o">},</span>
-        <span class="o">{</span>
-                <span class="s">"id"</span> <span class="err">：</span><span class="mi">2</span><span class="o">,</span>
-                <span class="s">"uid"</span> <span class="err">：</span><span class="mi">12</span><span class="o">,</span>
-                        <span class="s">"symbol"</span> <span class="err">：</span><span class="s">"ETH"</span><span class="o">,</span>
-                <span class="s">"amount"</span><span class="err">：</span><span class="s">"0.0002000000000000"</span><span class="o">,</span>
-                <span class="s">"created_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"updated_at"</span><span class="o">:</span> <span class="mi">1545273830000</span><span class="o">,</span>
-                <span class="s">"txid"</span><span class="o">:</span><span class="s">"0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e"</span><span class="o">,</span>
-                        <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">11</span><span class="o">,</span>
-                <span class="s">"status"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-                <span class="s">"address_to"</span><span class="o">:</span><span class="s">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span>
-        <span class="o">}</span>
-        <span class="o">]</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-9'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suc"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="w"> </span><span class="err">：</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"uid"</span><span class="w"> </span><span class="err">：</span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"symbol"</span><span class="err">：</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="err">：</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="w"> </span><span class="err">：</span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"uid"</span><span class="w"> </span><span class="err">：</span><span class="mi">12</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"symbol"</span><span class="w"> </span><span class="err">：</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="err">：</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-9'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2124,30 +1973,30 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>
-<span class="o">{</span> <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-  <span class="s">"data"</span><span class="o">:[</span>
-         <span class="o">{</span>
-         <span class="s">"id"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span>
-          <span class="s">"symbol"</span><span class="o">:</span><span class="s">"BTC"</span><span class="o">,</span>
-          <span class="s">"amount"</span><span class="o">:</span><span class="s">"11"</span><span class="o">,</span>
-          <span class="s">"fee"</span><span class="o">:</span><span class="s">"0.00111"</span><span class="o">,</span>
-          <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1539050731000</span><span class="o">,</span>
-          <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1543483252000</span><span class="o">,</span>
-          <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-          <span class="s">"status"</span><span class="o">:</span><span class="mi">2</span><span class="o">,</span>
-          <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"address_to"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"txid_type"</span><span class="o">:</span><span class="s">"1"</span><span class="o">,</span>
-          <span class="s">"base_symbol"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-          <span class="s">"contract_address"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-          <span class="s">"email"</span><span class="o">:</span><span class="s">""</span>
-          <span class="o">}</span>
-     <span class="o">],</span>
-  <span class="s">"msg"</span><span class="o">:</span> <span class="s">"success"</span>
-  <span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-10'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0.00111"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1539050731000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1543483252000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"txid_type"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"contract_address"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+     </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-10'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2313,15 +2162,15 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="mi">48680</span><span class="o">,</span>
-        <span class="s">"status"</span><span class="o">:</span><span class="mi">0</span>
-    <span class="o">},</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-11'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">48680</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-11'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>param</th>
@@ -2421,11 +2270,11 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"check_sum"</span><span class="o">:</span><span class="s">"1234"</span><span class="o">,</span>
-    <span class="s">"time"</span><span class="o">:</span><span class="s">"12345678"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-12'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"check_sum"</span><span class="p">:</span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="s2">"12345678"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-12'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2633,34 +2482,34 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0.4"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"10"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10739</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">48393</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">0</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-13'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10739</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">48393</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-13'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -2820,34 +2669,34 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"withdraw_fee"</span><span class="o">:</span><span class="s">"0.4"</span><span class="o">,</span>
-            <span class="s">"symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"amount"</span><span class="o">:</span><span class="s">"10"</span><span class="o">,</span>
-            <span class="s">"real_fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"fee"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-            <span class="s">"address_to"</span><span class="o">:</span><span class="s">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="o">,</span>
-            <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"txid"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"confirmations"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"address_from"</span><span class="o">:</span><span class="s">""</span><span class="o">,</span>
-            <span class="s">"uid"</span><span class="o">:</span><span class="mi">10739</span><span class="o">,</span>
-            <span class="s">"withdraw_fee_symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-            <span class="s">"fee_symbol"</span><span class="o">:</span><span class="s">"LTC"</span><span class="o">,</span>
-            <span class="s">"saas_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"updated_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-            <span class="s">"company_status"</span><span class="o">:</span><span class="mi">0</span><span class="o">,</span>
-            <span class="s">"id"</span><span class="o">:</span><span class="mi">48393</span><span class="o">,</span>
-            <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-            <span class="s">"status"</span><span class="o">:</span><span class="mi">0</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-14'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"withdraw_fee"</span><span class="p">:</span><span class="s2">"0.4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"real_fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"LhFrA5ZJL15UdRV1uEfFxfdqWJUbBhXpRk1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_from"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">10739</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_fee_symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_symbol"</span><span class="p">:</span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"saas_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"company_status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">48393</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-14'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3031,16 +2880,16 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
-    <span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-    <span class="s">"data"</span><span class="o">:[</span>
-        <span class="o">{</span>
-            <span class="s">"receipt"</span><span class="o">:</span><span class="s">"abcdesd"</span><span class="o">,</span>
-        <span class="o">}</span>
-    <span class="o">],</span>
-    <span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-<span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-15'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"abcdesd"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-15'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3128,17 +2977,17 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>    <span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-<span class="s">"data"</span><span class="o">:[</span>
-    <span class="o">{</span>
-        <span class="s">"time"</span><span class="o">:</span><span class="mi">1551429063111</span><span class="o">,</span>
-        <span class="s">"check_sum"</span><span class="o">:</span><span class="s">"123124"</span><span class="o">,</span>
-    <span class="o">}</span>
-<span class="o">],</span>
-<span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-    <span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-16'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="mi">1551429063111</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"check_sum"</span><span class="p">:</span><span class="s2">"123124"</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-16'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3206,35 +3055,35 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>    <span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-<span class="s">"data"</span><span class="o">:[</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123123"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444444"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"remark"</span>
-    <span class="o">}</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"124"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063111</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123124"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444445"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"remark"</span>
-    <span class="o">}</span>
-<span class="o">],</span>
-<span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-    <span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-17'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444444"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"remark"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063111</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444445"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"remark"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-17'>Response Data Parameters</h4>
 <table><thead>
 <tr>
 <th>Param</th>
@@ -3358,36 +3207,154 @@
 <blockquote>
 <p>Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code>   <span class="o">{</span>
-<span class="s">"code"</span><span class="o">:</span><span class="s">"0"</span><span class="o">,</span>
-<span class="s">"data"</span><span class="o">:[</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"123"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063000</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123123"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444444"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"remark"</span>
-    <span class="o">}</span>
-    <span class="o">{</span>
-        <span class="s">"id"</span><span class="o">:</span><span class="s">"124"</span><span class="o">,</span>
-        <span class="s">"symbol"</span><span class="o">:</span><span class="s">"ETH"</span><span class="o">,</span>
-        <span class="s">"amount"</span><span class="o">:</span><span class="s">"0.002"</span><span class="o">,</span>
-        <span class="s">"from"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="o">,</span>
-        <span class="s">"to"</span><span class="o">:</span><span class="s">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="o">,</span>
-        <span class="s">"created_at"</span><span class="o">:</span><span class="mi">1551429063111</span><span class="o">,</span>
-        <span class="s">"request_id"</span><span class="o">:</span><span class="s">"123124"</span><span class="o">,</span>
-        <span class="s">"receipt"</span><span class="o">:</span><span class="s">"4444445"</span><span class="o">,</span>
-        <span class="s">"remark"</span><span class="o">:</span><span class="s">"remark"</span>
-    <span class="o">}</span>
-<span class="o">],</span>
-<span class="s">"msg"</span><span class="o">:</span><span class="s">"success"</span>
-    <span class="o">}</span>
-</code></pre></div><h4 id='response-data-parameters-18'>Response Data Parameters</h4>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w">
+</span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444444"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"remark"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0xc0ff095a9f1608f6873e74b84671640364107dc5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1551429063111</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"123124"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"receipt"</span><span class="p">:</span><span class="s2">"4444445"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"remark"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">],</span><span class="w">
+</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='response-data-parameters-18'>Response Data Parameters</h4>
 <p>None</p>
+<h1 id='sdk'>SDK</h1>
+<p>To meet the diverse business needs of customers, ChainUp Custody supports two docking methods: <strong>SDK and API;</strong></p>
+
+<p><strong>SDK</strong>：Support for Java、PHP and node</p>
+
+<p>java SDK address：https://github.com/HiCoinCom/java-sdk</p>
+
+<p>PHP SDK address：https://github.com/HiCoinCom/php-sdk</p>
+
+<p>node SDK address：https://github.com/HiCoinCom/js-sdk</p>
+<h1 id='interface-error-code-list'>Interface Error Code List</h1>
+<table><thead>
+<tr>
+<th>code</th>
+<th>msg</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>success</td>
+</tr>
+<tr>
+<td>100001</td>
+<td>system error</td>
+</tr>
+<tr>
+<td>100004</td>
+<td>request parameter is not valid</td>
+</tr>
+<tr>
+<td>100005</td>
+<td>signature verification failed</td>
+</tr>
+<tr>
+<td>100007</td>
+<td>illegal IP</td>
+</tr>
+<tr>
+<td>100015</td>
+<td>merchant ID is invalid</td>
+</tr>
+<tr>
+<td>100016</td>
+<td>merchant information expired</td>
+</tr>
+<tr>
+<td>110004</td>
+<td>users are frozen and cannot withdraw money</td>
+</tr>
+<tr>
+<td>110023</td>
+<td>mobile phone number has been registered</td>
+</tr>
+<tr>
+<td>110037</td>
+<td>withdrawal address is at risk</td>
+</tr>
+<tr>
+<td>110055</td>
+<td>correct withdrawal address for</td>
+</tr>
+<tr>
+<td>110065</td>
+<td>user does not exist (used to obtain user balance, withdraw money, or transfer money)</td>
+</tr>
+<tr>
+<td>110078</td>
+<td>withdrawal or transfer amount less than the minimum transfer amount</td>
+</tr>
+<tr>
+<td>110087</td>
+<td>withdrawal or transfer amount is greater than the maximum transfer amount</td>
+</tr>
+<tr>
+<td>110088</td>
+<td>please do not repeat the request</td>
+</tr>
+<tr>
+<td>110089</td>
+<td>registered mobile phone number is incorrect</td>
+</tr>
+<tr>
+<td>110101</td>
+<td>user registration failed</td>
+</tr>
+<tr>
+<td>110161</td>
+<td>exceeds the maximum withdrawal support accuracy</td>
+</tr>
+<tr>
+<td>120202</td>
+<td>currency is not supported</td>
+</tr>
+<tr>
+<td>120206</td>
+<td>withdrawal second confirmation failed</td>
+</tr>
+<tr>
+<td>120402</td>
+<td>insufficient balance in withdrawal or transfer</td>
+</tr>
+<tr>
+<td>120403</td>
+<td>insufficient balance of withdrawal fee</td>
+</tr>
+<tr>
+<td>120404</td>
+<td>withdrawal or transfer amount is too small, less than or equal to the commission fee</td>
+</tr>
+<tr>
+<td>900006</td>
+<td>the user is at risk. Withdrawal is prohibited</td>
+</tr>
+<tr>
+<td>3040006</td>
+<td>cannot transfer money to itself</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
