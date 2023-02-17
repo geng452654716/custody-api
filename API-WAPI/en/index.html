@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="images/favicon-5df21527.ico" rel="icon" type="image/ico" />
     <title>API Reference</title>
 
     <style media="screen">
@@ -335,17 +336,12 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#development-notes" class="toc-h2 toc-link" data-title="Development Notes">Development Notes</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#the-role-of-public-and-private-keys" class="toc-h3 toc-link" data-title="The Role of Public and Private Keys">The Role of Public and Private Keys</a>
-                          </li>
-                          <li>
-                            <a href="#account-preparation" class="toc-h3 toc-link" data-title="Account Preparation">Account Preparation</a>
-                          </li>
-                          <li>
-                            <a href="#interface-rules" class="toc-h3 toc-link" data-title="Interface rules">Interface rules</a>
-                          </li>
-                      </ul>
+                  </li>
+                  <li>
+                    <a href="#account-preparation" class="toc-h2 toc-link" data-title="Account Preparation">Account Preparation</a>
+                  </li>
+                  <li>
+                    <a href="#interface-rules" class="toc-h2 toc-link" data-title="Interface rules">Interface rules</a>
                   </li>
               </ul>
           </li>
@@ -407,7 +403,7 @@
             <a href="#appendix" class="toc-h1 toc-link" data-title="Appendix">Appendix</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#appendix-1-encryption-and-decryption-method" class="toc-h2 toc-link" data-title="Appendix 1: Encryption and Decryption Method">Appendix 1: Encryption and Decryption Method</a>
+                    <a href="#encryption-and-decryption-method" class="toc-h2 toc-link" data-title="Encryption and Decryption Method">Encryption and Decryption Method</a>
                   </li>
               </ul>
           </li>
@@ -420,13 +416,15 @@
 <p>Welcome to the TopValue asset custody platform. This document is used by the third-party technical team to add the self-developed mainchain to the ChainUp Custody for alliance members.</p>
 
 <p>Note: How to use WAPI to access the mainchain, the server and private keys are kept by the third-party technical team, and the ChainUp Custody is not responsible for the security of assets. Therefore, the third-party technical team must establish a complete wallet private key custody system and API private key custody system</p>
-<h1 id='preliminary-preparation'>Preliminary Preparation</h1><h2 id='development-notes'>Development Notes</h2><h3 id='the-role-of-public-and-private-keys'>The Role of Public and Private Keys</h3>
+<h1 id='preliminary-preparation'>Preliminary Preparation</h1><h2 id='development-notes'>Development Notes</h2>
+<p><strong>The Role of Public and Private Keys</strong></p>
+
 <p><strong>Party A</strong> is a third-party public chain docking party</p>
 
 <p><strong>Party B</strong> is the ChainUp Custody BaaS Cloud</p>
 
 <p><strong>The Role of Public and Private Keys</strong>： Party A needs to generate a pair of public and private keys in advance when registering the WAPI interface. The public key (rsa_third_pub) is provided to Party B. The private key is kept by yourself, and the private key is not disclosed to anyone. When requesting WAPI services, Party A shall encrypt the request parameters with Party B’s public key and sign the original data after MD5 with Party A’s private key. Upon receiving the request, Party B shall decrypt the data with Party B’s private key and check the original data after MD5 with Party A’s public key</p>
-<h3 id='account-preparation'>Account Preparation</h3><h4 id='developers-need-to-prepare-the-following-information'>Developers need to prepare the following information：</h4>
+<h2 id='account-preparation'>Account Preparation</h2><h4 id='developers-need-to-prepare-the-following-information'>Developers need to prepare the following information：</h4>
 <p>1）Generate a pair of public and private keys, and provide the public key to the platform；</p>
 
 <p>2）Third-party application server IP；</p>
@@ -442,7 +440,7 @@
 <p>Password length：<code>2048</code></p>
 
 <p>Key format：<code>PKCS#8</code></p>
-<h3 id='interface-rules'>Interface rules</h3>
+<h2 id='interface-rules'>Interface rules</h2>
 <table><thead>
 <tr>
 <th style="text-align: left">Transmission method:</th>
@@ -1127,8 +1125,8 @@ A maximum of 100 addresses per push to Custody, with each push checking that the
 </tbody></table>
 <h4 id='decrypted-response-data-parameters-7'>Decrypted Response Data Parameters</h4>
 <p>None</p>
-<h1 id='appendix'>Appendix</h1><h2 id='appendix-1-encryption-and-decryption-method'>Appendix 1: Encryption and Decryption Method</h2>
-<p>Java Encryption and Decryption Demo： https://github.com/HiCoinCom/WAPIDemo.git</p>
+<h1 id='appendix'>Appendix</h1><h2 id='encryption-and-decryption-method'>Encryption and Decryption Method</h2>
+<p><strong>Java Encryption and Decryption Demo</strong>： <a href="https://github.com/HiCoinCom/WAPIDemo.git">https://github.com/HiCoinCom/WAPIDemo.git</a></p>
 
       </div>
       <div class="dark-box">

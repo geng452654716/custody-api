@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="images/favicon-5df21527.ico" rel="icon" type="image/ico" />
     <title>API Reference</title>
 
     <style media="screen">
@@ -423,21 +424,16 @@
             <a href="#f3b134a5ca" class="toc-h1 toc-link" data-title="开发前准备">开发前准备</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#4390a3fb6e" class="toc-h2 toc-link" data-title="前期准备">前期准备</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#72706ccb1b" class="toc-h3 toc-link" data-title="开发须知">开发须知</a>
-                          </li>
-                          <li>
-                            <a href="#2f8862bf69" class="toc-h3 toc-link" data-title="资管账号准备">资管账号准备</a>
-                          </li>
-                          <li>
-                            <a href="#6e241fa925" class="toc-h3 toc-link" data-title="接口交互过程">接口交互过程</a>
-                          </li>
-                          <li>
-                            <a href="#cb6baa1bd8" class="toc-h3 toc-link" data-title="接口规则">接口规则</a>
-                          </li>
-                      </ul>
+                    <a href="#72706ccb1b" class="toc-h2 toc-link" data-title="开发须知">开发须知</a>
+                  </li>
+                  <li>
+                    <a href="#2f8862bf69" class="toc-h2 toc-link" data-title="资管账号准备">资管账号准备</a>
+                  </li>
+                  <li>
+                    <a href="#6e241fa925" class="toc-h2 toc-link" data-title="接口交互过程">接口交互过程</a>
+                  </li>
+                  <li>
+                    <a href="#cb6baa1bd8" class="toc-h2 toc-link" data-title="接口规则">接口规则</a>
                   </li>
               </ul>
           </li>
@@ -718,7 +714,7 @@
 <li>提币矿工费：提币到非ChainUP Custody的地址，走区块链网络需要消耗矿工费（部分币种），消耗的矿工费由三方承担；此部分资金支出在提币订单内可以直接查看；</li>
 <li>分润手续费：暂不收取</li>
 </ol>
-<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='4390a3fb6e'>前期准备</h2><h3 id='72706ccb1b'>开发须知</h3><h4 id='api-2'>两对公私钥作用（API方式）</h4>
+<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='72706ccb1b'>开发须知</h2><h4 id='api-2'>两对公私钥作用（API方式）</h4>
 <p><strong>第一对公私钥：</strong> 开发者在开通资管账号时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台B，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。</p>
 
 <p><strong>第二对公私钥：</strong> 开发者开通资管账号后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。</p>
@@ -765,7 +761,7 @@
 <li><p>rsa_third_prv为第三方应用私钥，主要用于加密请求参数。如果是生产环境，rsa_third_prv由开发者生成，然后将对应的公钥提供给平台。测试环境为了简化开发者对接流程，此处直接提供了一套第三方的公私钥，便于开发者快速对接。</p></li>
 <li><p>目前不支持测试环境对接，请根据<strong>接入指引</strong>自主注册创建钱包后，获取生产环境的API相关信息。</p></li>
 </ol>
-<h3 id='2f8862bf69'>资管账号准备</h3>
+<h2 id='2f8862bf69'>资管账号准备</h2>
 <p>开发者准备如下信息：</p>
 
 <p>1）生成一对公私钥，将公钥提供给平台；</p>
@@ -783,13 +779,13 @@
 <p>1）商户的唯一标识：<code>app_id</code>；</p>
 
 <p>2）钱包公钥：<code>rsa_wallet_pub</code>。</p>
-<h3 id='6e241fa925'>接口交互过程</h3>
+<h2 id='6e241fa925'>接口交互过程</h2>
 <p>文档为钱包服务对第三方应用提供的接口。</p>
 
 <p><a href="https://custodydocs.chainup.com/zh/latest/_images/apiopen-instructions-v2.png"><img src="https://custodydocs.chainup.com/zh/latest/_images/apiopen-instructions-v2.png" alt="../_images/apiopen-instructions-v2.png" /></a></p>
 
 <p>以下文档中的接口提供方称为 <strong>钱包服务</strong>，接口调用方称为 <strong>第三方应用</strong>。第三方应用在请求钱包服务时，通过RSA算法对请求参数进行加密，接受到钱包服务的响应数据后需要进行解密</p>
-<h3 id='cb6baa1bd8'>接口规则</h3>
+<h2 id='cb6baa1bd8'>接口规则</h2>
 <table><thead>
 <tr>
 <th style="text-align: left">传输方式:</th>
