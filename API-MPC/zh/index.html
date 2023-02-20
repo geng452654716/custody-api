@@ -341,7 +341,7 @@
                     <a href="#c4571ab0cb" class="toc-h2 toc-link" data-title="创建并配置企业钱包">创建并配置企业钱包</a>
                   </li>
                   <li>
-                    <a href="#api" class="toc-h2 toc-link" data-title="获取API 信息">获取API 信息</a>
+                    <a href="#api-2" class="toc-h2 toc-link" data-title="获取API 信息">获取API 信息</a>
                   </li>
               </ul>
           </li>
@@ -352,10 +352,7 @@
                     <a href="#72706ccb1b" class="toc-h2 toc-link" data-title="开发须知">开发须知</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#api-2" class="toc-h3 toc-link" data-title="两对公私钥作用（API方式）">两对公私钥作用（API方式）</a>
-                          </li>
-                          <li>
-                            <a href="#api-3" class="toc-h3 toc-link" data-title="为什么需要进行提现二次确认（API方式）">为什么需要进行提现二次确认（API方式）</a>
+                            <a href="#api-3" class="toc-h3 toc-link" data-title="两对公私钥作用（API方式）">两对公私钥作用（API方式）</a>
                           </li>
                           <li>
                             <a href="#api-api" class="toc-h3 toc-link" data-title="域名及API密钥（API方式）">域名及API密钥（API方式）</a>
@@ -363,7 +360,7 @@
                       </ul>
                   </li>
                   <li>
-                    <a href="#2f8862bf69" class="toc-h2 toc-link" data-title="资管账号准备">资管账号准备</a>
+                    <a href="#mpc-4" class="toc-h2 toc-link" data-title="MPC钱包准备">MPC钱包准备</a>
                   </li>
                   <li>
                     <a href="#6e241fa925" class="toc-h2 toc-link" data-title="接口交互过程">接口交互过程</a>
@@ -461,7 +458,13 @@
             <a href="#co-signer" class="toc-h1 toc-link" data-title="Co-Signer">Co-Signer</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#9f54d23a64" class="toc-h2 toc-link" data-title="客户需要实现提现签名回调接口（签名前回调一次，签名成功回调一次）">客户需要实现提现签名回调接口（签名前回调一次，签名成功回调一次）</a>
+                    <a href="#b122105296" class="toc-h2 toc-link" data-title="概述"><strong>概述</strong></a>
+                  </li>
+                  <li>
+                    <a href="#ae5b009f16" class="toc-h2 toc-link" data-title="对接流程"><strong>对接流程</strong></a>
+                  </li>
+                  <li>
+                    <a href="#co-signer-2" class="toc-h2 toc-link" data-title="Co-Signer回调"><strong>Co-Signer回调</strong></a>
                   </li>
               </ul>
           </li>
@@ -475,15 +478,14 @@
 
 <p><strong>MPC</strong>协议的性质允许用户了解哪些私钥片段参与和签署，旦其协议的性质不要求参与者对外披露他们的身份，这意味着每一方的输入都是保密的。同时MPC会保证签名生成方的在网络上是私密不可见的，在保护其个人数据隐私的同时，保证多方协作和交易可信度。</p>
 
-<p>您可以通过 <strong>ChainUp Custody</strong> 提供的 <strong>MPC- API</strong> ：</p>
-
+<p><strong>ChainUp Custody MPC</strong>提供了一个简单、高效的对接组件和API，可以帮助开发者更快地接入系统，可以让您自动化管理您的钱包、交易流程等。除此之外，我们还提供交易消息通知，让你更快的感知事件的发生。</p>
+<h4 id='api'>API主要提供以下功能：</h4>
 <ul>
-<li><p>实现对子钱包和资产的管理</p></li>
-<li><p>快捷发起交易，并收到关于交易的实时状态变更通知</p></li>
-<li><p>获取充值提币等交易记录</p></li>
-<li><p>检查区块链钱包地址是否正确</p></li>
-<li><p>通过 ChainUp MPC-API 的 Co-signer 设置交易自动签名</p></li>
-<li><p>... ...</p></li>
+<li>管理子钱包和资产查看</li>
+<li>获取发起交易所需的预估手续费</li>
+<li>发起交易、收到交易最终的状态通知</li>
+<li>通过ChainUp Custody提供的Co-Signer完成自动签名、地址生成</li>
+<li>获取所有交易的记录详情</li>
 </ul>
 
 <p>请联系<strong>商务经理</strong>或<strong>发邮件</strong>至 <a href="mailto:custody@chainup.com">custody@chainup.com</a> 获取<strong>API</strong> 信息。 </p>
@@ -517,14 +519,12 @@
 </ul>
 
 <p>若钱包配置不满足您的需求，可联系商务经理或发邮件至 <a href="mailto:custody@chainup.com">custody@chainup.com</a> 获取支持。</p>
-<h2 id='api'>获取API 信息</h2>
+<h2 id='api-2'>获取API 信息</h2>
 <p>请联系<strong>商务经理</strong>或<strong>发邮件</strong>至 <a href="mailto:custody@chainup.com">custody@chainup.com</a> 获取<strong>API</strong> 信息。 </p>
-<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='72706ccb1b'>开发须知</h2><h3 id='api-2'>两对公私钥作用（API方式）</h3>
-<p><strong>第一对公私钥：</strong> 开发者在开通资管账号时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台B，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。</p>
+<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='72706ccb1b'>开发须知</h2><h3 id='api-3'>两对公私钥作用（API方式）</h3>
+<p><strong>第一对公私钥：</strong> 开发者在开通MPC钱包时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。</p>
 
-<p><strong>第二对公私钥：</strong> 开发者开通资管账号后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。</p>
-<h3 id='api-3'>为什么需要进行提现二次确认（API方式）</h3>
-<p>钱包服务接收到第三方应用请求时，为了确认该请求为第三方应用合法请求，会调用第三方提供的接口来确认。该过程在一定程度上也能避免第三方私钥丢失所造成的影响，也为钱包服务的安全性提供了一套有效屏障。</p>
+<p><strong>第二对公私钥：</strong> 开发者开通MPC钱包后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。</p>
 <h3 id='api-api'>域名及API密钥（API方式）</h3>
 <table><thead>
 <tr>
@@ -562,20 +562,18 @@
 <li><p>rsa_third_prv为第三方应用私钥，主要用于加密请求参数。如果是生产环境，rsa_third_prv由开发者生成，然后将对应的公钥提供给平台。测试环境为了简化开发者对接流程，此处直接提供了一套第三方的公私钥，便于开发者快速对接。</p></li>
 <li><p>目前不支持测试环境对接，请根据<strong>接入指引</strong>自主注册创建钱包后，获取生产环境的API相关信息。</p></li>
 </ol>
-<h2 id='2f8862bf69'>资管账号准备</h2>
+<h2 id='mpc-4'>MPC钱包准备</h2>
 <p><strong>开发者准备如下信息：</strong></p>
 
 <p>1）生成一对公私钥，将公钥提供给平台；</p>
 
-<p>2）第三方应用服务器IP；</p>
+<p>2）第三方应用服务器和Co-Signer服务器的IP；</p>
 
 <p>3）充值提现回调通知地址；</p>
 
-<p>4）提现二次确认地址；</p>
+<p>4）Co-Signer服务器的域名；</p>
 
-<p>5）是否开启自动归集功能，开启后，系统会自动将用户充值资金划转到商户归集账户。</p>
-
-<p>联系平台相关人员，提供上述五类信息。平台为您准备资管账号，提供到您这边包括以下信息：</p>
+<p>联系平台相关人员，提供上述四类信息。平台为您准备MPC钱包，提供到您这边包括以下信息：</p>
 
 <p>1）商户的唯一标识：<code>app_id</code>；</p>
 
@@ -607,10 +605,17 @@
 </tr>
 <tr>
 <td style="text-align: left">加密算法:</td>
-<td>详见<code>附 1</code></td>
+<td>RSA</td>
 </tr>
 </tbody></table>
-<h1 id='api-4'>API接口</h1><h2 id='ada01d8c4e'>统一说明</h2><h4 id='d06fcec6de'>请求参数统一格式</h4>
+<h1 id='api-4'>API接口</h1><h2 id='ada01d8c4e'>统一说明</h2>
+<blockquote>
+<p>请求接口示例：</p>
+</blockquote>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="no">POST</span> <span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">mpc</span><span class="o">/</span><span class="n">sub_wallet</span><span class="o">/</span><span class="n">assets</span>
+
+<span class="n">app_id</span><span class="o">=</span><span class="mi">2128</span><span class="n">eb8de9e932a4376909f3d69424cc</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">SWYYr</span><span class="o">-</span><span class="nc">LBVAmaS0eq8n</span><span class="o">-</span><span class="n">CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov</span><span class="o">-</span><span class="mi">7</span><span class="n">hsRsVmOhyPqC</span><span class="o">-</span><span class="n">JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8</span><span class="o">-</span><span class="n">BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht</span><span class="o">-</span><span class="n">n_ZcBdxIDt975dbOFUiH</span><span class="o">-</span><span class="n">oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ</span><span class="o">-</span><span class="mi">6</span><span class="n">cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb</span><span class="o">-</span><span class="mi">5</span><span class="n">g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI</span>
+</code></pre></div><h4 id='d06fcec6de'>请求参数统一格式</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -634,14 +639,7 @@
 </tbody></table>
 <h4 id='837f556275'>请求接口示例：</h4>
 <p><code>POST /api/mpc/sub_wallet/assets</code></p>
-
-<blockquote>
-<p>请求接口示例：</p>
-</blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="no">POST</span> <span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">mpc</span><span class="o">/</span><span class="n">sub_wallet</span><span class="o">/</span><span class="n">assets</span>
-
-<span class="n">app_id</span><span class="o">=</span><span class="mi">2128</span><span class="n">eb8de9e932a4376909f3d69424cc</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">SWYYr</span><span class="o">-</span><span class="nc">LBVAmaS0eq8n</span><span class="o">-</span><span class="n">CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov</span><span class="o">-</span><span class="mi">7</span><span class="n">hsRsVmOhyPqC</span><span class="o">-</span><span class="n">JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8</span><span class="o">-</span><span class="n">BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht</span><span class="o">-</span><span class="n">n_ZcBdxIDt975dbOFUiH</span><span class="o">-</span><span class="n">oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ</span><span class="o">-</span><span class="mi">6</span><span class="n">cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb</span><span class="o">-</span><span class="mi">5</span><span class="n">g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI</span>
-</code></pre></div><h4 id='680b2bbba1'>响应参数统一格式</h4>
+<h4 id='680b2bbba1'>响应参数统一格式</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -1846,8 +1844,8 @@
 <blockquote>
 <p>交易通知请求接口示例</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">app_id=</span><span class="mi">2128</span><span class="err">eb</span><span class="mi">8</span><span class="err">de</span><span class="mi">9e932</span><span class="err">a</span><span class="mi">4376909</span><span class="err">f</span><span class="mi">3</span><span class="err">d</span><span class="mi">69424</span><span class="err">cc&amp;data=SWYYr-LBVAmaS</span><span class="mi">0</span><span class="err">eq</span><span class="mi">8</span><span class="err">n-CUT_nHkM</span><span class="mi">3</span><span class="err">OBxyWOsImMTe</span><span class="mi">41</span><span class="err">UaqAoYI</span><span class="mi">2</span><span class="err">ZghmaphXHov</span><span class="mi">-7</span><span class="err">hsRsVmOhyPqC-JFuRGvonJKFd</span><span class="mi">2</span><span class="err">Jirxv</span><span class="mi">6</span><span class="err">Vn_</span><span class="mi">8</span><span class="err">V</span><span class="mi">40</span><span class="err">r_MMYTkhqcviQbZWYW</span><span class="mi">5</span><span class="err">xX</span><span class="mi">8</span><span class="err">Ai</span><span class="mi">8</span><span class="err">CIpqas</span><span class="mi">9</span><span class="err">fIWVDIYA_NKBl</span><span class="mi">0</span><span class="err">UCJpwGxscxLNpjq</span><span class="mi">5</span><span class="err">Z</span><span class="mi">8</span><span class="err">-BTyIYDsVBquM</span><span class="mi">9</span><span class="err">zEQGBCfcA</span><span class="mi">7</span><span class="err">szD</span><span class="mi">9</span><span class="err">n</span><span class="mi">2</span><span class="err">fN_loSkoexlwqV</span><span class="mi">8</span><span class="err">wg</span><span class="mi">9</span><span class="err">HIZO</span><span class="mi">5</span><span class="err">yQ</span><span class="mi">6</span><span class="err">utZ_Kt</span><span class="mi">0</span><span class="err">lNDQQb</span><span class="mi">8</span><span class="err">zn</span><span class="mi">8</span><span class="err">BwfAvsEsbJlOINUAqhxh</span><span class="mi">1</span><span class="err">vV_AJ</span><span class="mi">4</span><span class="err">bXn</span><span class="mi">2</span><span class="err">uYx</span><span class="mi">8</span><span class="err">TaYcBht-n_ZcBdxIDt</span><span class="mi">975</span><span class="err">dbOFUiH-oCzIuDi</span><span class="mi">1</span><span class="err">oLDtb</span><span class="mi">4</span><span class="err">EylfCvhU</span><span class="mi">5E4</span><span class="err">ozel_lQ</span><span class="mi">-6</span><span class="err">cyIG</span><span class="mi">0</span><span class="err">Dqiiyx</span><span class="mi">0</span><span class="err">RFFOCJzPSXIoV</span><span class="mi">031</span><span class="err">pvoa</span><span class="mi">8</span><span class="err">pTCpkWklh</span><span class="mi">8</span><span class="err">mRw</span><span class="mi">1</span><span class="err">rylBgeZtqSxpnJO</span><span class="mi">2</span><span class="err">_u</span><span class="mi">2</span><span class="err">RIlXq</span><span class="mi">6</span><span class="err">Hs</span><span class="mi">8</span><span class="err">Yly</span><span class="mi">9</span><span class="err">CmhIXaSrUgPir</span><span class="mi">0</span><span class="err">h</span><span class="mi">6</span><span class="err">xVxlf</span><span class="mi">4</span><span class="err">VC</span><span class="mi">6</span><span class="err">PFVCkiiTlp</span><span class="mi">0</span><span class="err">kZ_H_UbKm</span><span class="mi">0</span><span class="err">nUis</span><span class="mi">3</span><span class="err">v</span><span class="mi">3</span><span class="err">U</span><span class="mi">2</span><span class="err">sflWJ</span><span class="mi">2</span><span class="err">C</span><span class="mi">449</span><span class="err">waSrikhuxVrFAQ</span><span class="mi">6</span><span class="err">PQmrFVCAE</span><span class="mi">6</span><span class="err">MYXNrFXJQuam</span><span class="mi">2</span><span class="err">HAIQNSGbFQjspw</span><span class="mi">8</span><span class="err">b_bXyfyZMGZ</span><span class="mi">3</span><span class="err">K</span><span class="mi">2</span><span class="err">oBC</span><span class="mi">4</span><span class="err">I_v</span><span class="mi">3</span><span class="err">eETTdPe</span><span class="mi">0</span><span class="err">pfSNJb</span><span class="mi">-5</span><span class="err">g</span><span class="mi">37</span><span class="err">K</span><span class="mi">0</span><span class="err">tOAr_UFbWK</span><span class="mi">8</span><span class="err">pkC</span><span class="mi">8</span><span class="err">yl</span><span class="mi">56</span><span class="err">fSjn</span><span class="mi">8</span><span class="err">tcR</span><span class="mi">3</span><span class="err">yCRWwoi</span><span class="mi">8</span><span class="err">jxTcUBiswTtvXZtzgG</span><span class="mi">4</span><span class="err">dyzkaHXjsZjSGiywXSqP</span><span class="mi">76</span><span class="err">VZWlyOmAx</span><span class="mi">6</span><span class="err">IDSViLcPLPISdU</span><span class="mi">3</span><span class="err">ruCI</span><span class="w">
-</span></code></pre></div><h4 id='9d2f6dab11'>交易通知请求参数统一格式</h4>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="n">app_id</span><span class="o">=</span><span class="mi">2128</span><span class="n">eb8de9e932a4376909f3d69424cc</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">SWYYr</span><span class="o">-</span><span class="nc">LBVAmaS0eq8n</span><span class="o">-</span><span class="n">CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov</span><span class="o">-</span><span class="mi">7</span><span class="n">hsRsVmOhyPqC</span><span class="o">-</span><span class="n">JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8</span><span class="o">-</span><span class="n">BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht</span><span class="o">-</span><span class="n">n_ZcBdxIDt975dbOFUiH</span><span class="o">-</span><span class="n">oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ</span><span class="o">-</span><span class="mi">6</span><span class="n">cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb</span><span class="o">-</span><span class="mi">5</span><span class="n">g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI</span>
+</code></pre></div><h4 id='9d2f6dab11'>交易通知请求参数统一格式</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -1856,12 +1854,6 @@
 <th style="text-align: left">说明</th>
 </tr>
 </thead><tbody>
-<tr>
-<td style="text-align: left">Param</td>
-<td style="text-align: left">类型</td>
-<td style="text-align: left">是否必须</td>
-<td style="text-align: left">说明</td>
-</tr>
 <tr>
 <td style="text-align: left">app_id</td>
 <td style="text-align: left">String</td>
@@ -2263,9 +2255,42 @@
 <td>不能给自己转账</td>
 </tr>
 </tbody></table>
-<h1 id='co-signer'>Co-Signer</h1><h2 id='9f54d23a64'>客户需要实现提现签名回调接口（签名前回调一次，签名成功回调一次）</h2><h4 id='http-13'>HTTP请求</h4>
-<p><code>POST /自定义地址</code></p>
-<h4 id='a25863fc00'>请求参数数据结构（无需进行加密）</h4>
+<h1 id='co-signer'>Co-Signer</h1><h2 id='b122105296'><strong>概述</strong></h2>
+<p>Co-Signer可以帮助您快速对接API，需要您单独部署在服务器上。Co-Signer需要绑定您钱包的分片私钥，用于创建地址和交易签名。</p>
+
+<p>Co-Signer在交易签名前会回调您的业务系统，得到授权通过后才能发起签名，否则无法进行交易。</p>
+<h2 id='ae5b009f16'><strong>对接流程</strong></h2>
+<p>Co-Signer主要实现了两个功能：创建地址和自动签名，具体流程如下图：</p>
+<h4 id='8d32a28e9d'>创建地址流程：</h4>
+<p><img src="images/createaddress-4034e617.png" style="width: 350px" alt="" /></p>
+<h4 id='76b23b2e5e'>自动签名流程：</h4>
+<p><img src="images/sign-d7a24ba1.png" style="width: 350px" alt="" /></p>
+<h2 id='co-signer-2'><strong>Co-Signer回调</strong></h2>
+<p>为了保证交易的安全，您需要在Co-Signer中配置一个业务系统的回调地址，在交易签名之前授权。</p>
+
+<p>授权交易数据<strong>采用明文传输</strong>，您需要在应用服务中保证业务系统和Co-Signer之间的通信安全。</p>
+<h4 id='http-13'>HTTP请求</h4>
+<p><code>POST /{url}</code></p>
+
+<p><code>Content-Type application/json;charset=UTF-8</code></p>
+
+<blockquote>
+<p>回调参数示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/callback/example</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"sign_start"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdraw_id"</span><span class="p">:</span><span class="mi">321456</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"c70d1eebb7c687ec8d56bead73f104"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pending_round"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="mf">167230.4978</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='2f0c1d7200'>回调参数格式：</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -2275,56 +2300,62 @@
 </tr>
 </thead><tbody>
 <tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">回调类型，<code>sign_start</code>签名开始，<code>sign_success</code>签名成功</td>
+</tr>
+<tr>
 <td style="text-align: left">withdraw_id</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">是</td>
-<td style="text-align: left">提现id</td>
+<td style="text-align: left">交易ID</td>
 </tr>
 <tr>
 <td style="text-align: left">request_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">是</td>
-<td style="text-align: left">提币唯一标识</td>
+<td style="text-align: left">发起交易唯一标识</td>
 </tr>
 <tr>
 <td style="text-align: left">pending_round</td>
-<td style="text-align: left">Bool</td>
+<td style="text-align: left">Boolean</td>
 <td style="text-align: left">是</td>
-<td style="text-align: left">加速状态，<code>false</code>为提币，<code>true</code>为提币加速</td>
+<td style="text-align: left">加速状态，true是，false否（普通交易）</td>
 </tr>
 <tr>
 <td style="text-align: left">from</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">是</td>
-<td style="text-align: left">出币地址</td>
+<td style="text-align: left">交易出币地址</td>
 </tr>
 <tr>
 <td style="text-align: left">to</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">是</td>
-<td style="text-align: left">到账地址</td>
+<td style="text-align: left">交易到账地址</td>
 </tr>
 <tr>
 <td style="text-align: left">memo</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">否</td>
-<td style="text-align: left">到账地址memo</td>
+<td style="text-align: left">交易到账memo</td>
 </tr>
 <tr>
 <td style="text-align: left">amount</td>
 <td style="text-align: left">Decimal</td>
 <td style="text-align: left">是</td>
-<td style="text-align: left">提币金额</td>
+<td style="text-align: left">交易金额</td>
 </tr>
 <tr>
 <td style="text-align: left">symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">是</td>
-<td style="text-align: left">币种唯一标识，例：USDTERC20</td>
+<td style="text-align: left">交易币种唯一标识</td>
 </tr>
 </tbody></table>
 <h4 id='2dda1c9689'>回调响应参数统一格式</h4>
-<p>返回字符串：<code>SUCCES</code>表示成功，<code>FAILURE</code>表示失败 （注意此处返回参数无需进行加密）</p>
+<p>返回字符串：<code>SUCCES</code>表示成功，<code>FAILURE</code>表示失败 </p>
 
       </div>
       <div class="dark-box">

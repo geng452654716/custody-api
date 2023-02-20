@@ -2244,7 +2244,25 @@
 <p><code>POST /{url}</code></p>
 
 <p><code>Content-Type application/json;charset=UTF-8</code></p>
-<h4 id='callback-request-parameters'>Callback Request Parameters</h4>
+
+<blockquote>
+<p>Request </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="err">POST</span><span class="w"> </span><span class="err">/callback/example</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"sign_start"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdraw_id"</span><span class="p">:</span><span class="mi">321456</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"c70d1eebb7c687ec8d56bead73f104"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pending_round"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="mf">167230.4978</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='callback-request-parameters'>Callback Request Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
