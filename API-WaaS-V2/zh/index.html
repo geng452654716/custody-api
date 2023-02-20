@@ -728,10 +728,6 @@
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left"></td>
-<td></td>
-</tr>
-<tr>
 <td style="text-align: left">app_id:</td>
 <td>请创建钱包后获取</td>
 </tr>
@@ -875,7 +871,9 @@
 <blockquote>
 <p>响应结果示例:   </p>
 </blockquote>
-<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span><span class="s">"data"</span><span class="o">:</span><span class="s">"LK4D5mrtvTubDxCQM4lqyN2h8TTIkEBL_06FrrrzLrImyMO4Yuac-wdbk5VnGVfCKB5EFaUb162xXUJdTHhpA5CGBCAQKl64h_Dt10C-H8KIoap9dZI90qE4f-mAMAyjF1QzKXJ-f-R_3J3bRGqfHFBRXebh08R8MdRDssniopVOhsFUs4gBxUensKas3_ta15eFIqXPjIgJWfYQCD2DUi1gaKgmN-5Q_tgt-qXp5Y2uh3yfM4g4k71Ahyel3G8S_AktbWl2G9wU3cri3ZVQEo0faIpkX_CKsk9V1YoY5yRopvJbxNtkG9lBFxKnureAQo0KP3f1tsIMOzgcyEXPnA"</span><span class="o">}</span>
+<div class="highlight"><pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"data"</span><span class="o">:</span><span class="s">"LK4D5mrtvTubDxCQM4lqyN2h8TTIkEBL_06FrrrzLrImyMO4Yuac-wdbk5VnGVfCKB5EFaUb162xXUJdTHhpA5CGBCAQKl64h_Dt10C-H8KIoap9dZI90qE4f-mAMAyjF1QzKXJ-f-R_3J3bRGqfHFBRXebh08R8MdRDssniopVOhsFUs4gBxUensKas3_ta15eFIqXPjIgJWfYQCD2DUi1gaKgmN-5Q_tgt-qXp5Y2uh3yfM4g4k71Ahyel3G8S_AktbWl2G9wU3cri3ZVQEo0faIpkX_CKsk9V1YoY5yRopvJbxNtkG9lBFxKnureAQo0KP3f1tsIMOzgcyEXPnA"</span>
+<span class="o">}</span>
 </code></pre></div><h3 id='data'>响应结果data解密后格式</h3>
 <table><thead>
 <tr>
@@ -1105,7 +1103,8 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:{</span><span class="w">
-</span><span class="nl">"uid"</span><span class="p">:</span><span class="s2">"3529218"</span><span class="p">,</span><span class="w">     </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="s2">"3529218"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="s2">"0x6956f9af53b22117f2fc94dfe7c74ff3893b2acd"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1722,34 +1721,34 @@
 <p>响应数据解密后示例:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suc"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"id"</span><span class="w"> </span><span class="err">：</span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"uid"</span><span class="w"> </span><span class="err">：</span><span class="mi">11</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"symbol"</span><span class="err">：</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"amount"</span><span class="err">：</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"suc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="w"> </span><span class="err">：</span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"uid"</span><span class="w"> </span><span class="err">：</span><span class="mi">12</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"symbol"</span><span class="w"> </span><span class="err">：</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"amount"</span><span class="err">：</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"78d1edef3b3fd14365f88cf2d03e8c29ec49ac1a43cedde9e21d320b3268f4de"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.0002000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="mi">1545273830000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txid"</span><span class="p">:</span><span class="s2">"0xd609e050c3d573fb715431edbd36cc08eaa475f813de921026a65c0a96e8113e"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address_to"</span><span class="p">:</span><span class="s2">"0xcb03bfdccb50c9f62ec1c728f264bf453e037132"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='data-19'>响应参数data解密之后数据结构:</h4>
 <table><thead>
@@ -1844,7 +1843,7 @@
 </tr>
 </tbody></table>
 <h4 id='data-20'>请求参数data解密之后数据结构:</h4>
-<p>充值通知：</p>
+<p><strong>充值通知：</strong></p>
 
 <table><thead>
 <tr>
@@ -2847,13 +2846,13 @@
 <td>charset</td>
 <td>String</td>
 <td>必填</td>
-<td>编码格式，无特殊情况，传参数utf-8</td>
+<td>编码格式，无特殊情况，传参数<code>utf-8</code></td>
 </tr>
 <tr>
 <td>version</td>
 <td>String</td>
 <td>必填</td>
-<td>接口版本号，无特殊情况，传参数v2</td>
+<td>接口版本号，无特殊情况，传参数<code>v2</code></td>
 </tr>
 <tr>
 <td>request_id</td>
@@ -2877,7 +2876,7 @@
 <td>to</td>
 <td>String</td>
 <td>必填</td>
-<td>转入商户，目前填写商户APPID</td>
+<td>转入商户，目前填写商户<code>APPID</code></td>
 </tr>
 <tr>
 <td>remark</td>
@@ -2938,13 +2937,13 @@
 <td>charset</td>
 <td>String</td>
 <td>必填</td>
-<td>编码格式，无特殊情况，传参数utf-8</td>
+<td>编码格式，无特殊情况，传参数<code>utf-8</code></td>
 </tr>
 <tr>
 <td>version</td>
 <td>String</td>
 <td>必填</td>
-<td>接口版本号，无特殊情况，传参数v2</td>
+<td>接口版本号，无特殊情况，传参数<code>v2</code></td>
 </tr>
 <tr>
 <td>request_id</td>
@@ -2968,7 +2967,7 @@
 <td>to</td>
 <td>String</td>
 <td>必填</td>
-<td>转入商户，目前填写商户APPID</td>
+<td>转入商户，目前填写商户<code>APPID</code></td>
 </tr>
 <tr>
 <td>check_sum</td>
@@ -3040,13 +3039,13 @@
 <td>charset</td>
 <td>String</td>
 <td>必填</td>
-<td>编码格式，无特殊情况，传参数utf-8</td>
+<td>编码格式，无特殊情况，传参数<code>utf-8</code></td>
 </tr>
 <tr>
 <td>version</td>
 <td>String</td>
 <td>必填</td>
-<td>接口版本号，无特殊情况，传参数v2</td>
+<td>接口版本号，无特殊情况，传参数<code>v2</code></td>
 </tr>
 <tr>
 <td>ids</td>
@@ -3112,13 +3111,13 @@
 <td>charset</td>
 <td>String</td>
 <td>必填</td>
-<td>编码格式，无特殊情况，传参数utf-8</td>
+<td>编码格式，无特殊情况，传参数<code>utf-8</code></td>
 </tr>
 <tr>
 <td>version</td>
 <td>String</td>
 <td>必填</td>
-<td>接口版本号，无特殊情况，传参数v2</td>
+<td>接口版本号，无特殊情况，传参数<code>v2</code></td>
 </tr>
 <tr>
 <td>id</td>
@@ -3142,13 +3141,13 @@
 <td>from</td>
 <td>String</td>
 <td>必填</td>
-<td>转出商户，转出商户APPID</td>
+<td>转出商户<code>APPID</code></td>
 </tr>
 <tr>
 <td>to</td>
 <td>String</td>
 <td>必填</td>
-<td>转入商户，转入商户APPID</td>
+<td>转入商户<code>APPID</code></td>
 </tr>
 <tr>
 <td>created_at</td>
@@ -3196,13 +3195,13 @@
 <td>charset</td>
 <td>String</td>
 <td>必填</td>
-<td>编码格式，无特殊情况，传参数utf-8</td>
+<td>编码格式，无特殊情况，传参数<code>utf-8</code></td>
 </tr>
 <tr>
 <td>version</td>
 <td>String</td>
 <td>必填</td>
-<td>接口版本号，无特殊情况，传参数v2</td>
+<td>接口版本号，无特殊情况，传参数<code>v2</code></td>
 </tr>
 <tr>
 <td>max_id</td>
@@ -3244,7 +3243,87 @@
 </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"成功"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='data-39'>响应参数data解密之后数据结构:</h4>
-<p>无</p>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time</td>
+<td>long</td>
+<td>必填</td>
+<td>当前时间戳</td>
+</tr>
+<tr>
+<td>charset</td>
+<td>String</td>
+<td>必填</td>
+<td>编码格式，无特殊情况，传参数<code>utf-8</code></td>
+</tr>
+<tr>
+<td>version</td>
+<td>String</td>
+<td>必填</td>
+<td>接口版本号，无特殊情况，传参数<code>v2</code></td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>必填</td>
+<td>请求唯一标识，最多支持64位</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>必填</td>
+<td>币种</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>必填</td>
+<td>转账数量，包含转账手续费</td>
+</tr>
+<tr>
+<td>from</td>
+<td>String</td>
+<td>必填</td>
+<td>转出商户<code>APPID</code></td>
+</tr>
+<tr>
+<td>to</td>
+<td>String</td>
+<td>必填</td>
+<td>转入商户<code>APPID</code></td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>Long</td>
+<td>必填</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>request_id</td>
+<td>String</td>
+<td>必填</td>
+<td>三方ID</td>
+</tr>
+<tr>
+<td>receipt</td>
+<td>String</td>
+<td>必填</td>
+<td>转账凭证</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>String</td>
+<td>必填</td>
+<td>最大支持32字符</td>
+</tr>
+</tbody></table>
 <h1 id='sdk'>SDK</h1>
 <p>为满足客户多样性的业务需求，ChainUp Custody支持两种对接方式：SDK与API</p>
 
