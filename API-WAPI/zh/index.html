@@ -354,21 +354,24 @@
                           </li>
                       </ul>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#06914006d1" class="toc-h1 toc-link" data-title="对接方案">对接方案</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#06914006d1" class="toc-h2 toc-link" data-title="对接方案">对接方案</a>
-                      <ul class="toc-list-h3">
-                          <li>
-                            <a href="#e4d635d90e" class="toc-h3 toc-link" data-title="注册充币地址">注册充币地址</a>
-                          </li>
-                          <li>
-                            <a href="#3a86198eeb" class="toc-h3 toc-link" data-title="用户充币">用户充币</a>
-                          </li>
-                          <li>
-                            <a href="#6f4f99292a" class="toc-h3 toc-link" data-title="用户提币">用户提币</a>
-                          </li>
-                      </ul>
+                    <a href="#e4d635d90e" class="toc-h2 toc-link" data-title="注册充币地址">注册充币地址</a>
+                  </li>
+                  <li>
+                    <a href="#3a86198eeb" class="toc-h2 toc-link" data-title="用户充币">用户充币</a>
+                  </li>
+                  <li>
+                    <a href="#6f4f99292a" class="toc-h2 toc-link" data-title="用户提币">用户提币</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
           </li>
           <li>
             <a href="#api-2" class="toc-h1 toc-link" data-title="API文档">API文档</a>
@@ -377,35 +380,30 @@
                     <a href="#ada01d8c4e" class="toc-h2 toc-link" data-title="统一说明">统一说明</a>
                   </li>
                   <li>
-                    <a href="#9726c568f9" class="toc-h2 toc-link" data-title="地址注册接口">地址注册接口</a>
+                    <a href="#22f2a9e0df" class="toc-h2 toc-link" data-title="地址注册">地址注册</a>
                   </li>
                   <li>
-                    <a href="#1f61660d6b" class="toc-h2 toc-link" data-title="剩余地址可用数量接口">剩余地址可用数量接口</a>
+                    <a href="#676802e579" class="toc-h2 toc-link" data-title="剩余地址可用数量">剩余地址可用数量</a>
                   </li>
                   <li>
-                    <a href="#59c963c6a4" class="toc-h2 toc-link" data-title="充值通知接口">充值通知接口</a>
+                    <a href="#0a4c7aae08" class="toc-h2 toc-link" data-title="充值通知">充值通知</a>
                   </li>
                   <li>
-                    <a href="#c02e8c7d87" class="toc-h2 toc-link" data-title="提现拉取接口">提现拉取接口</a>
+                    <a href="#fe12700c74" class="toc-h2 toc-link" data-title="提现拉取">提现拉取</a>
                   </li>
                   <li>
-                    <a href="#a4636a81e2" class="toc-h2 toc-link" data-title="提现通知接口">提现通知接口</a>
+                    <a href="#751ba0a652" class="toc-h2 toc-link" data-title="提现通知">提现通知</a>
                   </li>
                   <li>
-                    <a href="#3cc9595904" class="toc-h2 toc-link" data-title="内部通知接口">内部通知接口</a>
+                    <a href="#f39d1dc3bf" class="toc-h2 toc-link" data-title="内部通知">内部通知</a>
                   </li>
                   <li>
-                    <a href="#ba627cf61f" class="toc-h2 toc-link" data-title="提币打回接口">提币打回接口</a>
+                    <a href="#38ee0ad075" class="toc-h2 toc-link" data-title="提币打回">提币打回</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#f8519014aa" class="toc-h1 toc-link" data-title="附录">附录</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#8c20d5369f" class="toc-h2 toc-link" data-title="加解密方式">加解密方式</a>
-                  </li>
-              </ul>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
           </li>
       </ul>
     </div>
@@ -459,7 +457,7 @@
 </tr>
 <tr>
 <td style="text-align: left">加密算法:</td>
-<td>详见<code>附 1</code></td>
+<td>Java 加解密Demo ： <a href="https://github.com/HiCoinCom/WAPIDemo.git">https://github.com/HiCoinCom/WAPIDemo.git</a></td>
 </tr>
 </tbody></table>
 <h2 id='api'>域名及API密钥</h2><h3 id='7f152260df'>生产环境</h3>
@@ -519,7 +517,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 </tbody></table>
 
 <p><strong>说明：</strong> <code>rsa_third_prv</code>为第三方应用私钥，主要用于加密请求参数。如果是生产环境，<code>rsa_third_prv</code>由开发者生成，然后将对应的公钥提供给平台。测试环境为了简化开发者对接流程，此处直接提供了一套第三方的公私钥及币种名称，便于开发者快速对接。</p>
-<h2 id='06914006d1'>对接方案</h2>
+<h1 id='06914006d1'>对接方案</h1>
 <p>为了让公链接入者更便捷、快速的接入ChainUp Custody，我们提供了BaaS服务，以满足公链对接需求，平台基于过往客户的对接经验，梳理了一套对接方案。具体如下：</p>
 
 <p>整个方案共分三个流程：</p>
@@ -547,6 +545,12 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 <p>3）上链成功后，向BaaS通知提现结果,BaaS接口响应（*<em>接口地址: *</em><code>/api/v1/withdraw/notify</code>）</p>
 
 <p>注：如遇特殊情况可以撤销提币请求，向BaaS接口推送通知（<strong>接口地址：</strong><code>/api/v1/withdraw/cancel</code>）</p>
+<h1 id='sdk'>SDK</h1>
+<p>为满足客户多样性的业务需求，ChainUp Custody支持两种对接方式：<strong>SDK与API</strong> </p>
+<h4 id='sdk-java-node'>SDK：支持java和node</h4>
+<p><strong>java SDK地址</strong>：<a href="https://github.com/HiCoinCom/java-wapi-sdk">GitHub - HiCoinCom/java-wapi-sdk: bass wapi java sdk</a></p>
+
+<p><strong>node SDK地址</strong>：<a href="https://github.com/HiCoinCom/js-wapi-sdk">GitHub - HiCoinCom/js-wapi-sdk: chainup wapi sdk</a></p>
 <h1 id='api-2'>API文档</h1><h2 id='ada01d8c4e'>统一说明</h2><h4 id='2eb6f47757'>请求参数:</h4>
 <table><thead>
 <tr>
@@ -639,7 +643,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tBosL74tKsUMckzB0320OjvqJvjHip77PS-mz_BZ-xsKO5MVzPz-adw94NUZ_8FtdYSDTsnM6ZtiL3e7T-2c2U5fvc7QTMVoJfv6SPJOmk0yRz8qBvMfgUKdjwEkpZJyCRYtmdp9sSJsbtI_Ygkr0i4KtaxMA_yskkAXODJ0aewcT7_uS9OHn8pExoNXpQ-XEbHbrK-QF8Sl4BcWQXZ2YdsF4z8T4Q3hQcSG3AyLOb4z3YIU6ZyjMok7ZsWyYoiHpMjD9eXfIfgDYUOxdocbNCjqAx6EPrueupLtUXqjCDqUEuXP3jXLJ97c9rluiNhc3XVdvrCK0lEzxoLL44yWRHDUTCpPARSemsHWy9XOiAdWlS8SaQKUS-iprfKi9e6kUDSHYFSEoZSo44Vktv8AGmHod5IGwGLBtu1fIaTuun8ahRHSVyLoJf11rSgfAkIWDUnC-Fiilk0O0pw-5q0HQkhihYYx4TEr-JWV_Y080YGkBI-NQ4RILpIKr0r292BrR4GLsYWzxieOURXrbmx7NKCaD0JmERrUbV0rbUs0rvJRj6T-5MIW6FD7oFGhXbViuTAxyqtUNvatbDEGRXbnoUTC_Jv0TX9LM0S9coT0ozYLn_2L9psdUdNGPPGkd6d3KzFxxy_m_h3l4MHinEpFvVewBJeZP7q5Z5rNhzSmxtc"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jJr0UmgMHPesDNfe4kw8KYR3zSDzBmoRlJ6O979tgdLx5JydY6jNMYrzWEn4sqqy4p6niw7HEnbOrgtSGBr4BtgoGpzaqs4hslADUGfDpn8FPO4Cb6DW09yMsQZVMp7m9NIybgVwPiro7fMDOxOlSA5M5Bzxth7UNIVwgtEEZCoS0pi1Elsl6xASc9N8VR5gkh55B9zt_NbOOQ_nN-p7s1_JwOFY4qXtfYDrAjjawpTdprvThfRYoX_Lm-YpoWQeED80yFMOOUbrl9SUG-j8opVlSX53IwvQbVvwPI2gnZIBJBfUYgICP6ffQZRulP1WllYwaWYLKUdamyyYAZgQIQ"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='9726c568f9'>地址注册接口</h2>
+</span></code></pre></div><h2 id='22f2a9e0df'>地址注册</h2>
 <p>推送地址给平台，此地址用于分配给用户</p>
 <h4 id='http'>HTTP请求</h4>
 <p><code>POST/api/v1/address/register</code></p>
@@ -675,7 +679,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 </tbody></table>
 <h4 id='data-2'>响应参数data解密之后数据结构:</h4>
 <p>无</p>
-<h2 id='1f61660d6b'>剩余地址可用数量接口</h2>
+<h2 id='676802e579'>剩余地址可用数量</h2>
 <p>推送的地址中还有多少可用地址, 建议脚本监控可用数量。</p>
 <h4 id='http-2'>HTTP请求</h4>
 <p><code>POST/api/v1/address/available</code></p>
@@ -725,7 +729,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 <td>地址可用数量</td>
 </tr>
 </tbody></table>
-<h2 id='59c963c6a4'>充值通知接口</h2>
+<h2 id='0a4c7aae08'>充值通知</h2>
 <p>充值通知调用接口</p>
 <h4 id='http-3'>HTTP请求</h4>
 <p><code>POST/api/v1/deposit/notify</code></p>
@@ -837,7 +841,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 <td>单次请求的唯一标识</td>
 </tr>
 </tbody></table>
-<h2 id='c02e8c7d87'>提现拉取接口</h2>
+<h2 id='fe12700c74'>提现拉取</h2>
 <p>提币拉取接口, 此接口单次最多返回最近20条数据</p>
 <h4 id='http-4'>HTTP请求</h4>
 <p><code>POST/api/v1/withdraw/consume</code></p>
@@ -910,7 +914,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 <td>提现memo</td>
 </tr>
 </tbody></table>
-<h2 id='a4636a81e2'>提现通知接口</h2>
+<h2 id='751ba0a652'>提现通知</h2>
 <p>提现通知调用接口</p>
 <h4 id='http-5'>HTTP请求</h4>
 <p><code>POST/api/v1/withdraw/consume</code></p>
@@ -993,7 +997,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 </tbody></table>
 <h4 id='data-10'>响应参数data解密之后数据结构:</h4>
 <p>无</p>
-<h2 id='3cc9595904'>内部通知接口</h2>
+<h2 id='f39d1dc3bf'>内部通知</h2>
 <p>内部通知调用接口</p>
 <h4 id='http-6'>HTTP请求</h4>
 <p><code>POST/api/v1/internal/notify</code></p>
@@ -1065,7 +1069,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 </tbody></table>
 <h4 id='data-12'>响应参数data解密之后数据结构:</h4>
 <p>无</p>
-<h2 id='ba627cf61f'>提币打回接口</h2>
+<h2 id='38ee0ad075'>提币打回</h2>
 <p>推送地址给平台，此地址用于分配给用户</p>
 <h4 id='http-7'>HTTP请求</h4>
 <p><code>POST/api/v1/withdraw/cancel</code></p>
@@ -1101,8 +1105,94 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 </tbody></table>
 <h4 id='data-14'>响应参数data解密之后数据结构:</h4>
 <p>无</p>
-<h1 id='f8519014aa'>附录</h1><h2 id='8c20d5369f'>加解密方式</h2>
-<p><strong>Java 加解密Demo</strong> ： <a href="https://github.com/HiCoinCom/WAPIDemo.git">https://github.com/HiCoinCom/WAPIDemo.git</a></p>
+<h1 id='e08c1d4f9a'>错误码</h1>
+<table><thead>
+<tr>
+<th>code</th>
+<th>msg</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>success</td>
+</tr>
+<tr>
+<td>100001</td>
+<td>json decode error</td>
+</tr>
+<tr>
+<td>100002</td>
+<td>system error</td>
+</tr>
+<tr>
+<td>100003</td>
+<td>appid not register</td>
+</tr>
+<tr>
+<td>100004</td>
+<td>publicKey decode error</td>
+</tr>
+<tr>
+<td>100005</td>
+<td>appid already exist</td>
+</tr>
+<tr>
+<td>100006</td>
+<td>decode publicKey error</td>
+</tr>
+<tr>
+<td>100007</td>
+<td>privkey decode error</td>
+</tr>
+<tr>
+<td>100008</td>
+<td>verify signature error</td>
+</tr>
+<tr>
+<td>100009</td>
+<td>appid does not match symbol</td>
+</tr>
+<tr>
+<td>1000010</td>
+<td>address length exceeds 100</td>
+</tr>
+<tr>
+<td>1000011</td>
+<td>deposit notify fail</td>
+</tr>
+<tr>
+<td>1000012</td>
+<td>request_id txid not match</td>
+</tr>
+<tr>
+<td>1000013</td>
+<td>privkey hash not match</td>
+</tr>
+<tr>
+<td>1000014</td>
+<td>only one address is allowed</td>
+</tr>
+<tr>
+<td>1000015</td>
+<td>add token address is not allowed</td>
+</tr>
+<tr>
+<td>1000016</td>
+<td>address exceeds length</td>
+</tr>
+<tr>
+<td>1000017</td>
+<td>address not exists</td>
+</tr>
+<tr>
+<td>1000018</td>
+<td>finance notify error</td>
+</tr>
+<tr>
+<td>1000019</td>
+<td>appid is disabled</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
