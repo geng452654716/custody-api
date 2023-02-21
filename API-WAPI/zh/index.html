@@ -343,35 +343,35 @@
                   <li>
                     <a href="#cb6baa1bd8" class="toc-h2 toc-link" data-title="接口规则">接口规则</a>
                   </li>
+                  <li>
+                    <a href="#api" class="toc-h2 toc-link" data-title="域名及API密钥">域名及API密钥</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#7f152260df" class="toc-h3 toc-link" data-title="生产环境">生产环境</a>
+                          </li>
+                          <li>
+                            <a href="#7a4cfb2662" class="toc-h3 toc-link" data-title="测试环境">测试环境</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#06914006d1" class="toc-h2 toc-link" data-title="对接方案">对接方案</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#e4d635d90e" class="toc-h3 toc-link" data-title="注册充币地址">注册充币地址</a>
+                          </li>
+                          <li>
+                            <a href="#3a86198eeb" class="toc-h3 toc-link" data-title="用户充币">用户充币</a>
+                          </li>
+                          <li>
+                            <a href="#6f4f99292a" class="toc-h3 toc-link" data-title="用户提币">用户提币</a>
+                          </li>
+                      </ul>
+                  </li>
               </ul>
           </li>
           <li>
-            <a href="#api" class="toc-h1 toc-link" data-title="域名及API密钥">域名及API密钥</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#7f152260df" class="toc-h2 toc-link" data-title="生产环境">生产环境</a>
-                  </li>
-                  <li>
-                    <a href="#7a4cfb2662" class="toc-h2 toc-link" data-title="测试环境">测试环境</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#06914006d1" class="toc-h1 toc-link" data-title="对接方案">对接方案</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#e4d635d90e" class="toc-h2 toc-link" data-title="注册充币地址">注册充币地址</a>
-                  </li>
-                  <li>
-                    <a href="#3a86198eeb" class="toc-h2 toc-link" data-title="用户充币">用户充币</a>
-                  </li>
-                  <li>
-                    <a href="#6f4f99292a" class="toc-h2 toc-link" data-title="用户提币">用户提币</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#custody-wapi-2" class="toc-h1 toc-link" data-title="托管(Custody) WAPI文档">托管(Custody) WAPI文档</a>
+            <a href="#api-2" class="toc-h1 toc-link" data-title="API文档">API文档</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#ada01d8c4e" class="toc-h2 toc-link" data-title="统一说明">统一说明</a>
@@ -462,7 +462,7 @@
 <td>详见<code>附 1</code></td>
 </tr>
 </tbody></table>
-<h1 id='api'>域名及API密钥</h1><h2 id='7f152260df'>生产环境</h2>
+<h2 id='api'>域名及API密钥</h2><h3 id='7f152260df'>生产环境</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">域名:</th>
@@ -478,7 +478,7 @@
 <td>待分配</td>
 </tr>
 </tbody></table>
-<h2 id='7a4cfb2662'>测试环境</h2>
+<h3 id='7a4cfb2662'>测试环境</h3>
 <p>域名 : <a href="http://baas.dw2nn.com">http://baas.dw2nn.com</a></p>
 
 <p><code>app_id</code> :  8ee3794a7e5bd188c6af4fd7dda191f3</p>
@@ -519,7 +519,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 </tbody></table>
 
 <p><strong>说明：</strong> <code>rsa_third_prv</code>为第三方应用私钥，主要用于加密请求参数。如果是生产环境，<code>rsa_third_prv</code>由开发者生成，然后将对应的公钥提供给平台。测试环境为了简化开发者对接流程，此处直接提供了一套第三方的公私钥及币种名称，便于开发者快速对接。</p>
-<h1 id='06914006d1'>对接方案</h1>
+<h2 id='06914006d1'>对接方案</h2>
 <p>为了让公链接入者更便捷、快速的接入ChainUp Custody，我们提供了BaaS服务，以满足公链对接需求，平台基于过往客户的对接经验，梳理了一套对接方案。具体如下：</p>
 
 <p>整个方案共分三个流程：</p>
@@ -531,15 +531,15 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 <p>3、用户提币</p>
 <h4 id='c930504af9'>整体对接流程如下</h4>
 <p><a href="https://custodydocs.chainup.com/zh/latest/_images/wapi_interact_process.png"><img src="https://custodydocs.chainup.com/zh/latest/_images/wapi_interact_process.png" alt="../_images/wapi_interact_process.png" /></a></p>
-<h2 id='e4d635d90e'>注册充币地址</h2>
+<h3 id='e4d635d90e'>注册充币地址</h3>
 <p>1）可通过币种名称查询可用地址数量 注：（每次向Custody推送地址条数上限为<code>100</code>条，每次推送时会检查Custody剩余的地址可用数是否大于<code>5000</code>，如果有5000个地址没有被使用，则不允许注册；接口地址：<code>/api/v1/address/available</code>）</p>
 
 <p>2）向BaaS平台推送币种名称和地址列表，响应成功后及代表注册地址成功, 接口地址：<code>/api/v1/address/register</code>。 注：若注册币种的类型为memo类型，则同一个地址只允许注册一次。</p>
-<h2 id='3a86198eeb'>用户充币</h2>
+<h3 id='3a86198eeb'>用户充币</h3>
 <p>1）第三方钱包监测到地址有充币交易,发起充值通知，通知BaaS系统,  接口地址：<code>/api/v1/deposit/notify</code></p>
 
 <p>2）BaaS返回通知结果</p>
-<h2 id='6f4f99292a'>用户提币</h2>
+<h3 id='6f4f99292a'>用户提币</h3>
 <p>1）用户在Custody系统发起提币请求</p>
 
 <p>2）主链开发者拉取提币列表（<strong>接口地址：</strong><code>/api/v1/withdraw/consume</code>）</p>
@@ -547,7 +547,7 @@ MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDQ/Xw5xJGvaadYBbCfqFaUoLIKEFvx
 <p>3）上链成功后，向BaaS通知提现结果,BaaS接口响应（*<em>接口地址: *</em><code>/api/v1/withdraw/notify</code>）</p>
 
 <p>注：如遇特殊情况可以撤销提币请求，向BaaS接口推送通知（<strong>接口地址：</strong><code>/api/v1/withdraw/cancel</code>）</p>
-<h1 id='custody-wapi-2'>托管(Custody) WAPI文档</h1><h2 id='ada01d8c4e'>统一说明</h2><h4 id='2eb6f47757'>请求参数:</h4>
+<h1 id='api-2'>API文档</h1><h2 id='ada01d8c4e'>统一说明</h2><h4 id='2eb6f47757'>请求参数:</h4>
 <table><thead>
 <tr>
 <th>Param</th>

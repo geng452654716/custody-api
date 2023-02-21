@@ -336,37 +336,28 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#4742b507b1" class="toc-h2 toc-link" data-title="创建账号">创建账号</a>
-                  </li>
-                  <li>
-                    <a href="#c4571ab0cb" class="toc-h2 toc-link" data-title="创建并配置企业钱包">创建并配置企业钱包</a>
-                  </li>
-                  <li>
-                    <a href="#api-2" class="toc-h2 toc-link" data-title="获取API 信息">获取API 信息</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#f3b134a5ca" class="toc-h1 toc-link" data-title="开发前准备">开发前准备</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#72706ccb1b" class="toc-h2 toc-link" data-title="开发须知">开发须知</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#api-3" class="toc-h3 toc-link" data-title="两对公私钥作用（API方式）">两对公私钥作用（API方式）</a>
-                          </li>
-                          <li>
-                            <a href="#api-api" class="toc-h3 toc-link" data-title="域名及API密钥（API方式）">域名及API密钥（API方式）</a>
+                            <a href="#api-2" class="toc-h3 toc-link" data-title="获取API 信息">获取API 信息</a>
                           </li>
                       </ul>
                   </li>
                   <li>
-                    <a href="#mpc-4" class="toc-h2 toc-link" data-title="MPC钱包准备">MPC钱包准备</a>
-                  </li>
-                  <li>
-                    <a href="#6e241fa925" class="toc-h2 toc-link" data-title="接口交互过程">接口交互过程</a>
-                  </li>
-                  <li>
-                    <a href="#cb6baa1bd8" class="toc-h2 toc-link" data-title="接口规则">接口规则</a>
+                    <a href="#f3b134a5ca" class="toc-h2 toc-link" data-title="开发前准备">开发前准备</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#72706ccb1b" class="toc-h3 toc-link" data-title="开发须知">开发须知</a>
+                          </li>
+                          <li>
+                            <a href="#6d0db715bb" class="toc-h3 toc-link" data-title="账户准备">账户准备</a>
+                          </li>
+                          <li>
+                            <a href="#6e241fa925" class="toc-h3 toc-link" data-title="接口交互过程">接口交互过程</a>
+                          </li>
+                          <li>
+                            <a href="#cb6baa1bd8" class="toc-h3 toc-link" data-title="接口规则">接口规则</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -375,6 +366,17 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#ada01d8c4e" class="toc-h2 toc-link" data-title="统一说明">统一说明</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#d06fcec6de" class="toc-h3 toc-link" data-title="请求参数统一格式">请求参数统一格式</a>
+                          </li>
+                          <li>
+                            <a href="#680b2bbba1" class="toc-h3 toc-link" data-title="响应参数统一格式">响应参数统一格式</a>
+                          </li>
+                          <li>
+                            <a href="#8c20d5369f" class="toc-h3 toc-link" data-title="加解密方式">加解密方式</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
                     <a href="#c02d697612" class="toc-h2 toc-link" data-title="钱包">钱包</a>
@@ -449,12 +451,6 @@
               </ul>
           </li>
           <li>
-            <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
-          </li>
-          <li>
-            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
-          </li>
-          <li>
             <a href="#co-signer" class="toc-h1 toc-link" data-title="Co-Signer">Co-Signer</a>
               <ul class="toc-list-h2">
                   <li>
@@ -467,6 +463,12 @@
                     <a href="#co-signer-2" class="toc-h2 toc-link" data-title="Co-Signer回调"><strong>Co-Signer回调</strong></a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+          </li>
+          <li>
+            <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
           </li>
       </ul>
     </div>
@@ -503,7 +505,7 @@
 <p>打开【Custody】应用，注册账号（未注册账号登录即注册），支持邮箱与手机号两种方式</p>
 
 <p><img src="images/login-ddfa039e.png" style="width: 250px" alt="" /></p>
-<h2 id='c4571ab0cb'>创建并配置企业钱包</h2>
+<h4 id='c4571ab0cb'>创建并配置企业钱包</h4>
 <p>钱包分为<strong>主钱包</strong>、<strong>子钱包</strong>两个类型；一个主钱包可以创建多个子钱包；</p>
 <h4 id='ec2469f83f'>应用场景：</h4>
 <ul>
@@ -519,13 +521,13 @@
 </ul>
 
 <p>若钱包配置不满足您的需求，可联系商务经理或发邮件至 <a href="mailto:custody@chainup.com">custody@chainup.com</a> 获取支持。</p>
-<h2 id='api-2'>获取API 信息</h2>
+<h3 id='api-2'>获取API 信息</h3>
 <p>请联系<strong>商务经理</strong>或<strong>发邮件</strong>至 <a href="mailto:custody@chainup.com">custody@chainup.com</a> 获取<strong>API</strong> 信息。 </p>
-<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='72706ccb1b'>开发须知</h2><h3 id='api-3'>两对公私钥作用（API方式）</h3>
+<h2 id='f3b134a5ca'>开发前准备</h2><h3 id='72706ccb1b'>开发须知</h3><h4 id='api-3'>两对公私钥作用（API方式）</h4>
 <p><strong>第一对公私钥：</strong> 开发者在开通MPC钱包时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。</p>
 
 <p><strong>第二对公私钥：</strong> 开发者开通MPC钱包后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。</p>
-<h3 id='api-api'>域名及API密钥（API方式）</h3>
+<h4 id='api-api'>域名及API密钥（API方式）</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">生产环境域名(不支持测试环境):</th>
@@ -562,7 +564,7 @@
 <li><p>rsa_third_prv为第三方应用私钥，主要用于加密请求参数。如果是生产环境，rsa_third_prv由开发者生成，然后将对应的公钥提供给平台。测试环境为了简化开发者对接流程，此处直接提供了一套第三方的公私钥，便于开发者快速对接。</p></li>
 <li><p>目前不支持测试环境对接，请根据<strong>接入指引</strong>自主注册创建钱包后，获取生产环境的API相关信息。</p></li>
 </ol>
-<h2 id='mpc-4'>MPC钱包准备</h2>
+<h3 id='6d0db715bb'>账户准备</h3>
 <p><strong>开发者准备如下信息：</strong></p>
 
 <p>1）生成一对公私钥，将公钥提供给平台；</p>
@@ -578,13 +580,13 @@
 <p>1）商户的唯一标识：<code>app_id</code>；</p>
 
 <p>2）钱包公钥：<code>rsa_wallet_pub</code>。</p>
-<h2 id='6e241fa925'>接口交互过程</h2>
+<h3 id='6e241fa925'>接口交互过程</h3>
 <p>文档为钱包服务对第三方应用提供的接口。</p>
 
 <p><a href="https://custodydocs.chainup.com/zh/latest/_images/apiopen-instructions-v2.png"><img src="https://custodydocs.chainup.com/zh/latest/_images/apiopen-instructions-v2.png" alt="../_images/apiopen-instructions-v2.png" /></a></p>
 
 <p>以下文档中的接口提供方称为 <strong>钱包服务</strong>，接口调用方称为 <strong>第三方应用</strong>。第三方应用在请求钱包服务时，通过RSA算法对请求参数进行加密，接受到钱包服务的响应数据后需要进行解密</p>
-<h2 id='cb6baa1bd8'>接口规则</h2>
+<h3 id='cb6baa1bd8'>接口规则</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">传输方式:</th>
@@ -615,7 +617,7 @@
 <div class="highlight"><pre class="highlight java tab-java"><code><span class="no">POST</span> <span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">mpc</span><span class="o">/</span><span class="n">sub_wallet</span><span class="o">/</span><span class="n">assets</span>
 
 <span class="n">app_id</span><span class="o">=</span><span class="mi">2128</span><span class="n">eb8de9e932a4376909f3d69424cc</span><span class="o">&amp;</span><span class="n">data</span><span class="o">=</span><span class="nc">SWYYr</span><span class="o">-</span><span class="nc">LBVAmaS0eq8n</span><span class="o">-</span><span class="n">CUT_nHkM3OBxyWOsImMTe41UaqAoYI2ZghmaphXHov</span><span class="o">-</span><span class="mi">7</span><span class="n">hsRsVmOhyPqC</span><span class="o">-</span><span class="n">JFuRGvonJKFd2Jirxv6Vn_8V40r_MMYTkhqcviQbZWYW5xX8Ai8CIpqas9fIWVDIYA_NKBl0UCJpwGxscxLNpjq5Z8</span><span class="o">-</span><span class="n">BTyIYDsVBquM9zEQGBCfcA7szD9n2fN_loSkoexlwqV8wg9HIZO5yQ6utZ_Kt0lNDQQb8zn8BwfAvsEsbJlOINUAqhxh1vV_AJ4bXn2uYx8TaYcBht</span><span class="o">-</span><span class="n">n_ZcBdxIDt975dbOFUiH</span><span class="o">-</span><span class="n">oCzIuDi1oLDtb4EylfCvhU5E4ozel_lQ</span><span class="o">-</span><span class="mi">6</span><span class="n">cyIG0Dqiiyx0RFFOCJzPSXIoV031pvoa8pTCpkWklh8mRw1rylBgeZtqSxpnJO2_u2RIlXq6Hs8Yly9CmhIXaSrUgPir0h6xVxlf4VC6PFVCkiiTlp0kZ_H_UbKm0nUis3v3U2sflWJ2C449waSrikhuxVrFAQ6PQmrFVCAE6MYXNrFXJQuam2HAIQNSGbFQjspw8b_bXyfyZMGZ3K2oBC4I_v3eETTdPe0pfSNJb</span><span class="o">-</span><span class="mi">5</span><span class="n">g37K0tOAr_UFbWK8pkC8yl56fSjn8tcR3yCRWwoi8jxTcUBiswTtvXZtzgG4dyzkaHXjsZjSGiywXSqP76VZWlyOmAx6IDSViLcPLPISdU3ruCI</span>
-</code></pre></div><h4 id='d06fcec6de'>请求参数统一格式</h4>
+</code></pre></div><h3 id='d06fcec6de'>请求参数统一格式</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -639,7 +641,7 @@
 </tbody></table>
 <h4 id='837f556275'>请求接口示例：</h4>
 <p><code>POST /api/mpc/sub_wallet/assets</code></p>
-<h4 id='680b2bbba1'>响应参数统一格式</h4>
+<h3 id='680b2bbba1'>响应参数统一格式</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -699,7 +701,7 @@
 <td style="text-align: left">具体响应数据，数据结构定义见各接口  <code>响应参数数据结构</code></td>
 </tr>
 </tbody></table>
-<h4 id='8c20d5369f'>加解密方式</h4>
+<h3 id='8c20d5369f'>加解密方式</h3>
 <p>请求参数data与响应字段data的值都是经过rsa加密后再通过 <strong>base64urlsafe</strong> 加密的结果</p>
 
 <aside class="notice">
@@ -2123,16 +2125,107 @@
 <td style="text-align: left">充币币种合约地址</td>
 </tr>
 </tbody></table>
-<h1 id='sdk'>SDK</h1>
-<p>为满足客户多样性的业务需求，<strong>ChainUp MPC wallet</strong> 支持两种对接方式：SDK与API</p>
+<h1 id='co-signer'>Co-Signer</h1><h2 id='b122105296'><strong>概述</strong></h2>
+<p>Co-Signer可以帮助您快速对接API，需要您单独部署在服务器上。Co-Signer需要绑定您钱包的分片私钥，用于创建地址和交易签名。</p>
 
-<p>SDK：支持java与PHP</p>
+<p>Co-Signer在交易签名前会回调您的业务系统，得到授权通过后才能发起签名，否则无法进行交易。</p>
+<h2 id='ae5b009f16'><strong>对接流程</strong></h2>
+<p>Co-Signer主要实现了两个功能：创建地址和自动签名，具体流程如下图：</p>
+<h4 id='8d32a28e9d'>创建地址流程：</h4>
+<p><img src="images/createaddress-4034e617.png" style="width: 350px" alt="" /></p>
+<h4 id='76b23b2e5e'>自动签名流程：</h4>
+<p><img src="images/sign-d7a24ba1.png" style="width: 350px" alt="" /></p>
+<h2 id='co-signer-2'><strong>Co-Signer回调</strong></h2>
+<p>为了保证交易的安全，您需要在Co-Signer中配置一个业务系统的回调地址，在交易签名之前授权。</p>
 
-<p>java SDK地址：<code>https://github.com/HiCoinCom/java-sdk</code></p>
+<p>授权交易数据<strong>采用明文传输</strong>，您需要在应用服务中保证业务系统和Co-Signer之间的通信安全。</p>
+<h4 id='http-13'>HTTP请求</h4>
+<p><code>POST /{url}</code></p>
 
-<p>PHP SDK地址：<code>https://github.com/HiCoinCom/php-sdk</code></p>
+<p><code>Content-Type application/json;charset=UTF-8</code></p>
 
-<p>API：<code>请查看相关文档</code></p>
+<blockquote>
+<p>回调参数示例</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/callback/example</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"sign_start"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdraw_id"</span><span class="p">:</span><span class="mi">321456</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"c70d1eebb7c687ec8d56bead73f104"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pending_round"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="mf">167230.4978</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='2f0c1d7200'>回调参数格式：</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Param</th>
+<th style="text-align: left">类型</th>
+<th style="text-align: left">是否必须</th>
+<th style="text-align: left">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">type</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">回调类型，<code>sign_start</code>签名开始，<code>sign_success</code>签名成功</td>
+</tr>
+<tr>
+<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易ID</td>
+</tr>
+<tr>
+<td style="text-align: left">request_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">发起交易唯一标识</td>
+</tr>
+<tr>
+<td style="text-align: left">pending_round</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">加速状态，true是，false否（普通交易）</td>
+</tr>
+<tr>
+<td style="text-align: left">from</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易出币地址</td>
+</tr>
+<tr>
+<td style="text-align: left">to</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易到账地址</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">交易到账memo</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">Decimal</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易金额</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">交易币种唯一标识</td>
+</tr>
+</tbody></table>
+<h4 id='2dda1c9689'>回调响应参数统一格式</h4>
+<p>返回字符串：<code>SUCCES</code>表示成功，<code>FAILURE</code>表示失败 </p>
 <h1 id='e08c1d4f9a'>错误码</h1>
 <p>接口错误码表 - 表格</p>
 
@@ -2255,107 +2348,16 @@
 <td>不能给自己转账</td>
 </tr>
 </tbody></table>
-<h1 id='co-signer'>Co-Signer</h1><h2 id='b122105296'><strong>概述</strong></h2>
-<p>Co-Signer可以帮助您快速对接API，需要您单独部署在服务器上。Co-Signer需要绑定您钱包的分片私钥，用于创建地址和交易签名。</p>
+<h1 id='sdk'>SDK</h1>
+<p>为满足客户多样性的业务需求，<strong>ChainUp MPC wallet</strong> 支持两种对接方式：SDK与API</p>
 
-<p>Co-Signer在交易签名前会回调您的业务系统，得到授权通过后才能发起签名，否则无法进行交易。</p>
-<h2 id='ae5b009f16'><strong>对接流程</strong></h2>
-<p>Co-Signer主要实现了两个功能：创建地址和自动签名，具体流程如下图：</p>
-<h4 id='8d32a28e9d'>创建地址流程：</h4>
-<p><img src="images/createaddress-4034e617.png" style="width: 350px" alt="" /></p>
-<h4 id='76b23b2e5e'>自动签名流程：</h4>
-<p><img src="images/sign-d7a24ba1.png" style="width: 350px" alt="" /></p>
-<h2 id='co-signer-2'><strong>Co-Signer回调</strong></h2>
-<p>为了保证交易的安全，您需要在Co-Signer中配置一个业务系统的回调地址，在交易签名之前授权。</p>
+<p>SDK：支持java与PHP</p>
 
-<p>授权交易数据<strong>采用明文传输</strong>，您需要在应用服务中保证业务系统和Co-Signer之间的通信安全。</p>
-<h4 id='http-13'>HTTP请求</h4>
-<p><code>POST /{url}</code></p>
+<p>java SDK地址：<code>https://github.com/HiCoinCom/java-sdk</code></p>
 
-<p><code>Content-Type application/json;charset=UTF-8</code></p>
+<p>PHP SDK地址：<code>https://github.com/HiCoinCom/php-sdk</code></p>
 
-<blockquote>
-<p>回调参数示例</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/callback/example</span><span class="w">
-
-</span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"sign_start"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"withdraw_id"</span><span class="p">:</span><span class="mi">321456</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"c70d1eebb7c687ec8d56bead73f104"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pending_round"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"0x5EDc9177997Bf6B4db559A5C184051858B3B3704"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123321"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="mf">167230.4978</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='2f0c1d7200'>回调参数格式：</h4>
-<table><thead>
-<tr>
-<th style="text-align: left">Param</th>
-<th style="text-align: left">类型</th>
-<th style="text-align: left">是否必须</th>
-<th style="text-align: left">说明</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">type</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">回调类型，<code>sign_start</code>签名开始，<code>sign_success</code>签名成功</td>
-</tr>
-<tr>
-<td style="text-align: left">withdraw_id</td>
-<td style="text-align: left">Integer</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">交易ID</td>
-</tr>
-<tr>
-<td style="text-align: left">request_id</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">发起交易唯一标识</td>
-</tr>
-<tr>
-<td style="text-align: left">pending_round</td>
-<td style="text-align: left">Boolean</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">加速状态，true是，false否（普通交易）</td>
-</tr>
-<tr>
-<td style="text-align: left">from</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">交易出币地址</td>
-</tr>
-<tr>
-<td style="text-align: left">to</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">交易到账地址</td>
-</tr>
-<tr>
-<td style="text-align: left">memo</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">否</td>
-<td style="text-align: left">交易到账memo</td>
-</tr>
-<tr>
-<td style="text-align: left">amount</td>
-<td style="text-align: left">Decimal</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">交易金额</td>
-</tr>
-<tr>
-<td style="text-align: left">symbol</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">是</td>
-<td style="text-align: left">交易币种唯一标识</td>
-</tr>
-</tbody></table>
-<h4 id='2dda1c9689'>回调响应参数统一格式</h4>
-<p>返回字符串：<code>SUCCES</code>表示成功，<code>FAILURE</code>表示失败 </p>
+<p>API：<code>请查看相关文档</code></p>
 
       </div>
       <div class="dark-box">
