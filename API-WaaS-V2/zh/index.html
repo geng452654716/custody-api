@@ -349,7 +349,7 @@
                     <a href="#c4571ab0cb" class="toc-h2 toc-link" data-title="创建并配置企业钱包">创建并配置企业钱包</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#api" class="toc-h3 toc-link" data-title="获取API信息">获取API信息</a>
+                            <a href="#api-2" class="toc-h3 toc-link" data-title="获取API信息">获取API信息</a>
                           </li>
                       </ul>
                   </li>
@@ -399,7 +399,7 @@
             <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
           </li>
           <li>
-            <a href="#api-4" class="toc-h1 toc-link" data-title="API文档">API文档</a>
+            <a href="#api-5" class="toc-h1 toc-link" data-title="API文档">API文档</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#ada01d8c4e" class="toc-h2 toc-link" data-title="统一说明">统一说明</a>
@@ -515,9 +515,7 @@
       <div class="content">
         <h1 id='chainup-custody-v2'>ChainUp Custody V2</h1>
 <p>欢迎来到<strong>ChainUp Custody</strong>，ChainUp Custody基于深厚的底层钱包技术和安全的区块链钱包架构，将强大的资产托管功通过接口的方式提供给第三方合作伙伴。通过这种方式能帮助合作伙伴在关注于核心业务发展的同时也能确保资产的安全。</p>
-
-<p>您可以通过API</p>
-
+<h4 id='api'><strong>您可以通过API</strong></h4>
 <ul>
 <li><p>提交传输，并接收传输的实时信息;</p></li>
 <li><p>安全检查所有事务类型和消息;</p></li>
@@ -579,7 +577,7 @@
 <p>进入编辑页面，开启币种</p>
 
 <p><a href="https://custodydocs.chainup.com/zh/latest/_images/api_plan_bizhongbianji.png"><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_bizhongbianji.png" alt="../_images/api_plan_bizhongbianji.png" /></a></p>
-<h3 id='api'>获取API信息</h3>
+<h3 id='api-2'>获取API信息</h3>
 <p>创建API（目前仅支持一个全功能权限的API）</p>
 
 <p><a href="https://custodydocs.chainup.com/zh/latest/_images/api_plan_apiliebiao.png"><img src="https://custodydocs.chainup.com/zh/latest/_images/api_plan_apiliebiao.png" alt="../_images/api_plan_apiliebiao.png" /></a></p>
@@ -677,11 +675,11 @@
 <li>提币矿工费：提币到非ChainUP Custody的地址，走区块链网络需要消耗矿工费（部分币种），消耗的矿工费由三方承担；此部分资金支出在提币订单内可以直接查看；</li>
 <li>分润手续费：暂不收取</li>
 </ol>
-<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='72706ccb1b'>开发须知</h2><h4 id='api-2'>两对公私钥作用（API方式）</h4>
+<h1 id='f3b134a5ca'>开发前准备</h1><h2 id='72706ccb1b'>开发须知</h2><h4 id='api-3'>两对公私钥作用（API方式）</h4>
 <p><strong>第一对公私钥：</strong> 开发者在开通资管账号时，需提前生成一对公私钥，其中公钥（rsa_third_pub）提供给平台B，私钥自己保管，私钥为第三方应用调用钱包服务的唯一凭证，请勿透露给任何人。第三方在请求钱包服务时，通过私钥来加密请求参数，平台接受到请求时，通过提供的公钥（rsa_third_pub）来解密请求数据。</p>
 
 <p><strong>第二对公私钥：</strong> 开发者开通资管账号后，平台会提供钱包公钥（rsa_wallet_pub）给开发者，第三方应用在接受到钱包的响应数据或异步通知时，需要通过公钥来进行解密。</p>
-<h4 id='api-3'>为什么需要进行提现二次确认（API方式）</h4>
+<h4 id='api-4'>为什么需要进行提现二次确认（API方式）</h4>
 <p>钱包服务接收到第三方应用请求时，为了确认该请求为第三方应用合法请求，会调用第三方提供的接口来确认。该过程在一定程度上也能避免第三方私钥丢失所造成的影响，也为钱包服务的安全性提供了一套有效屏障。</p>
 <h4 id='api-api'>域名及API密钥（API方式）</h4>
 <table><thead>
@@ -776,7 +774,7 @@
 <p><strong>PHP SDK地址：</strong><a href="https://github.com/HiCoinCom/php-sdk">https://github.com/HiCoinCom/php-sdk</a></p>
 
 <p><strong>node SDK地址：</strong><a href="https://github.com/HiCoinCom/js-sdk">https://github.com/HiCoinCom/js-sdk</a></p>
-<h1 id='api-4'>API文档</h1><h2 id='ada01d8c4e'>统一说明</h2><h3 id='d06fcec6de'>请求参数统一格式</h3>
+<h1 id='api-5'>API文档</h1><h2 id='ada01d8c4e'>统一说明</h2><h3 id='d06fcec6de'>请求参数统一格式</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>

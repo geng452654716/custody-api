@@ -365,9 +365,6 @@
               </ul>
           </li>
           <li>
-            <a href="#sdk" class="toc-h1 toc-link" data-title="SDK">SDK</a>
-          </li>
-          <li>
             <a href="#api-list" class="toc-h1 toc-link" data-title="API list">API list</a>
               <ul class="toc-list-h2">
                   <li>
@@ -416,36 +413,33 @@
                       </ul>
                   </li>
                   <li>
-                    <a href="#withdrawal" class="toc-h2 toc-link" data-title="Withdrawal">Withdrawal</a>
+                    <a href="#transfer" class="toc-h2 toc-link" data-title="Transfer">Transfer</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#withdrawal-2" class="toc-h3 toc-link" data-title="Withdrawal">Withdrawal</a>
+                            <a href="#initiate-a-transfer" class="toc-h3 toc-link" data-title="Initiate a transfer">Initiate a transfer</a>
                           </li>
                           <li>
-                            <a href="#initiate-a-withdraw" class="toc-h3 toc-link" data-title="Initiate a withdraw">Initiate a withdraw</a>
+                            <a href="#estimated-gas-fee" class="toc-h3 toc-link" data-title="Estimated Gas Fee">Estimated Gas Fee</a>
                           </li>
                           <li>
-                            <a href="#withdrawal-estimated-miner-fee" class="toc-h3 toc-link" data-title="Withdrawal Estimated Miner Fee">Withdrawal Estimated Miner Fee</a>
+                            <a href="#speed-up-transfer" class="toc-h3 toc-link" data-title="Speed Up transfer">Speed Up transfer</a>
                           </li>
                           <li>
-                            <a href="#speed-up-withdrawal" class="toc-h3 toc-link" data-title="Speed Up Withdrawal">Speed Up Withdrawal</a>
+                            <a href="#get-transfer-records" class="toc-h3 toc-link" data-title="Get transfer records">Get transfer records</a>
                           </li>
                           <li>
-                            <a href="#get-withdrawal-records" class="toc-h3 toc-link" data-title="Get withdrawal records">Get withdrawal records</a>
-                          </li>
-                          <li>
-                            <a href="#synchronize-withdrawal-records" class="toc-h3 toc-link" data-title="Synchronize withdrawal records">Synchronize withdrawal records</a>
+                            <a href="#synchronize-transfer-records" class="toc-h3 toc-link" data-title="Synchronize transfer records">Synchronize transfer records</a>
                           </li>
                       </ul>
                   </li>
                   <li>
-                    <a href="#deposit" class="toc-h2 toc-link" data-title="Deposit">Deposit</a>
+                    <a href="#received" class="toc-h2 toc-link" data-title="Received">Received</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#get-deposit-records" class="toc-h3 toc-link" data-title="Get deposit records">Get deposit records</a>
+                            <a href="#get-receiving-records" class="toc-h3 toc-link" data-title="Get Receiving records">Get Receiving records</a>
                           </li>
                           <li>
-                            <a href="#synchronous-deposit-record" class="toc-h3 toc-link" data-title="Synchronous deposit record">Synchronous deposit record</a>
+                            <a href="#synchronous-receiving-record" class="toc-h3 toc-link" data-title="Synchronous Receiving record">Synchronous Receiving record</a>
                           </li>
                       </ul>
                   </li>
@@ -458,10 +452,10 @@
                     <a href="#overview-2" class="toc-h2 toc-link" data-title="Overview">Overview</a>
                   </li>
                   <li>
-                    <a href="#withdrawal-notification" class="toc-h2 toc-link" data-title="Withdrawal Notification">Withdrawal Notification</a>
+                    <a href="#transfer-notification" class="toc-h2 toc-link" data-title="Transfer Notification">Transfer Notification</a>
                   </li>
                   <li>
-                    <a href="#deposit-notification" class="toc-h2 toc-link" data-title="Deposit Notification">Deposit Notification</a>
+                    <a href="#receive-notification" class="toc-h2 toc-link" data-title="Receive Notification">Receive Notification</a>
                   </li>
               </ul>
           </li>
@@ -488,7 +482,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='chainup-mpc-wallet'>ChainUp MPC Wallet</h1>
-<p><strong>ChainUp Custody&#39;s</strong> implementation of the <strong>MPC technology</strong> ensures that users&#39; investment assets are under the protection of the highest security level in the market. User&#39;s private key will be managed jointly by the user and ChainUp Custody, and the user will have complete control over assets and may use them at any time without limitation. MPC technology not only makes recovery easier but also increases security by removing the single point of failure of a private key.</p>
+<p><strong>ChainUp Custody&#39;s</strong> implementation of the <strong>MPC technology</strong> ensures that users&#39; investment assets are under the protection of the highest security level in the market. User&#39;s private key will be managed jointly by the user and ChainUp Custody, and the user will have complete control over assets and may use them at any time without limitation. MPC technology not only makes recovery easier but also increases security by <strong>removing the single point of failure of a private key.</strong></p>
 
 <p><strong>MPC</strong> allows each co-signing component to audit which of the keys participated in the signing but the nature of the MPC protocol does not require participants to reveal their secret share to others, which means that every party’s input is kept private. In addition, the signature-generating parties are not exposed or visible over the network. MPC addresses the problem of enabling collaboration between different parties while providing trustworthy records and preserving the privacy of their individual data.</p>
 <h4 id='api-mainly-provides-the-following-functions'>API mainly provides the following functions:</h4>
@@ -581,7 +575,7 @@
 
 <p>2）IP of <strong>third-party</strong> application server and Co-Signer server;</p>
 
-<p>3）<strong>Deposit</strong> and <strong>Withdrawal</strong> callback notification address;</p>
+<p>3）<strong>Receiving</strong> and <strong>Transfer</strong> callback notification address;</p>
 
 <p>4）Domain name of the <strong>Co-signer Server</strong></p>
 
@@ -620,12 +614,6 @@
 <td>RSA</td>
 </tr>
 </tbody></table>
-<h1 id='sdk'>SDK</h1>
-<p>To meet the diverse business needs of customers, <strong>ChainUp MPC Wallet</strong> supports two docking methods: SDK and API;</p>
-<h4 id='sdk-support-for-java-and-php'><strong>SDK</strong>：Support for Java and PHP</h4>
-<p>The Java SDK address：<a href="https://github.com/HiCoinCom/java-sdk">https://github.com/HiCoinCom/java-sdk</a></p>
-
-<p>The PHP SDK address：<a href="https://github.com/HiCoinCom/php-sdk">https://github.com/HiCoinCom/php-sdk</a></p>
 <h1 id='api-list'>API list</h1><h2 id='overview'>Overview</h2>
 <blockquote>
 <p>Request Example</p>
@@ -767,7 +755,7 @@
 <td style="text-align: left">symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">The unique identifier of the coin, used when withdrawing, for example: USDTERC20</td>
+<td style="text-align: left">The unique identifier of the coin, used when transferring, for example: USDTERC20</td>
 </tr>
 <tr>
 <td style="text-align: left">symbol_alias</td>
@@ -838,7 +826,7 @@
 </tr>
 </tbody></table>
 <h3 id='get-sub-wallet-address'>Get sub-wallet address</h3>
-<p>Obtain the deposit address under the specified sub-wallet and coin</p>
+<p>Obtain the receiving address under the specified sub-wallet and coin</p>
 <h4 id='http-request-4'>HTTP Request</h4>
 <p><code>POST /api/mpc/sub_wallet/get_address</code></p>
 <h4 id='decrypted-request-parameters-3'>Decrypted Request Parameters</h4>
@@ -883,7 +871,7 @@
 <td style="text-align: left">address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit address</td>
+<td style="text-align: left">receiving address</td>
 </tr>
 </tbody></table>
 <h3 id='get-sub-wallet-assets'>Get sub-wallet assets</h3>
@@ -918,7 +906,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"normal_balance"</span><span class="p">:</span><span class="s2">"1.23"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deposit_address"</span><span class="p">:</span><span class="s2">"0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receive_address"</span><span class="p">:</span><span class="s2">"0xd5b688639ef10ac7fb8ad0156eb0ae025dd03b86"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"lock_balance"</span><span class="p">:</span><span class="s2">"0.77"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='response-data-parameters-4'>Response Data Parameters</h4>
@@ -931,10 +919,10 @@
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">deposit_address</td>
+<td style="text-align: left">receiving_address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit address</td>
+<td style="text-align: left">receiving address</td>
 </tr>
 <tr>
 <td style="text-align: left">normal_balance</td>
@@ -977,8 +965,8 @@
 </tbody></table>
 <h4 id='response-data-parameters-5'>Response Data Parameters</h4>
 <p>None</p>
-<h2 id='withdrawal'>Withdrawal</h2><h3 id='withdrawal-2'>Withdrawal</h3><h3 id='initiate-a-withdraw'>Initiate a withdraw</h3><h4 id='http-request-7'>HTTP Request</h4>
-<p><code>POST /api/mpc/billing/withdraw</code></p>
+<h2 id='transfer'>Transfer</h2><h3 id='initiate-a-transfer'>Initiate a transfer</h3><h4 id='http-request-7'>HTTP Request</h4>
+<p><code>POST /api/mpc/billing/transfer</code></p>
 <h4 id='decrypted-request-parameters-6'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
@@ -1004,31 +992,31 @@
 <td style="text-align: left">address_to</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal address</td>
+<td style="text-align: left">transfer address</td>
 </tr>
 <tr>
 <td style="text-align: left">memo</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Withdrawal address memo, Memo type can be filled in if available,  example: 123321</td>
+<td style="text-align: left">transfer address memo, Memo type can be filled in if available,  example: 123321</td>
 </tr>
 <tr>
 <td style="text-align: left">amount</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal amount</td>
+<td style="text-align: left">transfer amount</td>
 </tr>
 <tr>
 <td style="text-align: left">request_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">The unique identifier for withdrawing coins</td>
+<td style="text-align: left">The unique identifier for transferring coins</td>
 </tr>
 <tr>
 <td style="text-align: left">remark</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Withdrawal remarks</td>
+<td style="text-align: left">transfer remarks</td>
 </tr>
 <tr>
 <td style="text-align: left">gas_price</td>
@@ -1054,7 +1042,7 @@
 <p>Response</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"withdraw_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="w">
+    </span><span class="nl">"transfer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='response-data-parameters-6'>Response Data Parameters</h4>
 <table><thead>
@@ -1066,14 +1054,14 @@
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">transfer_id</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal id</td>
+<td style="text-align: left">transfer id</td>
 </tr>
 </tbody></table>
-<h3 id='withdrawal-estimated-miner-fee'>Withdrawal Estimated Miner Fee</h3>
-<p>Obtain the estimated miner fee required for withdrawal. </p>
+<h3 id='estimated-gas-fee'>Estimated Gas Fee</h3>
+<p>Obtain the estimated miner fee required for transfer. </p>
 <h4 id='http-request-8'>HTTP Request</h4>
 <p><code>GET /api/mpc/billing/gas_estimate</code></p>
 <h4 id='decrypted-request-parameters-7'>Decrypted Request Parameters</h4>
@@ -1174,10 +1162,10 @@
 <td style="text-align: left">The recommended value of the gas fee</td>
 </tr>
 </tbody></table>
-<h3 id='speed-up-withdrawal'>Speed Up Withdrawal</h3>
-<p>After the withdrawal signature is completed, if the transaction fee has not been process on the chain for a long time due to insufficient gas fee, you can re-specify a higher gas fee to speed up the process on the blockchain.</p>
+<h3 id='speed-up-transfer'>Speed Up transfer</h3>
+<p>After the transfer signature is completed, if the transaction fee has not been process on the chain for a long time due to insufficient gas fee, you can re-specify a higher gas fee to speed up the process on the blockchain.</p>
 <h4 id='http-request-9'>HTTP Request</h4>
-<p><code>POST /api/mpc/billing/withdraw_pending</code></p>
+<p><code>POST /api/mpc/billing/transfer_pending</code></p>
 <h4 id='decrypted-request-parameters-8'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
@@ -1188,10 +1176,10 @@
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">transfer_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal id, example: 12345</td>
+<td style="text-align: left">transfer id, example: 12345</td>
 </tr>
 <tr>
 <td style="text-align: left">gas_price</td>
@@ -1214,10 +1202,10 @@
 </tbody></table>
 <h4 id='response-data-parameters-8'>Response Data Parameters</h4>
 <p>None</p>
-<h3 id='get-withdrawal-records'>Get withdrawal records</h3>
-<p>Get all sub-wallet withdrawal records under the main wallet, and return up to 100 records</p>
+<h3 id='get-transfer-records'>Get transfer records</h3>
+<p>Get all sub-wallet transfer records under the main wallet, and return up to 100 records</p>
 <h4 id='http-request-10'>HTTP Request</h4>
-<p><code>GET /api/mpc/billing/withdraw_list</code></p>
+<p><code>GET /api/mpc/billing/transfer_list</code></p>
 <h4 id='decrypted-request-parameters-9'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
@@ -1274,13 +1262,13 @@
 <td style="text-align: left">id</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal id</td>
+<td style="text-align: left">transfer id</td>
 </tr>
 <tr>
 <td style="text-align: left">request_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">The unique identifier for withdrawing coins</td>
+<td style="text-align: left">The unique identifier for transferring coins</td>
 </tr>
 <tr>
 <td style="text-align: left">sub_wallet_id</td>
@@ -1298,7 +1286,7 @@
 <td style="text-align: left">amount</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal amount</td>
+<td style="text-align: left">transfer amount</td>
 </tr>
 <tr>
 <td style="text-align: left">fee_symbol</td>
@@ -1364,31 +1352,31 @@
 <td style="text-align: left">status</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal status: <code>1000</code> awaiting approval, <code>1100</code> Approved while awaiting signature, <code>1200</code> Payment in progress, <code>2000</code>Payment completed, <code>2100</code> Not Approved, <code>2200</code> Rejected, <code>2300</code> Transaction discarded, <code>2400</code>Payment failed</td>
+<td style="text-align: left">transfer status: <code>1000</code> awaiting approval, <code>1100</code> Approved while awaiting signature, <code>1200</code> Payment in progress, <code>2000</code>Payment completed, <code>2100</code> Not Approved, <code>2200</code> Rejected, <code>2300</code> Transaction discarded, <code>2400</code>Payment failed</td>
 </tr>
 <tr>
-<td style="text-align: left">withdraw_source</td>
+<td style="text-align: left">transfer_source</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal Type： <code>1</code>app, <code>2</code>openapi</td>
+<td style="text-align: left">transfer Type： <code>1</code>app, <code>2</code>openapi</td>
 </tr>
 <tr>
 <td style="text-align: left">base_symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">The unique identifier of the main chain of the coin to be withdrawn, for example: ETH</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be transferred, for example: ETH</td>
 </tr>
 <tr>
 <td style="text-align: left">contract_address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Withdrawal coin&#39;s  contract address</td>
+<td style="text-align: left">transfer coin&#39;s  contract address</td>
 </tr>
 </tbody></table>
-<h3 id='synchronize-withdrawal-records'>Synchronize withdrawal records</h3>
-<p>Get all sub-wallet withdrawal records under the main wallet, and return up to 100 records</p>
+<h3 id='synchronize-transfer-records'>Synchronize transfer records</h3>
+<p>Get all sub-wallet transfer records under the main wallet, and return up to 100 records</p>
 <h4 id='http-request-11'>HTTP Request</h4>
-<p><code>GET /api/mpc/billing/sync_withdraw_list</code></p>
+<p><code>GET /api/mpc/billing/sync_transfer_list</code></p>
 <h4 id='decrypted-request-parameters-10'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
@@ -1402,7 +1390,7 @@
 <td style="text-align: left">max_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal record initial id, example: 12345</td>
+<td style="text-align: left">transfer record initial id, example: 12345</td>
 </tr>
 </tbody></table>
 
@@ -1445,13 +1433,13 @@
 <td style="text-align: left">id</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">withdrawal id</td>
+<td style="text-align: left">transfer id</td>
 </tr>
 <tr>
 <td style="text-align: left">request_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">The unique identifier for withdrawing coins</td>
+<td style="text-align: left">The unique identifier for transferring coins</td>
 </tr>
 <tr>
 <td style="text-align: left">sub_wallet_id</td>
@@ -1469,7 +1457,7 @@
 <td style="text-align: left">amount</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal amount</td>
+<td style="text-align: left">transfer amount</td>
 </tr>
 <tr>
 <td style="text-align: left">fee_symbol</td>
@@ -1535,31 +1523,31 @@
 <td style="text-align: left">status</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal status: <code>1000</code> awaiting approval, <code>1100</code> Approved while awaiting signature, <code>1200</code> Payment in progress, <code>2000</code>Payment completed, <code>2100</code> Not Approved, <code>2200</code> Rejected, <code>2300</code> Transaction discarded, <code>2400</code>Payment failed</td>
+<td style="text-align: left">transfer status: <code>1000</code> awaiting approval, <code>1100</code> Approved while awaiting signature, <code>1200</code> Payment in progress, <code>2000</code>Payment completed, <code>2100</code> Not Approved, <code>2200</code> Rejected, <code>2300</code> Transaction discarded, <code>2400</code>Payment failed</td>
 </tr>
 <tr>
-<td style="text-align: left">withdraw_source</td>
+<td style="text-align: left">transfer_source</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal Type： <code>1</code>app, <code>2</code>openapi</td>
+<td style="text-align: left">transfer Type： <code>1</code>app, <code>2</code>openapi</td>
 </tr>
 <tr>
 <td style="text-align: left">base_symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">The unique identifier of the main chain of the coin to be withdrawn, for example: ETH</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be transferred, for example: ETH</td>
 </tr>
 <tr>
 <td style="text-align: left">contract_address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Withdrawal coin&#39;s  contract address</td>
+<td style="text-align: left">transfer coin&#39;s  contract address</td>
 </tr>
 </tbody></table>
-<h2 id='deposit'>Deposit</h2><h3 id='get-deposit-records'>Get deposit records</h3>
-<p>Get all sub-wallet deposit records under the main wallet, and return up to 100 records</p>
+<h2 id='received'>Received</h2><h3 id='get-receiving-records'>Get Receiving records</h3>
+<p>Get all sub-wallet receiving records under the main wallet, and return up to 100 records</p>
 <h4 id='http-request-12'>HTTP Request</h4>
-<p><code>GET/api/mpc/billing/deposit_list</code></p>
+<p><code>GET/api/mpc/billing/receive_list</code></p>
 <h4 id='decrypted-request-parameters-11'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
@@ -1611,7 +1599,7 @@
 <td style="text-align: left">id</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Depositid</td>
+<td style="text-align: left">Receiving id</td>
 </tr>
 <tr>
 <td style="text-align: left">sub_wallet_id</td>
@@ -1629,7 +1617,7 @@
 <td style="text-align: left">amount</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit amount</td>
+<td style="text-align: left">receiving amount</td>
 </tr>
 <tr>
 <td style="text-align: left">created_at</td>
@@ -1647,19 +1635,19 @@
 <td style="text-align: left">address_from</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">withdrawal from address</td>
+<td style="text-align: left">transfer from address</td>
 </tr>
 <tr>
 <td style="text-align: left">address_to</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">deposit address</td>
+<td style="text-align: left">receiving address</td>
 </tr>
 <tr>
 <td style="text-align: left">memo</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">deposit address memo，example：123321</td>
+<td style="text-align: left">receiving address memo，example：123321</td>
 </tr>
 <tr>
 <td style="text-align: left">txid</td>
@@ -1677,25 +1665,25 @@
 <td style="text-align: left">status</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit status: <code>1000</code> unconfirmed, <code>1100</code> confirmed (transaction block confirmed), <code>2000</code> completed (shown at account), <code>3000</code> abnormal</td>
+<td style="text-align: left">receiving status: <code>1000</code> unconfirmed, <code>1100</code> confirmed (transaction block confirmed), <code>2000</code> completed (shown at account), <code>3000</code> abnormal</td>
 </tr>
 <tr>
 <td style="text-align: left">base_symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">The unique identifier of the main chain of the coin to be deposited, example：ETH</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be received, example：ETH</td>
 </tr>
 <tr>
 <td style="text-align: left">contract_address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Deposit coin&#39;s contract address</td>
+<td style="text-align: left">received coin&#39;s contract address</td>
 </tr>
 </tbody></table>
-<h3 id='synchronous-deposit-record'>Synchronous deposit record</h3>
-<p>Get all sub-wallet deposit records under the main wallet, and return up to 100 records</p>
+<h3 id='synchronous-receiving-record'>Synchronous Receiving record</h3>
+<p>Get all sub-wallet receiving records under the main wallet, and return up to 100 records</p>
 <h4 id='http-request-13'>HTTP Request</h4>
-<p><code>GET /api/mpc/billing/sync_deposit_list</code></p>
+<p><code>GET /api/mpc/billing/sync_receive_list</code></p>
 <h4 id='decrypted-request-parameters-12'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
@@ -1709,7 +1697,7 @@
 <td style="text-align: left">max_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">deposit record initial id，example：100</td>
+<td style="text-align: left">receiving record initial id，example：100</td>
 </tr>
 </tbody></table>
 
@@ -1747,7 +1735,7 @@
 <td style="text-align: left">id</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Depositid</td>
+<td style="text-align: left">receivingid</td>
 </tr>
 <tr>
 <td style="text-align: left">sub_wallet_id</td>
@@ -1765,7 +1753,7 @@
 <td style="text-align: left">amount</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">deposit amount</td>
+<td style="text-align: left">receiving amount</td>
 </tr>
 <tr>
 <td style="text-align: left">created_at</td>
@@ -1783,19 +1771,19 @@
 <td style="text-align: left">address_from</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">withdrawal from address</td>
+<td style="text-align: left">transfer from address</td>
 </tr>
 <tr>
 <td style="text-align: left">address_to</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">deposit address</td>
+<td style="text-align: left">receiving address</td>
 </tr>
 <tr>
 <td style="text-align: left">memo</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">deposit address memo，example：123321</td>
+<td style="text-align: left">receiving address memo，example：123321</td>
 </tr>
 <tr>
 <td style="text-align: left">txid</td>
@@ -1813,19 +1801,19 @@
 <td style="text-align: left">status</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit status: <code>1000</code> unconfirmed, <code>1100</code> confirmed (transaction block confirmed), <code>2000</code> completed (shown at account), <code>3000</code> abnormal</td>
+<td style="text-align: left">receiving status: <code>1000</code> unconfirmed, <code>1100</code> confirmed (transaction block confirmed), <code>2000</code> completed (shown at account), <code>3000</code> abnormal</td>
 </tr>
 <tr>
 <td style="text-align: left">base_symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">The unique identifier of the main chain of the coin to be deposited, example：ETH</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be received, example：ETH</td>
 </tr>
 <tr>
 <td style="text-align: left">contract_address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Deposit coin&#39;s contract address</td>
+<td style="text-align: left">received coin&#39;s contract address</td>
 </tr>
 </tbody></table>
 <h1 id='transaction-notification'>Transaction Notification</h1><h2 id='overview-2'>Overview</h2>
@@ -1859,7 +1847,7 @@
 </tbody></table>
 <h4 id='common-response'>Common Response</h4>
 <p>Return string: <code>SUCCESS</code> means SUCCESS, <code>FAILURE</code> means FAILURE (note that the return parameter does not need to be encrypted here)</p>
-<h2 id='withdrawal-notification'>Withdrawal Notification</h2><h4 id='decrypted-request-parameters-13'>Decrypted Request Parameters</h4>
+<h2 id='transfer-notification'>Transfer Notification</h2><h4 id='decrypted-request-parameters-13'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -1878,7 +1866,7 @@
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Notification type, DEPOSIT notification: <code>deposit</code>, WITHDRAWAL notification: <code>withdraw</code></td>
+<td style="text-align: left">Notification type, receive notification: <code>receive</code>, transfer notification: <code>transfer</code></td>
 </tr>
 <tr>
 <td style="text-align: left">notify_time</td>
@@ -1890,13 +1878,13 @@
 <td style="text-align: left">id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal id, example: 12345</td>
+<td style="text-align: left">transfer id, example: 12345</td>
 </tr>
 <tr>
 <td style="text-align: left">request_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">The unique identifier for withdrawing coins</td>
+<td style="text-align: left">The unique identifier for transferring coins</td>
 </tr>
 <tr>
 <td style="text-align: left">sub_wallet_id</td>
@@ -1914,7 +1902,7 @@
 <td style="text-align: left">amount</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal amount, for example: 1.23</td>
+<td style="text-align: left">transfer amount, for example: 1.23</td>
 </tr>
 <tr>
 <td style="text-align: left">fee_symbol</td>
@@ -1980,28 +1968,28 @@
 <td style="text-align: left">status</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal status: <code>1000</code> awaiting approval, <code>1100</code> Approved while awaiting signature, <code>1200</code> Payment in progress, <code>2000</code>Payment completed, <code>2100</code> Not Approved, <code>2200</code> Rejected, <code>2300</code> Transaction discarded, <code>2400</code>Payment failed</td>
+<td style="text-align: left">transfer status: <code>1000</code> awaiting approval, <code>1100</code> Approved while awaiting signature, <code>1200</code> Payment in progress, <code>2000</code>Payment completed, <code>2100</code> Not Approved, <code>2200</code> Rejected, <code>2300</code> Transaction discarded, <code>2400</code>Payment failed</td>
 </tr>
 <tr>
-<td style="text-align: left">withdraw_source</td>
+<td style="text-align: left">transfer_source</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal Type：<code>1</code>app, <code>2</code>openapi</td>
+<td style="text-align: left">transfer Type：<code>1</code>app, <code>2</code>openapi</td>
 </tr>
 <tr>
 <td style="text-align: left">base_symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">The unique identifier of the main chain of the coin to be withdrawn, for example: ETH</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be transferred, for example: ETH</td>
 </tr>
 <tr>
 <td style="text-align: left">contract_address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Withdrawal coin&#39;s contract address</td>
+<td style="text-align: left">transfer coin&#39;s contract address</td>
 </tr>
 </tbody></table>
-<h2 id='deposit-notification'>Deposit Notification</h2><h4 id='decrypted-request-parameters-14'>Decrypted Request Parameters</h4>
+<h2 id='receive-notification'>Receive Notification</h2><h4 id='decrypted-request-parameters-14'>Decrypted Request Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Param</th>
@@ -2020,7 +2008,7 @@
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Notification type, DEPOSIT notification: <code>deposit</code>, WITHDRAWAL notification: <code>withdraw</code></td>
+<td style="text-align: left">Notification type, receive notification: <code>receive</code>, transfer notification: <code>transfer</code></td>
 </tr>
 <tr>
 <td style="text-align: left">notify_time</td>
@@ -2032,7 +2020,7 @@
 <td style="text-align: left">id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit id</td>
+<td style="text-align: left">receiving id</td>
 </tr>
 <tr>
 <td style="text-align: left">sub_wallet_id</td>
@@ -2050,7 +2038,7 @@
 <td style="text-align: left">amount</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit amount</td>
+<td style="text-align: left">receiving amount</td>
 </tr>
 <tr>
 <td style="text-align: left">created_at</td>
@@ -2098,19 +2086,19 @@
 <td style="text-align: left">status</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Deposit status: <code>1000</code> unconfirmed, <code>1100</code> confirmed (transaction block confirmed), <code>2000</code> completed (shown at account), <code>3000</code> abnormal</td>
+<td style="text-align: left">receiving status: <code>1000</code> unconfirmed, <code>1100</code> confirmed (transaction block confirmed), <code>2000</code> completed (shown at account), <code>3000</code> abnormal</td>
 </tr>
 <tr>
 <td style="text-align: left">base_symbol</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">The unique identifier of the main chain of the coin to be deposited, example：ETH</td>
+<td style="text-align: left">The unique identifier of the main chain of the coin to be received, example：ETH</td>
 </tr>
 <tr>
 <td style="text-align: left">contract_address</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Deposit coin&#39;s contract address</td>
+<td style="text-align: left">received coin&#39;s contract address</td>
 </tr>
 </tbody></table>
 <h1 id='co-signer'>Co-signer</h1><h2 id='overview-3'>Overview</h2>
@@ -2139,7 +2127,7 @@
 
 </span><span class="p">{</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"sign_start"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"withdraw_id"</span><span class="p">:</span><span class="mi">321456</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transfer_id"</span><span class="p">:</span><span class="mi">321456</span><span class="p">,</span><span class="w">
     </span><span class="nl">"request_id"</span><span class="p">:</span><span class="s2">"c70d1eebb7c687ec8d56bead73f104"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"pending_round"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"0xc70d1eebb7c687ec8d56bead73f104d41e6e0bda"</span><span class="p">,</span><span class="w">
@@ -2164,10 +2152,10 @@
 <td style="text-align: left">Callback type, <code>sign_start</code>start signing，<code>sign_success</code>successfully signed.</td>
 </tr>
 <tr>
-<td style="text-align: left">withdraw_id</td>
+<td style="text-align: left">transfer_id</td>
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Withdrawal id, example: 12345</td>
+<td style="text-align: left">transfer id, example: 12345</td>
 </tr>
 <tr>
 <td style="text-align: left">request_id</td>
@@ -2179,7 +2167,7 @@
 <td style="text-align: left">pending_round</td>
 <td style="text-align: left">Bool</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Speed Up status, <code>false</code> means in withdrawing transaction , <code>true</code> means speeding up the transaction</td>
+<td style="text-align: left">Speed Up status, <code>false</code> means in transferring transaction , <code>true</code> means speeding up the transaction</td>
 </tr>
 <tr>
 <td style="text-align: left">from</td>
@@ -2251,7 +2239,7 @@
 </tr>
 <tr>
 <td>110004</td>
-<td>users are frozen and cannot withdraw money</td>
+<td>users are frozen and cannot transfer money</td>
 </tr>
 <tr>
 <td>110023</td>
@@ -2259,23 +2247,23 @@
 </tr>
 <tr>
 <td>110037</td>
-<td>withdrawal address is at risk</td>
+<td>transfer address is at risk</td>
 </tr>
 <tr>
 <td>110055</td>
-<td>correct withdrawal address for</td>
+<td>correct transfer address for</td>
 </tr>
 <tr>
 <td>110065</td>
-<td>user does not exist (used to obtain user balance, withdraw money, or transfer money)</td>
+<td>user does not exist (used to obtain user balance, transfer money, or transfer money)</td>
 </tr>
 <tr>
 <td>110078</td>
-<td>withdrawal or transfer amount less than the minimum transfer amount</td>
+<td>transfer or transfer amount less than the minimum transfer amount</td>
 </tr>
 <tr>
 <td>110087</td>
-<td>withdrawal or transfer amount is greater than the maximum transfer amount</td>
+<td>transfer or transfer amount is greater than the maximum transfer amount</td>
 </tr>
 <tr>
 <td>110088</td>
@@ -2291,7 +2279,7 @@
 </tr>
 <tr>
 <td>110161</td>
-<td>exceeds the maximum withdrawal support accuracy</td>
+<td>exceeds the maximum transfer support accuracy</td>
 </tr>
 <tr>
 <td>120202</td>
@@ -2299,23 +2287,23 @@
 </tr>
 <tr>
 <td>120206</td>
-<td>withdrawal second confirmation failed</td>
+<td>transfer second confirmation failed</td>
 </tr>
 <tr>
 <td>120402</td>
-<td>insufficient balance in withdrawal or transfer</td>
+<td>insufficient balance in transfer or transfer</td>
 </tr>
 <tr>
 <td>120403</td>
-<td>insufficient balance of withdrawal fee</td>
+<td>insufficient balance of transfer fee</td>
 </tr>
 <tr>
 <td>120404</td>
-<td>withdrawal or transfer amount is too small, less than or equal to the commission fee</td>
+<td>transfer or transfer amount is too small, less than or equal to the commission fee</td>
 </tr>
 <tr>
 <td>900006</td>
-<td>the user is at risk. Withdrawal is prohibited</td>
+<td>the user is at risk. transfer is prohibited</td>
 </tr>
 <tr>
 <td>3040006</td>
