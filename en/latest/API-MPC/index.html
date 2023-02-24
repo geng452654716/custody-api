@@ -504,7 +504,7 @@
 
 <p>Method 2： scan the QR code for download:</p>
 
-<p><img src="images/qrCode-3001df59.png" style="width: 150px" alt="" /></p>
+<p><img src="images/qrCode.png" style="width: 150px" alt="" /></p>
 <h4 id='register-mpc-wallet-account'>Register MPC Wallet Account</h4>
 <p>Open the app and register a new account using email OR mobile phone number.</p>
 
@@ -521,9 +521,12 @@
 
 <p><strong>Private key password</strong> is used to encrypt and decrypt private key shards. It is very important. For the safety of your assets, please make sure to back it up in time. Failure to back up private key shards and passwords will limit the use of your <strong>MPC wallet</strong> functions.</p>
 
+<p>Your <strong>private key password</strong> is essential for encrypting and decrypting private key shards. It&#39;s crucial to ensure its <strong>timely backup</strong> to safeguard your assets. Failure to back up private key shards and passwords may restrict the use of your MPC wallet functions.</p>
+
 <ul>
-<li><p>The wallet has a total of 3 private key shards, 2 of which are encrypted and stored in ChainUp HSM, and the other 1 private key shard is stored locally by the user. Users need to <strong>back up</strong> the local private key shards in time and keep them properly;</p></li>
-<li><p>Private key shards exist in the form of recovery phrases for practical reasons.</p></li>
+<li><p><strong>ChainUp Custody</strong> utilizes a <strong>3-3 signature strategy</strong>. The wallet has a total of 3 private key shards, 2 of which are encrypted and stored in ChainUp HSM, and the other 1 private key shard is stored in the <strong>user&#39;s local device</strong>. </p></li>
+<li><p><strong>You have 100% control over assets</strong>: ChainUp Custody solely provides assistance in managing assets and cannot access user assets. Therefore, it is <strong>crucial</strong> for you to <strong>backup you local private key shard in a timely and secure manner</strong>.</p></li>
+<li><p>Private key shards exist in the form of <strong>recovery phrases</strong> for practical reasons.</p></li>
 </ul>
 
 <p>If the wallet function does not meet your needs, please contact your dedicated <strong>Business Manager</strong> or <strong>email</strong> to <a href="mailto:custody@chainup.com">custody@chainup.com</a> for upgrading package. </p>
@@ -586,8 +589,6 @@
 <p>2）The wallet public key：<code>rsa_wallet_pub</code>.</p>
 <h3 id='interface-process'>Interface Process</h3>
 <p>Documentation is the interface that the wallet service provides to third-party applications.</p>
-
-<p><a href="https://custodydocs.chainup.com/en/latest/_images/apiopen-instructions.png"><img src="https://custodydocs.chainup.com/en/latest/_images/apiopen-instructions.png" alt="../_images/apiopen-instructions.png" /></a></p>
 
 <p>The interface providers in the following documents are referred to as <strong>wallet services</strong>，and the interface callers are referred to as <strong>third-party applications</strong>. When the third-party application requests the wallet service, it encrypts the request parameters through the <strong>RSA</strong> algorithm and decrypts the response data after receiving the wallet service</p>
 <h3 id='interface-rules'>Interface Rules</h3>
